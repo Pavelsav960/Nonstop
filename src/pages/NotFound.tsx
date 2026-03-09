@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
+import { BUSINESS } from '../constants';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { cityData } from '../data/cityData';
@@ -32,10 +33,10 @@ export default function NotFound() {
               Go to Homepage
             </Link>
             <a
-              href="tel:+13145321112"
+              href={BUSINESS.phoneTel}
               className="inline-block px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-50 transition-all shadow-lg border-2 border-primary-600"
             >
-              Call (314) 532-1112
+              Call {BUSINESS.phone}
             </a>
           </div>
 

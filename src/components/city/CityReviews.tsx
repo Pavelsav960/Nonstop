@@ -1,3 +1,4 @@
+import { BUSINESS } from '../../constants';
 import type { CityData } from '../../data/cityData';
 
 interface CityReviewsProps {
@@ -76,10 +77,10 @@ export default function CityReviews({ city }: CityReviewsProps) {
             Based on 100+ reviews across St. Louis
           </p>
           <a
-            href="tel:+13145321112"
+            href={BUSINESS.phoneTel}
             className="inline-block px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg"
           >
-            Call (314) 532-1112
+            Call {BUSINESS.phone}
           </a>
         </div>
       </div>

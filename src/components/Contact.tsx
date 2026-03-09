@@ -1,4 +1,5 @@
 import { useState, FormEvent } from 'react';
+import { BUSINESS } from '../constants';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -59,7 +60,7 @@ export default function Contact() {
                   </div>
                   <div className="ml-3 sm:ml-4">
                     <p className="text-xs sm:text-sm font-medium text-gray-500">Phone</p>
-                    <a href="tel:3145321112" className="text-base sm:text-lg text-gray-900 hover:text-primary-600">(314) 532-1112</a>
+                    <a href={BUSINESS.phoneTel} className="text-base sm:text-lg text-gray-900 hover:text-primary-600">{BUSINESS.phone}</a>
                   </div>
                 </div>
 
@@ -71,7 +72,7 @@ export default function Contact() {
                   </div>
                   <div className="ml-3 sm:ml-4">
                     <p className="text-xs sm:text-sm font-medium text-gray-500">Email</p>
-                    <a href="mailto:Nonstoplockandkeyco@gmail.com" className="text-base sm:text-lg text-gray-900 hover:text-primary-600 break-all">Nonstoplockandkeyco@gmail.com</a>
+                    <a href={`mailto:${BUSINESS.email}`} className="text-base sm:text-lg text-gray-900 hover:text-primary-600 break-all">{BUSINESS.email}</a>
                   </div>
                 </div>
 

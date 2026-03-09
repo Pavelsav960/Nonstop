@@ -1,3 +1,4 @@
+import { BUSINESS } from '../../constants';
 import type { CityData } from '../../data/cityData';
 
 interface CityPricingProps {
@@ -41,10 +42,10 @@ export default function CityPricing({ city }: CityPricingProps) {
             Final pricing depends on lock type, time of service, and complexity. Call for an exact quote.
           </p>
           <a
-            href="tel:+13145321112"
+            href={BUSINESS.phoneTel}
             className="inline-block px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg"
           >
-            Call (314) 532-1112 for a Free Quote
+            Call {BUSINESS.phone} for a Free Quote
           </a>
         </div>
       </div>

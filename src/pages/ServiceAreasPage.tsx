@@ -1,11 +1,12 @@
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
+import { BUSINESS } from '../constants';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { cityData } from '../data/cityData';
 
 export default function ServiceAreasPage() {
-  const logoUrl = 'https://nonstoplockandkey.com/nonstop-lock-and-key-st-louis-locksmith-logo-no-bg-final-cut.png';
+  const logoUrl = BUSINESS.logo;
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -30,11 +31,11 @@ export default function ServiceAreasPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     additionalType: 'Locksmith',
-    name: 'Nonstop Lock & Key Co.',
+    name: BUSINESS.legalName,
     image: logoUrl,
     url: 'https://nonstoplockandkey.com/service-areas',
-    telephone: '+13145321112',
-    priceRange: '$$',
+    telephone: BUSINESS.phoneRaw,
+    priceRange: BUSINESS.priceRange,
     areaServed: cityData.map((city) => ({
       '@type': 'City',
       name: city.name,
@@ -52,7 +53,7 @@ export default function ServiceAreasPage() {
     <div className="min-h-screen animate-fade-in">
       <Helmet>
         <title>Locksmith Service Areas | St. Louis Metro | Nonstop Lock & Key</title>
-        <meta name="description" content="Nonstop Lock & Key provides 24/7 locksmith services across 20+ cities in the St. Louis metro area. Find your city for local pricing, response times, and reviews. Call (314) 532-1112." />
+        <meta name="description" content={`Nonstop Lock & Key provides 24/7 locksmith services across 20+ cities in the St. Louis metro area. Find your city for local pricing, response times, and reviews. Call ${BUSINESS.phone}.`} />
         <meta name="keywords" content="locksmith St. Louis metro, locksmith service areas, St. Louis County locksmith, mobile locksmith near me, 24/7 locksmith Missouri" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://nonstoplockandkey.com/service-areas" />
@@ -92,10 +93,10 @@ export default function ServiceAreasPage() {
             Nonstop Lock & Key provides 24/7 mobile locksmith services across the greater St. Louis metropolitan area. Select your city below for local pricing, response times, and customer reviews.
           </p>
           <a
-            href="tel:+13145321112"
+            href={BUSINESS.phoneTel}
             className="inline-block px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-lg"
           >
-            Call (314) 532-1112
+            Call {BUSINESS.phone}
           </a>
         </div>
       </header>
@@ -212,10 +213,10 @@ export default function ServiceAreasPage() {
                 We serve the entire St. Louis metro area. Call us and we will confirm coverage and give you an estimated arrival time for your location.
               </p>
               <a
-                href="tel:+13145321112"
+                href={BUSINESS.phoneTel}
                 className="inline-block px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-lg"
               >
-                Call (314) 532-1112
+                Call {BUSINESS.phone}
               </a>
             </div>
           </div>

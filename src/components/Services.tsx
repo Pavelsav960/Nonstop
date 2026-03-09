@@ -1,67 +1,35 @@
 import { Link } from 'react-router';
+import { serviceData } from '../data/serviceData';
 
-const services = [
-  {
-    title: 'Emergency Lockout Service',
-    description: 'Locked out of your home, car, or business? We provide fast 24/7 emergency lockout assistance.',
-    slug: 'emergency-locksmith',
-    icon: (
-      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Residential Locksmith',
-    description: 'Home lock installation, rekeying, and repair services to keep your family safe and secure.',
-    slug: 'house-lockout',
-    icon: (
-      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Commercial Locksmith',
-    description: 'Business security solutions including master key systems, access control, and high-security locks.',
-    slug: 'lock-installation-replacement',
-    icon: (
-      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Automotive Locksmith',
-    description: 'Car key replacement, ignition repair, and lockout services for all vehicle makes and models.',
-    slug: 'car-lockout',
-    icon: (
-      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Lock Rekeying',
-    description: 'Change your locks without replacing hardware. Perfect for new homeowners or security updates.',
-    slug: 'lock-rekey',
-    icon: (
-      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Smart Lock Installation',
-    description: 'Upgrade to keyless convenience with professional smart lock installation and setup.',
-    slug: 'smart-lock-installation',
-    icon: (
-      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
-  },
-];
+const categoryIcon: Record<string, JSX.Element> = {
+  Automotive: (
+    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 17h.01M16 17h.01M3 11l1.5-5A2 2 0 016.4 4h11.2a2 2 0 011.9 1.4L21 11M3 11h18M3 11v6a1 1 0 001 1h1a2 2 0 104 0h6a2 2 0 104 0h1a1 1 0 001-1v-6" />
+    </svg>
+  ),
+  Residential: (
+    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+    </svg>
+  ),
+  Emergency: (
+    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  ),
+  General: (
+    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+    </svg>
+  ),
+};
+
+const categoryColors: Record<string, string> = {
+  Automotive: 'bg-blue-100 text-blue-700',
+  Residential: 'bg-green-100 text-green-700',
+  Emergency: 'bg-red-100 text-red-700',
+  General: 'bg-gray-100 text-gray-700',
+};
 
 export default function Services() {
   return (
@@ -77,20 +45,28 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {services.map((service, index) => (
+          {serviceData.map((service) => (
             <Link
-              key={index}
+              key={service.slug}
               to={`/services/${service.slug}`}
               className="bg-white rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block"
             >
-              <div className="text-primary-600 mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                {service.icon}
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <div className="text-primary-600 group-hover:scale-110 transition-transform">
+                  {categoryIcon[service.category] || categoryIcon.General}
+                </div>
+                <span className={`text-xs font-semibold px-3 py-1 rounded-full ${categoryColors[service.category] || categoryColors.General}`}>
+                  {service.category}
+                </span>
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3 group-hover:text-primary-600 transition-colors" itemProp="name">
-                {service.title}
+                {service.name}
               </h3>
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-4">
-                {service.description}
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-3">
+                {service.shortDescription}
+              </p>
+              <p className="text-sm font-semibold text-gray-900 mb-4">
+                Starting at {service.startingPrice}
               </p>
               <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:gap-2 transition-all gap-1">
                 Learn More

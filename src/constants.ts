@@ -1,0 +1,23 @@
+// Single source of truth for all business information (NAP consistency)
+export const BUSINESS = {
+  name: 'Nonstop Lock & Key',
+  legalName: 'Nonstop Lock & Key',
+  phone: '(314) 532-1112',
+  phoneTel: 'tel:+13145321112',
+  phoneRaw: '+13145321112',
+  email: 'Nonstoplockandkeyco@gmail.com',
+  url: 'https://nonstoplockandkey.com',
+  logo: 'https://nonstoplockandkey.com/nonstop-lock-and-key-st-louis-locksmith-logo-no-bg-final-cut.png',
+  logoPath: '/nonstop-lock-and-key-st-louis-locksmith-logo-no-bg-final-cut.png',
+  priceRange: '$$',
+  ratingValue: '4.9',
+  reviewCount: '100',
+  city: 'St. Louis',
+  state: 'MO',
+  stateFullName: 'Missouri',
+  region: 'US-MO',
+  lat: 38.6270,
+  lng: -90.1994,
+  gbpUrl: 'https://g.page/r/CW7WyktBAIxtEBM',
+  gbpReviewUrl: 'https://g.page/r/CW7WyktBAIxtEBM/review',
+} as const;

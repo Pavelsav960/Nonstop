@@ -6,6 +6,7 @@ import ServicesPage from './pages/ServicesPage';
 import ServicePage from './pages/ServicePage';
 import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
+import StickyCallBar from './components/StickyCallBar';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/locksmith/:citySlug" element={<CityPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <StickyCallBar />
     </BrowserRouter>
   );
 }

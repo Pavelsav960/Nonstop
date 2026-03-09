@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 const stats = [
   { number: '24/7', label: 'Availability' },
   { number: '30min', label: 'Response Time' },
@@ -15,10 +17,15 @@ export default function About() {
               Trusted Locksmith Serving St. Louis, MO
             </h2>
             <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-              Nonstop Lock & Key is your reliable 24/7 locksmith service in St. Louis. Whether you're locked out of your home, need new locks installed, or require emergency automotive locksmith services, we're here to help day or night.
+              Nonstop Lock & Key is a fully licensed, 24/7 locksmith service trusted by homeowners, drivers, and businesses across the St. Louis area. With a 30-minute average response time covering{' '}
+              <Link to="/service-areas" className="text-primary-600 hover:text-primary-700 font-medium">20 cities across the St. Louis metro</Link>, we're always just a call away when you need help most — day or night, weekends and holidays included.
             </p>
             <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-              Our experienced team of licensed locksmiths provides fast, professional service with a 30-minute average response time. We use the latest tools and techniques to ensure your security needs are met with precision and care.
+              From{' '}
+              <Link to="/services/car-lockout" className="text-primary-600 hover:text-primary-700 font-medium">car lockouts</Link> and{' '}
+              <Link to="/services/car-key-replacement" className="text-primary-600 hover:text-primary-700 font-medium">key replacement</Link> to{' '}
+              <Link to="/services/lock-rekey" className="text-primary-600 hover:text-primary-700 font-medium">lock rekeying</Link> and{' '}
+              <Link to="/services/smart-lock-installation" className="text-primary-600 hover:text-primary-700 font-medium">smart lock installation</Link>, our licensed technicians handle it all with upfront pricing and no hidden fees.
             </p>
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {stats.map((stat, index) => (

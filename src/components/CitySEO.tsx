@@ -1,25 +1,27 @@
 import { Helmet } from 'react-helmet-async';
 import type { CityData } from '../data/cityData';
+import { BUSINESS } from '../constants';
 
 interface CitySEOProps {
   city: CityData;
 }
 
 export default function CitySEO({ city }: CitySEOProps) {
-  const canonicalUrl = `https://nonstoplockandkey.com/locksmith/${city.slug}`;
-  const logoUrl = 'https://nonstoplockandkey.com/nonstop-lock-and-key-st-louis-locksmith-logo-no-bg-final-cut.png';
+  const canonicalUrl = `${BUSINESS.url}/locksmith/${city.slug}`;
+  const logoUrl = BUSINESS.logo;
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     additionalType: 'Locksmith',
-    name: 'Nonstop Lock & Key Co.',
+    name: BUSINESS.legalName,
     image: logoUrl,
     '@id': `${canonicalUrl}#business`,
     url: canonicalUrl,
-    telephone: '+13145321112',
-    priceRange: '$$',
-    email: 'Nonstoplockandkeyco@gmail.com',
+    telephone: BUSINESS.phoneRaw,
+    priceRange: BUSINESS.priceRange,
+    email: BUSINESS.email,
+    sameAs: [BUSINESS.gbpUrl],
     paymentAccepted: 'Cash, Credit Card, Debit Card',
     currenciesAccepted: 'USD',
     knowsLanguage: 'English',
@@ -61,8 +63,8 @@ export default function CitySEO({ city }: CitySEOProps) {
     description: city.description,
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '100',
+      ratingValue: BUSINESS.ratingValue,
+      reviewCount: BUSINESS.reviewCount,
       bestRating: '5',
       worstRating: '1',
     },
@@ -91,7 +93,7 @@ export default function CitySEO({ city }: CitySEOProps) {
           serviceType: item.service,
           name: `${item.service} in ${city.name}, MO`,
           description: item.description,
-          provider: { '@type': 'LocalBusiness', name: 'Nonstop Lock & Key Co.' },
+          provider: { '@type': 'LocalBusiness', name: BUSINESS.legalName },
           areaServed: { '@type': 'City', name: city.name },
         },
         priceSpecification: {
@@ -125,13 +127,13 @@ export default function CitySEO({ city }: CitySEOProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://nonstoplockandkey.com',
+        item: BUSINESS.url,
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Service Areas',
-        item: 'https://nonstoplockandkey.com/service-areas',
+        item: `${BUSINESS.url}/service-areas`,
       },
       {
         '@type': 'ListItem',
@@ -146,8 +148,7 @@ export default function CitySEO({ city }: CitySEOProps) {
     <Helmet>
       <title>{city.metaTitle}</title>
       <meta name="description" content={city.metaDescription} />
-      <meta name="keywords" content={`locksmith ${city.name}, emergency locksmith ${city.name}, 24/7 locksmith ${city.name} MO, car lockout ${city.name}, house lockout ${city.name}, lock rekey ${city.name}, locksmith near me ${city.name}`} />
-      <meta name="author" content="Nonstop Lock & Key Co." />
+      <meta name="author" content={BUSINESS.legalName} />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
       <link rel="canonical" href={canonicalUrl} />
@@ -158,7 +159,7 @@ export default function CitySEO({ city }: CitySEOProps) {
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={logoUrl} />
       <meta property="og:locale" content="en_US" />
-      <meta property="og:site_name" content="Nonstop Lock & Key Co." />
+      <meta property="og:site_name" content={BUSINESS.legalName} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={city.metaTitle} />

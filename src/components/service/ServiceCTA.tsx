@@ -1,3 +1,4 @@
+import { BUSINESS } from '../../constants';
 import type { ServiceData } from '../../data/serviceData';
 
 interface ServiceCTAProps {
@@ -18,10 +19,10 @@ export default function ServiceCTA({ service }: ServiceCTAProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a
-              href="tel:+13145321112"
+              href={BUSINESS.phoneTel}
               className="inline-block px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-lg"
             >
-              Call (314) 532-1112
+              Call {BUSINESS.phone}
             </a>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-6 text-primary-100">

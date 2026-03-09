@@ -1,3 +1,5 @@
+import { BUSINESS } from '../../constants';
+
 export default function ServiceHowItWorks() {
   return (
     <section className="py-16 sm:py-24 bg-white" aria-labelledby="how-it-works-heading">
@@ -17,7 +19,7 @@ export default function ServiceHowItWorks() {
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Call Us</h3>
             <p className="text-gray-600">
-              Call (314) 532-1112 any time, day or night. Describe your situation and we will give you an upfront price before dispatching.
+              Call {BUSINESS.phone} any time, day or night. Describe your situation and we will give you an upfront price before dispatching.
             </p>
           </div>
           <div className="text-center">

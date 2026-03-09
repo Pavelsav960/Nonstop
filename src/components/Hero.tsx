@@ -1,3 +1,5 @@
+import { BUSINESS } from '../constants';
+
 export default function Hero() {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -50,10 +52,10 @@ export default function Hero() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
-              href="tel:3145321112"
+              href={BUSINESS.phoneTel}
               className="px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg text-center text-base sm:text-lg"
             >
-              Call Now: (314) 532-1112
+              Call Now: {BUSINESS.phone}
             </a>
             <button
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}

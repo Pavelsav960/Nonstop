@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
+import { BUSINESS } from '../constants';
 import { serviceData, servicesByCategory } from '../data/serviceData';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -13,7 +14,7 @@ const categoryDescriptions: Record<string, string> = {
 };
 
 export default function ServicesPage() {
-  const logoUrl = 'https://nonstoplockandkey.com/nonstop-lock-and-key-st-louis-locksmith-logo-no-bg-final-cut.png';
+  const logoUrl = BUSINESS.logo;
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -50,7 +51,7 @@ export default function ServicesPage() {
     <div className="min-h-screen animate-fade-in">
       <Helmet>
         <title>Locksmith Services in St. Louis, MO | Nonstop Lock & Key</title>
-        <meta name="description" content="Professional locksmith services in St. Louis, MO. Car lockouts, house lockouts, lock rekeying, car key replacement, smart lock installation, and 24/7 emergency service. Call (314) 532-1112." />
+        <meta name="description" content={`Professional locksmith services in St. Louis, MO. Car lockouts, house lockouts, lock rekeying, car key replacement, smart lock installation, and 24/7 emergency service. Call ${BUSINESS.phone}.`} />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://nonstoplockandkey.com/services" />
         <meta property="og:title" content="Locksmith Services in St. Louis, MO | Nonstop Lock & Key" />
@@ -59,7 +60,7 @@ export default function ServicesPage() {
         <meta property="og:url" content="https://nonstoplockandkey.com/services" />
         <meta property="og:image" content={logoUrl} />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:site_name" content="Nonstop Lock & Key Co." />
+        <meta property="og:site_name" content={BUSINESS.legalName} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Locksmith Services in St. Louis, MO | Nonstop Lock & Key" />
         <meta name="twitter:description" content="Professional locksmith services in St. Louis, MO. Car lockouts, house lockouts, lock rekeying, car key replacement, smart lock installation, and 24/7 emergency service." />
@@ -98,10 +99,10 @@ export default function ServicesPage() {
               Professional residential, commercial, and automotive locksmith solutions available 24/7
             </p>
             <a
-              href="tel:+13145321112"
+              href={BUSINESS.phoneTel}
               className="inline-block px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-lg"
             >
-              Call Now: (314) 532-1112
+              Call Now: {BUSINESS.phone}
             </a>
           </div>
         </header>
@@ -165,10 +166,10 @@ export default function ServicesPage() {
                 Call us and describe your situation. Our team will recommend the right service and provide an upfront price before sending a locksmith.
               </p>
               <a
-                href="tel:+13145321112"
+                href={BUSINESS.phoneTel}
                 className="inline-block px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-lg"
               >
-                Call (314) 532-1112
+                Call {BUSINESS.phone}
               </a>
             </div>
           </div>

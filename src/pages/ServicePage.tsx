@@ -46,32 +46,21 @@ export default function ServicePage() {
 
       <nav aria-label="Breadcrumb" className="bg-gray-100 pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <ol className="flex items-center space-x-2 text-sm text-gray-600" itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <Link to="/" itemProp="item" className="hover:text-primary-600 transition-colors">
-                <span itemProp="name">Home</span>
-              </Link>
-              <meta itemProp="position" content="1" />
+          <ol className="flex items-center space-x-2 text-sm text-gray-600">
+            <li>
+              <Link to="/" className="hover:text-primary-600 transition-colors">Home</Link>
             </li>
             <li className="flex items-center space-x-2">
               <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-              <span itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <Link to="/services" itemProp="item" className="hover:text-primary-600 transition-colors">
-                  <span itemProp="name">Services</span>
-                </Link>
-                <meta itemProp="position" content="2" />
-              </span>
+              <Link to="/services" className="hover:text-primary-600 transition-colors">Services</Link>
             </li>
             <li className="flex items-center space-x-2">
               <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-              <span itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <span itemProp="name" className="font-medium text-gray-900">{service.name}</span>
-                <meta itemProp="position" content="3" />
-              </span>
+              <span className="font-medium text-gray-900">{service.name}</span>
             </li>
           </ol>
         </div>
@@ -80,7 +69,7 @@ export default function ServicePage() {
       <main>
         <article itemScope itemType="https://schema.org/Service">
           <meta itemProp="serviceType" content={service.name} />
-          <meta itemProp="provider" content="Nonstop Lock & Key Co." />
+          <meta itemProp="provider" content="Nonstop Lock & Key" />
 
           <ServiceHero service={service} />
           <ServiceHowItWorks />

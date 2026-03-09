@@ -1,5 +1,7 @@
 import { useParams, Link } from 'react-router';
+import { BUSINESS } from '../constants';
 import { cityData } from '../data/cityData';
+import { serviceData } from '../data/serviceData';
 import { getNearbyCities } from '../utils/nearbyCity';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -33,32 +35,21 @@ export default function CityPage() {
 
       <nav aria-label="Breadcrumb" className="bg-gray-100 pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <ol className="flex items-center space-x-2 text-sm text-gray-600" itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <Link to="/" itemProp="item" className="hover:text-primary-600 transition-colors">
-                <span itemProp="name">Home</span>
-              </Link>
-              <meta itemProp="position" content="1" />
+          <ol className="flex items-center space-x-2 text-sm text-gray-600">
+            <li>
+              <Link to="/" className="hover:text-primary-600 transition-colors">Home</Link>
             </li>
             <li className="flex items-center space-x-2">
               <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-              <span itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <Link to="/service-areas" itemProp="item" className="hover:text-primary-600 transition-colors">
-                  <span itemProp="name">Service Areas</span>
-                </Link>
-                <meta itemProp="position" content="2" />
-              </span>
+              <Link to="/service-areas" className="hover:text-primary-600 transition-colors">Service Areas</Link>
             </li>
             <li className="flex items-center space-x-2">
               <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-              <span itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <span itemProp="name" className="font-medium text-gray-900">Locksmith {city.name}</span>
-                <meta itemProp="position" content="3" />
-              </span>
+              <span className="font-medium text-gray-900">Locksmith {city.name}</span>
             </li>
           </ol>
         </div>
@@ -67,7 +58,7 @@ export default function CityPage() {
       <main>
         <article itemScope itemType="https://schema.org/Service">
           <meta itemProp="serviceType" content="Locksmith" />
-          <meta itemProp="provider" content="Nonstop Lock & Key Co." />
+          <meta itemProp="provider" content="Nonstop Lock & Key" />
 
           <header className="pt-8 pb-16 sm:pt-12 sm:pb-24 bg-gradient-to-br from-primary-600 to-primary-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,10 +71,10 @@ export default function CityPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="tel:+13145321112"
+                    href={BUSINESS.phoneTel}
                     className="inline-block px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-lg"
                   >
-                    Call Now: (314) 532-1112
+                    Call Now: {BUSINESS.phone}
                   </a>
                   <Link
                     to="/service-areas"
@@ -113,7 +104,7 @@ export default function CityPage() {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Call Us</h3>
                   <p className="text-gray-600">
-                    Call (314) 532-1112 any time, day or night. Describe your situation and we will give you an upfront price before dispatching.
+                    Call {BUSINESS.phone} any time, day or night. Describe your situation and we will give you an upfront price before dispatching.
                   </p>
                 </div>
                 <div className="text-center">
@@ -150,96 +141,67 @@ export default function CityPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <Link to="/services/car-lockout" className="bg-white rounded-xl p-8 hover:shadow-xl transition-all transform hover:-translate-y-1 group block">
-                  <div className="text-primary-600 mb-6">
-                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">Car Lockout Service</h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    Locked your keys in your car in {city.name}? Our mobile locksmiths arrive fast with professional tools to safely unlock your vehicle without scratching the paint or damaging the door. We handle all makes and models, from older vehicles to new push-to-start systems.
-                  </p>
-                  <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:gap-2 transition-all gap-1">
-                    Learn More
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                  </span>
-                </Link>
-                <Link to="/services/house-lockout" className="bg-white rounded-xl p-8 hover:shadow-xl transition-all transform hover:-translate-y-1 group block">
-                  <div className="text-primary-600 mb-6">
-                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">Residential Lockout</h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    Locked out of your {city.name} home? We provide 24/7 residential lockout services with rapid response. Our experienced technicians use non-destructive methods to get you back inside without damaging your door, frame, or lock hardware.
-                  </p>
-                  <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:gap-2 transition-all gap-1">
-                    Learn More
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                  </span>
-                </Link>
-                <Link to="/services/lock-rekey" className="bg-white rounded-xl p-8 hover:shadow-xl transition-all transform hover:-translate-y-1 group block">
-                  <div className="text-primary-600 mb-6">
-                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">Lock Rekeying</h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    Moving to a new place in {city.name}? Lock rekeying changes the internal pins so only your new keys work, at a fraction of the cost of full lock replacement. We can rekey all your exterior doors to a single key for convenience.
-                  </p>
-                  <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:gap-2 transition-all gap-1">
-                    Learn More
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                  </span>
-                </Link>
-                <Link to="/services/lock-installation-replacement" className="bg-white rounded-xl p-8 hover:shadow-xl transition-all transform hover:-translate-y-1 group block">
-                  <div className="text-primary-600 mb-6">
-                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">Lock Installation</h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    Need new locks for your {city.name} property? We install deadbolts, knob sets, smart locks, and commercial-grade hardware. Our technicians help you choose the right security level for your home or business and install everything correctly the first time.
-                  </p>
-                  <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:gap-2 transition-all gap-1">
-                    Learn More
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                  </span>
-                </Link>
-                <Link to="/services/emergency-locksmith" className="bg-white rounded-xl p-8 hover:shadow-xl transition-all transform hover:-translate-y-1 group block">
-                  <div className="text-primary-600 mb-6">
-                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">24/7 Emergency Service</h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    Emergencies do not wait for business hours. Whether it is 3am, a holiday, or a weekend, our {city.name} locksmith team is on call and ready. We maintain rapid response times around the clock so you are never left stranded.
-                  </p>
-                  <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:gap-2 transition-all gap-1">
-                    Learn More
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                  </span>
-                </Link>
-                <Link to="/services/car-key-replacement" className="bg-white rounded-xl p-8 hover:shadow-xl transition-all transform hover:-translate-y-1 group block">
-                  <div className="text-primary-600 mb-6">
-                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">Car Key Replacement</h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    Lost or broken car keys in {city.name}? We cut and program replacement keys, transponder keys, and key fobs on-site for most vehicle makes and models. No towing to the dealership required.
-                  </p>
-                  <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:gap-2 transition-all gap-1">
-                    Learn More
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                  </span>
-                </Link>
+                {serviceData.map((service) => {
+                  const categoryIcon: Record<string, JSX.Element> = {
+                    Automotive: (
+                      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 17h.01M16 17h.01M3 11l1.5-5A2 2 0 016.4 4h11.2a2 2 0 011.9 1.4L21 11M3 11h18M3 11v6a1 1 0 001 1h1a2 2 0 104 0h6a2 2 0 104 0h1a1 1 0 001-1v-6" />
+                      </svg>
+                    ),
+                    Residential: (
+                      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                    ),
+                    Emergency: (
+                      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    ),
+                    General: (
+                      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                      </svg>
+                    ),
+                  };
+
+                  const categoryColors: Record<string, string> = {
+                    Automotive: 'bg-blue-100 text-blue-700',
+                    Residential: 'bg-green-100 text-green-700',
+                    Emergency: 'bg-red-100 text-red-700',
+                    General: 'bg-gray-100 text-gray-700',
+                  };
+
+                  return (
+                    <Link
+                      key={service.slug}
+                      to={`/services/${service.slug}`}
+                      className="bg-white rounded-xl p-8 hover:shadow-xl transition-all transform hover:-translate-y-1 group block"
+                    >
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="text-primary-600">
+                          {categoryIcon[service.category] || categoryIcon.General}
+                        </div>
+                        <span className={`text-xs font-semibold px-3 py-1 rounded-full ${categoryColors[service.category] || categoryColors.General}`}>
+                          {service.category}
+                        </span>
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">
+                        {service.name}
+                      </h3>
+                      <p className="text-gray-700 leading-relaxed mb-4">
+                        {service.shortDescription}
+                      </p>
+                      <p className="text-sm font-semibold text-gray-900 mb-4">
+                        Starting at {service.startingPrice}
+                      </p>
+                      <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:gap-2 transition-all gap-1">
+                        {service.name} in {city.name} &rarr;
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                      </span>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -308,13 +270,13 @@ export default function CityPage() {
                       <span className="text-sm font-medium">Mobile service — we come to your location in {city.name}</span>
                     </div>
                     <a
-                      href="tel:+13145321112"
+                      href={BUSINESS.phoneTel}
                       className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-600 text-white text-sm font-semibold rounded-lg hover:bg-primary-700 transition-colors"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
-                      <span>Call (314) 532-1112</span>
+                      <span>Call {BUSINESS.phone}</span>
                     </a>
                   </div>
                 </div>
@@ -353,10 +315,10 @@ export default function CityPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                   <a
-                    href="tel:+13145321112"
+                    href={BUSINESS.phoneTel}
                     className="inline-block px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-lg"
                   >
-                    Call (314) 532-1112
+                    Call {BUSINESS.phone}
                   </a>
                 </div>
                 <div className="flex flex-wrap items-center justify-center gap-6 text-primary-100">

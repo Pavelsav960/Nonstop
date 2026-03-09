@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import { BUSINESS } from '../constants';
 import { cityData } from '../data/cityData';
 
 export default function ServiceAreas() {
@@ -20,7 +21,7 @@ export default function ServiceAreas() {
               <Link
                 key={city.slug}
                 to={`/locksmith/${city.slug}`}
-                className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-600 transition-all duration-300 text-center group"
+                className="flex items-center p-4 py-5 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-600 transition-all duration-300 text-center group"
               >
                 <div className="flex items-center space-x-2">
                   <svg
@@ -43,9 +44,14 @@ export default function ServiceAreas() {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  <span className="text-sm font-medium text-gray-700 group-hover:text-primary-600">
-                    {city.name}
-                  </span>
+                  <div className="flex flex-col items-start">
+                    <span className="text-sm font-medium text-gray-700 group-hover:text-primary-600">
+                      Locksmith {city.name}
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      {city.responseTime}
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -56,10 +62,10 @@ export default function ServiceAreas() {
               Don't see your area listed? We serve the entire St. Louis metro area!
             </p>
             <a
-              href="tel:+13145321112"
+              href={BUSINESS.phoneTel}
               className="inline-block px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg"
             >
-              Call (314) 532-1112 to Confirm Service
+              Call {BUSINESS.phone} to Confirm Service
             </a>
           </div>
         </div>

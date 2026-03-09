@@ -1,3 +1,5 @@
+import { BUSINESS } from '../constants';
+
 const faqs = [
   {
     question: 'Do you provide 24/7 emergency locksmith services in St. Louis?',
@@ -9,7 +11,7 @@ const faqs = [
   },
   {
     question: 'How much does a locksmith cost in St. Louis?',
-    answer: 'Pricing varies based on the service needed. We offer competitive rates with transparent pricing - no hidden fees. Emergency lockouts typically start around $75-$150, while lock rekeying and installation vary by complexity. Call (314) 532-1112 for a free quote specific to your needs.',
+    answer: `Pricing varies based on the service needed. We offer competitive rates with transparent pricing - no hidden fees. Emergency lockouts typically start around $75-$150, while lock rekeying and installation vary by complexity. Call ${BUSINESS.phone} for a free quote specific to your needs.`,
   },
   {
     question: 'Are you licensed and insured in Missouri?',
@@ -47,23 +49,18 @@ export default function FAQ() {
             </p>
           </div>
 
-          <div className="space-y-6" itemScope itemType="https://schema.org/FAQPage">
+          <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div
                 key={index}
                 className="bg-white rounded-xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-shadow"
-                itemScope
-                itemProp="mainEntity"
-                itemType="https://schema.org/Question"
               >
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3" itemProp="name">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">
                   {faq.question}
                 </h3>
-                <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                  <p className="text-gray-700 leading-relaxed" itemProp="text">
-                    {faq.answer}
-                  </p>
-                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  {faq.answer}
+                </p>
               </div>
             ))}
           </div>
@@ -74,10 +71,10 @@ export default function FAQ() {
               Our St. Louis locksmith team is here to help 24/7
             </p>
             <a
-              href="tel:+13145321112"
+              href={BUSINESS.phoneTel}
               className="inline-block px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
             >
-              Call (314) 532-1112 Now
+              Call {BUSINESS.phone} Now
             </a>
           </div>
         </div>
