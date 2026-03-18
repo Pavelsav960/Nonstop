@@ -11,9 +11,16 @@ export const creveCoeur: CityData = {
     'Bear Creek Woods',
     'Drace Woods',
     'Mason Glen',
+    'Spoede Road',
+    'Old Olive Street Road',
+    'Ladue Estates Border',
+    'Ballas Road Corridor',
+    'Mason Road',
+    'Coeur de Ville',
+    'Westwood Park',
   ],
   localContext:
-    'Creve Coeur is a well-established suburban community known for excellent schools and a mix of families and working professionals. The Olive Boulevard corridor anchors much of the local commerce, while Creve Coeur Lake Memorial Park draws residents and visitors year-round. Homes here range from mid-century ranch-style houses to newer construction in subdivisions like Mason Glen, each with distinct security considerations that our technicians understand well.',
+    'Creve Coeur is a well-established suburban community known for top-rated schools that consistently attract families relocating to the St. Louis metro area. Creve Coeur Lake Memorial Park serves as a major local landmark, offering over 2,000 acres of trails, picnic areas, and waterfront recreation that make it one of the most visited parks in the region. The Olive Boulevard corridor is the commercial spine of the city, home to a busy mix of medical offices, technology firms, retail centers, and the Bayer (formerly Monsanto) global headquarters campus that brings thousands of professionals into the area daily. Housing in Creve Coeur spans considerable architectural variety, from 1960s-era ranch homes and split-levels near Conway Village to newer executive-style construction along Mason Road and in subdivisions like Mason Glen. This diversity of property types, combined with both residential and corporate security needs along the Ballas Road and Spoede Road corridors, means our technicians stay well-versed in a wide range of lock and access-control systems.',
   metaTitle: 'Creve Coeur Locksmith | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Trusted locksmith in Creve Coeur, MO. Car lockouts, lock rekeying, and emergency service for Conway Village, Pinetree Village, Bear Creek Woods, and surrounding neighborhoods. 20-30 min response.',

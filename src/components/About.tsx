@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import vanImage from '../assets/images/nonstop-lock-and-key-mobile-locksmith-van-st-louis-mo.jpeg';
 
 const stats = [
   { number: '24/7', label: 'Availability' },
@@ -27,7 +28,7 @@ export default function About() {
               <Link to="/services/lock-rekey" className="text-primary-600 hover:text-primary-700 font-medium">lock rekeying</Link> and{' '}
               <Link to="/services/smart-lock-installation" className="text-primary-600 hover:text-primary-700 font-medium">smart lock installation</Link>, our licensed technicians handle it all with upfront pricing and no hidden fees.
             </p>
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center p-3 sm:p-4 bg-gray-50 rounded-lg">
                   <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">
@@ -39,13 +40,24 @@ export default function About() {
                 </div>
               ))}
             </div>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/about" className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-700 font-semibold transition-colors">
+                Learn More About Us
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+              </Link>
+              <span className="text-gray-300">|</span>
+              <Link to="/contact" className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-700 font-semibold transition-colors">
+                Get a Free Quote
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+              </Link>
+            </div>
           </div>
 
           <div className="relative mt-8 lg:mt-0">
             <div className="relative h-80 sm:h-96 lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/210334/pexels-photo-210334.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Licensed St. Louis locksmith installing high-security door locks for residential and commercial properties in Missouri"
+                src={vanImage}
+                alt="Nonstop Lock & Key mobile locksmith van serving St. Louis, MO and surrounding areas"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

@@ -99,6 +99,34 @@ export default function Footer() {
           </div>
 
           <div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2 mb-6">
+              <li>
+                <Link to="/about" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/reviews" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
+                  Customer Reviews
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
+                  All Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/service-areas" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
+                  All Service Areas
+                </Link>
+              </li>
+            </ul>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2">
               <li className="text-gray-400">

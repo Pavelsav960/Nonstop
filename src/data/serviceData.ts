@@ -3,6 +3,11 @@ export interface ServiceFAQ {
   answer: string;
 }
 
+export interface ServiceHowItWorksStep {
+  title: string;
+  description: string;
+}
+
 export interface ServiceData {
   name: string;
   slug: string;
@@ -12,6 +17,7 @@ export interface ServiceData {
   startingPrice: string;
   benefits: string[];
   faqs: ServiceFAQ[];
+  howItWorks: ServiceHowItWorksStep[];
   metaTitle: string;
   metaDescription: string;
   relatedServiceSlugs: string[];

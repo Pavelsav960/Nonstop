@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { BUSINESS } from '../../constants';
 import type { CityData } from '../../data/cityData';
 
@@ -76,12 +77,20 @@ export default function CityReviews({ city }: CityReviewsProps) {
           <p className="text-gray-600 mb-6">
             Based on 100+ reviews across St. Louis
           </p>
-          <a
-            href={BUSINESS.phoneTel}
-            className="inline-block px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg"
-          >
-            Call {BUSINESS.phone}
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={BUSINESS.phoneTel}
+              className="inline-block px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg"
+            >
+              Call {BUSINESS.phone}
+            </a>
+            <Link
+              to="/reviews"
+              className="inline-block px-6 py-4 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-primary-300 hover:text-primary-700 transition-all shadow-md"
+            >
+              See All Customer Reviews
+            </Link>
+          </div>
         </div>
       </div>
     </section>

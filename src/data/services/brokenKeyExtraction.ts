@@ -42,6 +42,11 @@ export const brokenKeyExtraction: ServiceData = {
       answer: 'Yes. Our mobile locksmiths carry key cutting equipment and can cut a new replacement key on-site immediately after extracting the broken piece. We can cut the new key from the remaining fragment or from the lock code to ensure a perfect fit.',
     },
   ],
+  howItWorks: [
+    { title: 'Tell Us Where It Broke', description: 'Call (314) 532-1112 and describe where your key snapped — front door deadbolt, car ignition, padlock, or mailbox. We give you an upfront quote and dispatch a locksmith.' },
+    { title: 'Precision Extraction', description: 'Our technician arrives with specialized extraction tools designed to grip and remove broken key fragments without damaging the lock cylinder or internal pins.' },
+    { title: 'New Key Cut On-Site', description: 'After extraction, we cut a fresh key right at your location using our mobile key machine. We also lubricate and test the lock to prevent future breakage.' },
+  ],
   metaTitle: 'Broken Key Extraction Service in St. Louis, MO | Starting at $55 | Nonstop Lock & Key',
   metaDescription: 'Key broken in your lock? Nonstop Lock & Key extracts broken keys from door locks, car ignitions, and more without damage. New key cut on-site. Starting at $55. Call (314) 532-1112.',
   relatedServiceSlugs: ['house-lockout', 'car-lockout', 'lock-rekey'],

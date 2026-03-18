@@ -11,9 +11,16 @@ export const manchester: CityData = {
     'Lafayette area',
     'Manchester Road corridor',
     'Meramec Station',
+    'Shady Oak Industrial area',
+    'Barrett Station area',
+    'Highlands of Manchester',
+    'Manchester Highlands',
+    'Pond Grover area',
+    'Ballas Road border',
+    'Henry Road area',
   ],
   localContext:
-    'Manchester sits at the crossroads of several major west county routes, making it a hub of daily commuter and retail traffic. The Manchester Road corridor drives steady demand for commercial and automotive locksmith services, while the surrounding residential pockets draw homeowners who need reliable lock maintenance and emergency lockout help. Growing development in the Meramec Station area has also brought new construction rekeying and smart lock installation requests.',
+    'Manchester sits at a key west county crossroads where Manchester Road meets I-270, funneling heavy commuter and retail traffic through the city every day. The residential landscape ranges from established ranch-style and split-level homes built during the 1960s and 1970s to newer townhome and apartment developments clustered near the Meramec Station area, each with distinct lock hardware and security needs. The Manchester Road corridor continues to see commercial growth with restaurants, auto dealerships, medical offices, and retail centers driving steady demand for commercial locksmith services, master key systems, and after-hours lockout response. Ongoing revitalization projects are attracting younger residents and first-time homebuyers who often request rekeying, smart lock upgrades, and keyless entry installations shortly after move-in. This mix of older residential neighborhoods, active commercial zones, and new construction keeps our technicians busy across Manchester year-round.',
   metaTitle:
     'Manchester MO Locksmith - Emergency Lockouts & Rekeying | Nonstop Lock & Key',
   metaDescription:

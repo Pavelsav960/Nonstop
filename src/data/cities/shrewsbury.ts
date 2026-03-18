@@ -11,9 +11,16 @@ export const shrewsbury: CityData = {
     'MacKenzie Road area',
     'Watson Road corridor',
     'Scanlan Avenue area',
+    'Kenrick-Glennon Seminary area',
+    'Murdoch Avenue area',
+    'Itaska Street area',
+    'Laclede Station Road area',
+    'Lenz Avenue area',
+    'Bruno Avenue area',
+    'Weber Hill area',
   ],
   localContext:
-    'Shrewsbury is a small, tightly knit municipality where neighbors know each other by name and families put down roots for generations. The quiet residential streets, well-maintained parks, and steady commercial activity along Watson Road give the city a grounded, family-first character. Residents here value reliability and straightforward service, which is exactly what Nonstop Lock & Key provides every time we respond to a call in this community.',
+    'Shrewsbury is one of the smallest municipalities in St. Louis County, covering a compact 1.2-square-mile footprint where neighbors know each other by name and families often stay for generations. The housing stock is defined largely by 1940s and 1950s brick bungalows and Cape Cod homes lining quiet, tree-shaded streets, giving the city a distinctive mid-century residential character. Watson Road, the historic Route 66 corridor, runs directly through Shrewsbury and serves as its primary commercial strip with local shops, restaurants, and service businesses. The Kenrick-Glennon Seminary campus stands as one of the most recognizable landmarks in the area, anchoring the southern edge of the community with its stately grounds. This strong sense of neighborhood identity and pride in well-kept homes means Shrewsbury residents value reliability and straightforward service, which is exactly what Nonstop Lock & Key provides every time we respond to a call in this community.',
   metaTitle: '24/7 Emergency Locksmith Shrewsbury MO | Nonstop Lock & Key',
   metaDescription:
     'Shrewsbury MO residents trust Nonstop Lock & Key for 24/7 emergency lockouts, lock rekeying, and key replacement. Serving Lansdowne Avenue, Watson Road, Shrewsbury Park, and surrounding areas.',

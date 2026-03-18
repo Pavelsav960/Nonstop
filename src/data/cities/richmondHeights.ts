@@ -11,9 +11,16 @@ export const richmondHeights: CityData = {
     'Big Bend Area',
     'Hanley Station',
     'Dale Avenue Area',
+    'Maplewood Border Area',
+    'Hi-Pointe Area',
+    'Southampton Border',
+    'Berthold Avenue Area',
+    'Francis Place',
+    'Ellendale Area',
+    'Oakland Avenue Area',
   ],
   localContext:
-    'Richmond Heights sits at the crossroads of several major St. Louis thoroughfares, making it a hub for shopping, dining, and daily commuting. The Galleria and The Heights shopping district attract thousands of visitors, while the residential streets between Clayton Road and Dale Avenue are home to a diverse mix of bungalows and mid-century ranch houses. This blend of heavy commercial activity and established residential neighborhoods creates a wide range of lock and security needs.',
+    'Richmond Heights sits at the crossroads of several major St. Louis thoroughfares, making it a hub for shopping, dining, and daily commuting. The Galleria and The Heights mixed-use development serve as the city\'s major commercial anchors, drawing thousands of shoppers, diners, and office workers to the area every week. Between Clayton Road and Highway 40/I-64, the residential character is defined by charming 1930s-1950s bungalows and Tudor-style homes on tree-lined side streets like Dale Avenue, Oakland Avenue, and Francis Place. As an inner-ring suburb, Richmond Heights offers walkable access to the MetroLink light-rail system via the Richmond Heights station, connecting residents to downtown St. Louis and Lambert Airport without a car. The community is a mix of young professionals renting apartments near the Big Bend corridor and longtime homeowners on the quieter side streets off Berthold Avenue and Ellendale, creating a broad spectrum of residential and commercial lock and security needs.',
   metaTitle: 'Locksmith Near The Galleria | Richmond Heights MO | Nonstop Lock & Key',
   metaDescription:
     'Professional locksmith serving Richmond Heights, MO. Fast response near The Galleria, Clayton Road, and Big Bend. Emergency lockouts, rekeying, and key replacement. Call Nonstop Lock & Key today.',

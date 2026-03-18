@@ -42,6 +42,11 @@ export const lockRekey: ServiceData = {
       answer: 'Rekeying a standard residential lock takes approximately 10 to 15 minutes per lock. A typical home with a front door, back door, and garage entry door can be rekeyed in under an hour. We work efficiently to minimize disruption.',
     },
   ],
+  howItWorks: [
+    { title: 'Schedule or Call Now', description: 'Call (314) 532-1112 to book a rekeying appointment or request same-day service. Tell us how many locks need rekeying and we provide a complete upfront quote.' },
+    { title: 'Cylinders Repinned On-Site', description: 'Our locksmith removes each cylinder, replaces the internal pin configuration, and reassembles the lock — all at your door. Each lock takes about 10-15 minutes.' },
+    { title: 'New Keys, Old Keys Disabled', description: 'You receive a fresh set of keys that work on all rekeyed locks. Every old key is instantly rendered useless. We can key all your doors to a single key for convenience.' },
+  ],
   metaTitle: 'Lock Rekey Service in St. Louis, MO | Starting at $25/Lock | Nonstop Lock & Key',
   metaDescription: 'Professional lock rekeying in St. Louis starting at $25 per lock. Move into a new home? Lost your keys? Rekey all doors to one key. Same-day service. Call (314) 532-1112.',
   relatedServiceSlugs: ['lock-installation-replacement', 'house-lockout', 'smart-lock-installation'],

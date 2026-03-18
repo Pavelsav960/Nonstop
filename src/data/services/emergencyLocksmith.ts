@@ -42,6 +42,11 @@ export const emergencyLocksmith: ServiceData = {
       answer: 'We recommend contacting police first after a break-in for your safety and for insurance documentation. However, you can call us at (314) 532-1112 at any point. We can arrive while you wait for police or come after they have completed their report.',
     },
   ],
+  howItWorks: [
+    { title: 'Call Any Hour', description: 'Reach our live dispatcher 24/7/365 at (314) 532-1112. Describe your emergency — lockout, break-in damage, jammed lock — and receive an upfront price before we dispatch.' },
+    { title: 'Rapid Dispatch', description: 'We send the nearest available mobile locksmith to your St. Louis location. Average arrival time is 20-30 minutes, even on holidays, weekends, and in the middle of the night.' },
+    { title: 'Emergency Resolved', description: 'Our technician handles the situation on the spot with the tools and parts already on the van. Lock replaced, door secured, key extracted — whatever it takes to restore your safety immediately.' },
+  ],
   metaTitle: '24 Hour Emergency Locksmith in St. Louis, MO | No Extra Fees | Nonstop Lock & Key',
   metaDescription: '24/7 emergency locksmith service in St. Louis with no after-hours charges. Fast 20-30 minute response for lockouts, break-ins, and lock emergencies. Call (314) 532-1112 now.',
   relatedServiceSlugs: ['car-lockout', 'house-lockout', 'broken-key-extraction'],

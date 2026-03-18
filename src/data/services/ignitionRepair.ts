@@ -42,6 +42,11 @@ export const ignitionRepair: ServiceData = {
       answer: 'We do not recommend it. A hard-to-turn ignition will likely get worse over time and could fail completely while driving, which is a safety hazard. Forcing the key can also break it inside the cylinder, creating a more expensive repair. Call us for a same-day diagnosis.',
     },
   ],
+  howItWorks: [
+    { title: 'Describe the Ignition Problem', description: 'Call (314) 532-1112 and explain what is happening — key won\'t turn, stuck in the ignition, or engine won\'t start. Share your vehicle make and model so we bring the right parts.' },
+    { title: 'On-Site Diagnosis', description: 'Our locksmith inspects the ignition cylinder, key, and switch to pinpoint the exact cause. Sometimes it is a worn key that needs replacement; other times the cylinder itself needs repair or swap.' },
+    { title: 'Repaired and Running', description: 'We fix or replace the faulty component right in your driveway or parking spot. If a new cylinder is installed, we cut matching keys on-site so you leave with a fully working ignition system.' },
+  ],
   metaTitle: 'Ignition Repair Service in St. Louis, MO | Starting at $95 | Nonstop Lock & Key',
   metaDescription: 'Key stuck or won\'t turn in the ignition? Nonstop Lock & Key provides on-site ignition repair and cylinder replacement in St. Louis. Starting at $95. Call (314) 532-1112.',
   relatedServiceSlugs: ['car-key-replacement', 'car-lockout', 'key-fob-programming'],

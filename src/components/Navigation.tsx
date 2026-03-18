@@ -131,24 +131,30 @@ export default function Navigation() {
                 </div>
               </div>
             </div>
-            <button
-              onClick={() => handleNavigation('about')}
+            <Link
+              to="/about"
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
               About
-            </button>
+            </Link>
             <Link
               to="/service-areas"
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
               Service Areas
             </Link>
-            <button
-              onClick={() => handleNavigation('contact')}
+            <Link
+              to="/reviews"
+              className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+            >
+              Reviews
+            </Link>
+            <Link
+              to="/contact"
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
               Contact
-            </button>
+            </Link>
           </div>
 
           <button
@@ -234,12 +240,13 @@ export default function Navigation() {
                 </div>
               )}
             </div>
-            <button
-              onClick={() => handleNavigation('about')}
+            <Link
+              to="/about"
+              onClick={() => setIsMenuOpen(false)}
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
             >
               About
-            </button>
+            </Link>
             <Link
               to="/service-areas"
               onClick={() => setIsMenuOpen(false)}
@@ -247,12 +254,20 @@ export default function Navigation() {
             >
               Service Areas
             </Link>
-            <button
-              onClick={() => handleNavigation('contact')}
+            <Link
+              to="/reviews"
+              onClick={() => setIsMenuOpen(false)}
+              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              Reviews
+            </Link>
+            <Link
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
             >
               Contact
-            </button>
+            </Link>
           </div>
         )}
       </div>

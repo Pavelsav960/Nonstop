@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { BUSINESS } from '../constants';
 
 const reviews = [
@@ -127,6 +128,12 @@ export default function Reviews() {
             >
               Call {BUSINESS.phone} for Fast Service
             </a>
+            <Link
+              to="/reviews"
+              className="inline-block px-6 py-4 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-primary-300 hover:text-primary-700 transition-all shadow-md"
+            >
+              See All Customer Reviews
+            </Link>
             <a
               href={BUSINESS.gbpReviewUrl}
               target="_blank"

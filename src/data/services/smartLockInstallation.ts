@@ -42,6 +42,11 @@ export const smartLockInstallation: ServiceData = {
       answer: 'Most smart locks include a physical keyhole as a backup. Some models like the August smart lock are retrofit designs that keep your existing exterior key cylinder entirely. During installation, we set up both the smart features and the physical key backup.',
     },
   ],
+  howItWorks: [
+    { title: 'Choose Your Smart Lock', description: 'Already have a lock? Great. Need a recommendation? Call (314) 532-1112 and we will suggest the best smart lock for your door type, Wi-Fi setup, and smart home ecosystem.' },
+    { title: 'Expert Installation', description: 'Our technician removes your old hardware, installs the smart lock with proper alignment and reinforced strike plate, and connects it to your Wi-Fi or Bluetooth network.' },
+    { title: 'Configured and Connected', description: 'We set up your access codes, pair the lock with Alexa, Google Home, or Apple HomeKit if applicable, and walk you through the app so you are comfortable managing it on your own.' },
+  ],
   metaTitle: 'Smart Lock Installation in St. Louis, MO | Starting at $85 | Nonstop Lock & Key',
   metaDescription: 'Professional smart lock installation in St. Louis. Schlage, Kwikset, Yale, August, and more. Wi-Fi setup and smart home integration included. Starting at $85. Call (314) 532-1112.',
   relatedServiceSlugs: ['lock-installation-replacement', 'lock-rekey', 'house-lockout'],

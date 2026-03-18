@@ -29,6 +29,9 @@ const routes = [
   '/',
   '/services',
   '/service-areas',
+  '/about',
+  '/contact',
+  '/reviews',
   ...citySlugs.map(slug => `/locksmith/${slug}`),
   ...serviceSlugs.map(slug => `/services/${slug}`),
 ]

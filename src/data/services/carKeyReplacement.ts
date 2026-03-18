@@ -42,6 +42,11 @@ export const carKeyReplacement: ServiceData = {
       answer: 'Most car key replacements are completed in 30 to 45 minutes on-site. This includes cutting the key blade, programming the transponder chip, and testing the key to ensure it starts the vehicle and operates all locks properly.',
     },
   ],
+  howItWorks: [
+    { title: 'Share Your Vehicle Details', description: 'Call (314) 532-1112 with your vehicle make, model, and year. We confirm key type availability and give you an exact price before dispatching our mobile key shop.' },
+    { title: 'Key Cut and Programmed On-Site', description: 'Our locksmith arrives at your St. Louis location with blank transponder keys and professional programming equipment. The new key is precision-cut and coded to your vehicle\'s immobilizer.' },
+    { title: 'Verified and Ready to Drive', description: 'We test the new key in the door lock, trunk, and ignition to confirm it starts the engine and operates all functions. You drive away with a working key — no tow to the dealership needed.' },
+  ],
   metaTitle: 'Car Key Replacement in St. Louis, MO | Starting at $120 | Nonstop Lock & Key',
   metaDescription: 'Lost your car keys in St. Louis? Nonstop Lock & Key cuts and programs replacement car keys on-site for all makes and models. Cheaper than the dealer. Starting at $120. Call (314) 532-1112.',
   relatedServiceSlugs: ['key-fob-programming', 'car-lockout', 'ignition-repair'],

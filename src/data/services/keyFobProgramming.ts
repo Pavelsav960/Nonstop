@@ -42,6 +42,11 @@ export const keyFobProgramming: ServiceData = {
       answer: 'Yes. We program proximity smart keys used in push-button start systems for many vehicle makes and models. These are the keys that only need to be inside the vehicle to start the engine without inserting a key blade into the ignition.',
     },
   ],
+  howItWorks: [
+    { title: 'Describe Your Fob Issue', description: 'Call (314) 532-1112 and tell us your vehicle make, model, and what the fob is doing — or not doing. We determine whether you need reprogramming, a battery, or a replacement fob.' },
+    { title: 'On-Site Diagnosis and Programming', description: 'Our technician arrives with diagnostic tools and compatible fob inventory. We test your existing fob, identify the issue, and program the new or existing fob to your vehicle in 15-25 minutes.' },
+    { title: 'Full Function Test', description: 'We verify every fob button — lock, unlock, trunk, panic, and remote start if equipped. You leave with a fully functional key fob at a fraction of what the dealership charges.' },
+  ],
   metaTitle: 'Key Fob Programming in St. Louis, MO | Starting at $85 | Nonstop Lock & Key',
   metaDescription: 'Key fob not working? Nonstop Lock & Key programs and replaces key fobs on-site in St. Louis for most makes and models. Starting at $85. Call (314) 532-1112.',
   relatedServiceSlugs: ['car-key-replacement', 'car-lockout', 'ignition-repair'],

@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { BUSINESS } from '../../constants';
 import type { ServiceData } from '../../data/serviceData';
 
@@ -24,6 +25,12 @@ export default function ServiceCTA({ service }: ServiceCTAProps) {
             >
               Call {BUSINESS.phone}
             </a>
+            <Link
+              to="/contact"
+              className="inline-block px-8 py-4 bg-primary-700 text-white font-semibold rounded-lg hover:bg-primary-900 transition-all border-2 border-white/30 text-lg"
+            >
+              Request a Free Quote
+            </Link>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-6 text-primary-100">
             <div className="flex items-center space-x-2">
@@ -38,12 +45,12 @@ export default function ServiceCTA({ service }: ServiceCTAProps) {
               </svg>
               <span>24/7 Service</span>
             </div>
-            <div className="flex items-center space-x-2">
+            <Link to="/reviews" className="flex items-center space-x-2 hover:text-white transition-colors">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
               </svg>
-              <span>Upfront Pricing</span>
-            </div>
+              <span>4.9/5 from 100+ Reviews</span>
+            </Link>
           </div>
         </div>
       </div>

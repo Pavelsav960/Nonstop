@@ -72,7 +72,7 @@ export default function ServicePage() {
           <meta itemProp="provider" content="Nonstop Lock & Key" />
 
           <ServiceHero service={service} />
-          <ServiceHowItWorks />
+          <ServiceHowItWorks service={service} />
           <ServiceContent service={service} />
           <ServiceBenefits service={service} />
           <ServiceAreaLinks service={service} />

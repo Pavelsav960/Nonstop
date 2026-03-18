@@ -42,6 +42,11 @@ export const houseLockout: ServiceData = {
       answer: 'We typically arrive within 20 to 30 minutes anywhere in the St. Louis metropolitan area. When you call (314) 532-1112, we dispatch the nearest available locksmith to minimize your wait time.',
     },
   ],
+  howItWorks: [
+    { title: 'Describe Your Situation', description: 'Call (314) 532-1112 and tell us your lock type and location. We quote an upfront price and send a residential locksmith to your St. Louis home right away.' },
+    { title: 'Non-Destructive Entry', description: 'Our technician arrives in 20-30 minutes and uses professional bypass tools to open your door without damaging the lock, frame, or finish. Works on deadbolts, knobs, and electronic locks.' },
+    { title: 'Safe and Secure', description: 'Once you are back inside, we can rekey or upgrade your locks on the spot if you choose. Many customers pair a lockout visit with a same-day rekey for added peace of mind.' },
+  ],
   metaTitle: 'House Lockout Service in St. Louis, MO | Starting at $65 | Nonstop Lock & Key',
   metaDescription: 'Locked out of your house in St. Louis? Nonstop Lock & Key provides fast, non-destructive house lockout service 24/7. No damage to your door or lock. Starting at $65. Call (314) 532-1112.',
   relatedServiceSlugs: ['lock-rekey', 'lock-installation-replacement', 'smart-lock-installation'],

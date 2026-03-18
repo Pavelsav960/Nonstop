@@ -11,9 +11,17 @@ export const chesterfield: CityData = {
     'Baxter Acres',
     'Kehrs Mill',
     'Sackston Woods',
+    'Clarkson Valley Border',
+    'Chesterfield Village',
+    'River Valley',
+    'Schoettler Road Area',
+    'Chesterfield Commons',
+    'Long Road Area',
+    'Monarch Area',
+    'Lydia Hill',
   ],
   localContext:
-    'Chesterfield is one of the most affluent suburbs in the St. Louis metro, featuring a major retail corridor in Chesterfield Valley, upscale residential developments along Wild Horse Creek Road, and a fast-growing commercial base. The city blends large estate properties with newer planned communities, creating a wide range of security needs from high-end residential systems to retail loss-prevention hardware.',
+    'Chesterfield is one of the most affluent suburbs in the St. Louis metro, anchored by the massive Chesterfield Valley floodplain development that transformed former farmland into a thriving commercial corridor home to the Spirit of St. Louis Airport, Taubman Prestige Outlets, and dozens of corporate office parks. In stark contrast to the Valley\'s retail and commercial energy, the hillside residential areas along Wild Horse Creek Road and Schoettler Road feature sprawling estates on wooded lots, executive-style homes, and gated enclaves with property values well above the regional average. The city also includes a mix of newer planned communities like Wildhorse Village and established neighborhoods such as Kehrs Mill and Baxter Acres, offering everything from contemporary open-concept builds to traditional brick-and-stone colonials and French provincial residences. This blend of high-end residential estates, busy retail centers, and growing corporate campuses creates a wide range of security needs from sophisticated smart-lock installations on luxury homes to master key systems for Valley storefronts and office buildings.',
   metaTitle: 'Affordable Locksmith in Chesterfield MO | Nonstop Lock & Key',
   metaDescription:
     'Professional locksmith services in Chesterfield, MO. Emergency lockouts, lock replacement, and car key services for Chesterfield Valley, Wildhorse Village, Kehrs Mill, and more. Call now.',

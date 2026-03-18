@@ -21,37 +21,35 @@ export default function ServiceAreas() {
               <Link
                 key={city.slug}
                 to={`/locksmith/${city.slug}`}
-                className="flex items-center p-4 py-5 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-600 transition-all duration-300 text-center group"
+                className="flex items-center gap-2 p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-all duration-300 group"
               >
-                <div className="flex items-center space-x-2">
-                  <svg
-                    className="w-5 h-5 text-primary-600 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <div className="flex flex-col items-start">
-                    <span className="text-sm font-medium text-gray-700 group-hover:text-primary-600">
-                      Locksmith {city.name}
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      {city.responseTime}
-                    </span>
-                  </div>
+                <svg
+                  className="w-5 h-5 text-primary-600 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <div className="min-w-0">
+                  <span className="block text-sm font-medium text-gray-700 group-hover:text-primary-600 truncate">
+                    Locksmith {city.name}
+                  </span>
+                  <span className="block text-xs text-gray-400">
+                    {city.responseTime}
+                  </span>
                 </div>
               </Link>
             ))}
