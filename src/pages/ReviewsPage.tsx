@@ -64,11 +64,11 @@ const reviews = [
   },
   {
     name: 'Patricia W.',
-    location: 'Shrewsbury',
+    location: 'Olivette',
     rating: 5,
     date: '2025-01-22',
     service: 'Lock Replacement',
-    text: 'The deadbolt on our front door on MacKenzie Road had a worn-out mechanism that was getting harder to turn every day. The technician from Nonstop replaced it with a heavy-duty Kwikset deadbolt and made sure everything was aligned perfectly. Door locks and unlocks smoothly now.',
+    text: 'The deadbolt on our front door off Price Road had a worn-out mechanism that was getting harder to turn every day. The technician from Nonstop replaced it with a heavy-duty Kwikset deadbolt and made sure everything was aligned perfectly. Door locks and unlocks smoothly now.',
   },
   {
     name: 'Karen M.',
@@ -80,11 +80,11 @@ const reviews = [
   },
   {
     name: 'Greg M.',
-    location: 'St. Ann',
+    location: 'Bridgeton',
     rating: 5,
     date: '2025-03-05',
     service: 'Car Lockout',
-    text: 'Locked my keys in the car at Lambert Airport after getting back from a red-eye at 5am. Called Nonstop and they dispatched someone to the parking garage right away. Technician arrived quickly and got me back in without any fuss. A lifesaver at that hour.',
+    text: 'Locked my keys in the car near Lambert Airport after getting back from a red-eye at 5am. Called Nonstop and they dispatched someone to the parking area right away. Technician arrived quickly and got me back in without any fuss. A lifesaver at that hour.',
   },
   {
     name: 'Michelle W.',
@@ -137,8 +137,11 @@ export default function ReviewsPage() {
     priceRange: BUSINESS.priceRange,
     address: {
       '@type': 'PostalAddress',
+      streetAddress: BUSINESS.streetAddress,
       addressLocality: BUSINESS.city,
       addressRegion: BUSINESS.state,
+      postalCode: BUSINESS.postalCode,
+      addressCountry: 'US',
     },
     geo: {
       '@type': 'GeoCoordinates',
@@ -152,6 +155,18 @@ export default function ReviewsPage() {
       bestRating: '5',
       worstRating: '1',
     },
+    review: reviews.map((r) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.name },
+      datePublished: r.date,
+      reviewBody: r.text,
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: r.rating.toString(),
+        bestRating: '5',
+        worstRating: '1',
+      },
+    })),
     sameAs: [
       BUSINESS.gbpUrl,
     ],
@@ -186,6 +201,8 @@ export default function ReviewsPage() {
         <meta name="twitter:image" content={logoUrl} />
         <meta name="geo.region" content={BUSINESS.region} />
         <meta name="geo.placename" content={BUSINESS.city} />
+        <meta name="geo.position" content={`${BUSINESS.lat};${BUSINESS.lng}`} />
+        <meta name="ICBM" content={`${BUSINESS.lat}, ${BUSINESS.lng}`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>

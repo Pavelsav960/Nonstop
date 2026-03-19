@@ -67,6 +67,8 @@ export default function ServicesPage() {
         <meta name="twitter:image" content={logoUrl} />
         <meta name="geo.region" content="US-MO" />
         <meta name="geo.placename" content="St. Louis" />
+        <meta name="geo.position" content={`${BUSINESS.lat};${BUSINESS.lng}`} />
+        <meta name="ICBM" content={`${BUSINESS.lat}, ${BUSINESS.lng}`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
       </Helmet>

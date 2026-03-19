@@ -28,8 +28,10 @@ export default function ServiceSEO({ service }: ServiceSEOProps) {
       priceRange: BUSINESS.priceRange,
       address: {
         '@type': 'PostalAddress',
+        streetAddress: BUSINESS.streetAddress,
         addressLocality: BUSINESS.city,
         addressRegion: BUSINESS.state,
+        postalCode: BUSINESS.postalCode,
         addressCountry: 'US',
       },
       openingHoursSpecification: {
@@ -134,6 +136,8 @@ export default function ServiceSEO({ service }: ServiceSEOProps) {
 
       <meta name="geo.region" content="US-MO" />
       <meta name="geo.placename" content={BUSINESS.city} />
+      <meta name="geo.position" content={`${BUSINESS.lat};${BUSINESS.lng}`} />
+      <meta name="ICBM" content={`${BUSINESS.lat}, ${BUSINESS.lng}`} />
 
       <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

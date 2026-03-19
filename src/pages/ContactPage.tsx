@@ -88,8 +88,10 @@ export default function ContactPage() {
             priceRange: BUSINESS.priceRange,
             address: {
               '@type': 'PostalAddress',
+              streetAddress: BUSINESS.streetAddress,
               addressLocality: BUSINESS.city,
               addressRegion: BUSINESS.state,
+              postalCode: BUSINESS.postalCode,
               addressCountry: 'US',
             },
             geo: {

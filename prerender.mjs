@@ -9,19 +9,19 @@ const DIST = join(__dirname, 'dist')
 
 // All city slugs
 const citySlugs = [
-  'st-louis', 'creve-coeur', 'chesterfield', 'maryland-heights',
-  'town-and-country', 'clayton', 'brentwood', 'richmond-heights',
-  'university-city', 'ladue', 'kirkwood', 'webster-groves',
-  'ballwin', 'manchester', 'des-peres', 'overland',
-  'st-ann', 'maplewood', 'shrewsbury', 'frontenac',
+  'st-louis', 'saint-charles', 'manchester', 'ballwin',
+  'brentwood', 'bridgeton', 'creve-coeur', 'des-peres',
+  'frontenac', 'kirkwood', 'ladue', 'maryland-heights',
+  'olivette', 'overland', 'richmond-heights', 'town-and-country',
+  'university-city', 'webster-groves', 'chesterfield', 'clayton',
 ]
 
 // All service slugs
 const serviceSlugs = [
-  'car-lockout', 'house-lockout', 'emergency-locksmith',
+  'car-lockout', 'house-lockout', 'commercial-lockout', 'emergency-locksmith',
   'broken-key-extraction', 'lock-rekey', 'car-key-replacement',
   'key-fob-programming', 'ignition-repair', 'lock-installation-replacement',
-  'smart-lock-installation',
+  'smart-lock-installation', 'safe-opening',
 ]
 
 // All routes to prerender

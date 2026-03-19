@@ -62,6 +62,12 @@ export default function ServiceAreasPage() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://nonstoplockandkey.com/service-areas" />
         <meta property="og:image" content={logoUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content={BUSINESS.legalName} />
+        <meta name="geo.region" content="US-MO" />
+        <meta name="geo.placename" content={BUSINESS.city} />
+        <meta name="geo.position" content={`${BUSINESS.lat};${BUSINESS.lng}`} />
+        <meta name="ICBM" content={`${BUSINESS.lat}, ${BUSINESS.lng}`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>

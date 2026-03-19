@@ -112,5 +112,5 @@ export const marylandHeights: CityData = {
   ],
   responseTime: '20-30 minutes',
   servingParagraph:
-    'Nonstop Lock & Key serves the entire city of Maryland Heights, including Riverport, the Creve Coeur Airport area, McKelvey Hills, McKelvey Woods, and Dorsett Woods. We also provide quick service to adjacent communities such as Creve Coeur, Bridgeton, Overland, and St. Ann. Wherever you are near the Dorsett Road or Page Avenue corridors, help is just a phone call away.',
+    'Nonstop Lock & Key serves the entire city of Maryland Heights, including Riverport, the Creve Coeur Airport area, McKelvey Hills, McKelvey Woods, and Dorsett Woods. We also provide quick service to adjacent communities such as Creve Coeur, Bridgeton, Overland, and Olivette. Wherever you are near the Dorsett Road or Page Avenue corridors, help is just a phone call away.',
 };

@@ -6,7 +6,10 @@
       "Bash(npm uninstall:*)",
       "Bash(npx tsc:*)",
       "Bash(npx vite:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(find /c/Dev/Nonstop -type f -name *404* -o -name *NotFound*)",
+      "Bash(find /c/Dev/Nonstop/public -type f \\\\\\(-name *.jpg -o -name *.png -o -name *.webp -o -name *.gif \\\\\\))",
+      "Bash(ls:*)"
     ]
   }
 }
