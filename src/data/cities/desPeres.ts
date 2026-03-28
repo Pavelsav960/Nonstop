@@ -15,7 +15,7 @@ export const desPeres: CityData = {
   localContext:
     'Des Peres occupies a prime location in west St. Louis County at the junction of I-270 and Manchester Road, making it one of the most accessible cities in the metro. West County Center draws shoppers from across the region, and Des Peres Hospital brings constant foot and vehicle traffic to the surrounding blocks. The residential pockets between these anchors feature well-maintained homes whose owners prioritize security. The combination of retail, medical, and residential density means locksmith needs here range from quick car lockouts in busy parking garages to whole-home rekeying projects.',
   metaTitle:
-    'Locksmith Des Peres MO | Fast Mobile Service | Nonstop Lock & Key',
+    'Emergency Locksmith in Des Peres, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Mobile locksmith serving Des Peres, MO. Quick response for car lockouts at West County Center, home rekeying, and lock upgrades near Des Peres Park. Call Nonstop Lock & Key today.',
   lat: 38.6009,

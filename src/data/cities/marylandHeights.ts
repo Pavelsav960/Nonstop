@@ -22,7 +22,7 @@ export const marylandHeights: CityData = {
   ],
   localContext:
     'Maryland Heights occupies a strategic location in west St. Louis County, blending a significant commercial and entertainment sector with established residential neighborhoods. The Westport Plaza complex serves as a major hub of office space, restaurants, hotels, and nightlife, while Hollywood Casino and the nearby amphitheater draw large nighttime crowds that keep parking lots and surrounding streets busy well past midnight. Along Dorsett Road and Page Avenue, large apartment and condo communities house a sizable renter population, creating steady demand for lockout service and rekeying between tenants. To the north, the industrial and warehouse district near Creve Coeur Airport supports dozens of logistics and distribution businesses that require commercial-grade security hardware. Meanwhile, established single-family neighborhoods like McKelvey Hills and Fee Fee Hills feature 1970s and 1980s split-level and ranch homes with a wide diversity of lock hardware, from original builder-grade knobs to modern smart locks installed by newer owners.',
-  metaTitle: '24/7 Emergency Locksmith Maryland Heights | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in Maryland Heights, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Emergency locksmith in Maryland Heights, MO. Quick response for car lockouts, house lockouts, and commercial lock services near Westport Plaza, Riverport, McKelvey Hills, and Dorsett Road.',
   lat: 38.7131,

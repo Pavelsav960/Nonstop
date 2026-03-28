@@ -15,7 +15,7 @@ export const websterGroves: CityData = {
   localContext:
     'Webster Groves is known for its tree-lined streets, craftsman-era architecture, and tight-knit neighborhood feel. Many homes date back to the early 1900s and feature original hardware that requires specialized locksmith expertise. Residents here value preserving the character of their properties while ensuring modern security standards are met. Webster University draws a mix of students and faculty, adding to the diverse security needs across the area.',
   metaTitle:
-    'Webster Groves Locksmith | Home Security & Emergency | Nonstop Lock & Key',
+    'Emergency Locksmith in Webster Groves, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Trusted locksmith serving Webster Groves, MO. Emergency lockouts, lock rekeying, and home security upgrades for historic and modern homes. Call Nonstop Lock & Key for fast local service.',
   lat: 38.5926,

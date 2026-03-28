@@ -21,7 +21,7 @@ export const saintCharles: CityData = {
   ],
   localContext:
     'Saint Charles holds the distinction of being Missouri\'s first state capitol and one of the oldest cities on the Missouri River, a heritage that is immediately visible along its preserved Main Street district with nineteenth-century brick storefronts, cobblestone lanes, and historic residential blocks. Beyond downtown, the city has experienced decades of steady residential growth stretching west along Highway 94, producing a wide spectrum of housing that ranges from pre-Civil War homes near Frenchtown to established subdivisions from the 1970s through 1990s and brand-new construction in master-planned communities on the city\'s western edge. Lindenwood University brings a student and faculty population that generates steady demand for apartment rekeying and car lockout service, while the Ameristar Casino, Streets of St. Charles shopping district, and Saint Charles Convention Center draw visitors who occasionally need emergency automotive locksmith help in busy parking areas. This combination of historic architecture, modern suburban development, a university campus, and a thriving tourism economy means our technicians encounter a remarkably diverse set of lock and security challenges every time they cross the river into Saint Charles.',
-  metaTitle: 'Saint Charles MO Locksmith | 24/7 Emergency Service | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in Saint Charles, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Need a locksmith in Saint Charles, MO? Nonstop Lock & Key offers 24/7 emergency lockouts, lock rekeying, and car key replacement near Historic Main Street and all of Saint Charles. Call now.',
   lat: 38.7881,

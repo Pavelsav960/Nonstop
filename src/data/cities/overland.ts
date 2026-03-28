@@ -22,7 +22,7 @@ export const overland: CityData = {
   localContext:
     'Overland grew rapidly as a post-World War II working-class suburb, and its residential streets are still defined by the brick bungalows, small ranch homes, and Cape Cod-style houses built during the 1940s through 1960s. Woodson Road and Lackland Road serve as the city\'s primary commercial corridors, lined with local shops, family restaurants, auto-service businesses, and professional offices that give the community a self-sufficient feel. Situated in central St. Louis County, Overland offers residents quick highway access via I-170 and Page Avenue, making it an easy commute to Clayton, Westport, and downtown St. Louis. The city has continued to invest in its parks, sidewalks, and public infrastructure, reinforcing a practical, neighborhood-first character that longtime residents value. Many Overland homes still feature original lock hardware from the mid-twentieth century, and our technicians carry the parts and expertise to maintain, rekey, or upgrade those older mechanisms alongside modern security options.',
   metaTitle:
-    'Affordable Locksmith Overland MO | 24/7 Emergency | Nonstop Lock & Key',
+    'Emergency Locksmith in Overland, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Budget-friendly locksmith in Overland, MO. 24/7 emergency lockouts, lock rekeying, and key replacement along Woodson Road and Midland Avenue. Call Nonstop Lock & Key for honest pricing.',
   lat: 38.7012,

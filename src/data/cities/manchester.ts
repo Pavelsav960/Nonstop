@@ -22,7 +22,7 @@ export const manchester: CityData = {
   localContext:
     'Manchester sits at a key west county crossroads where Manchester Road meets I-270, funneling heavy commuter and retail traffic through the city every day. The residential landscape ranges from established ranch-style and split-level homes built during the 1960s and 1970s to newer townhome and apartment developments clustered near the Meramec Station area, each with distinct lock hardware and security needs. The Manchester Road corridor continues to see commercial growth with restaurants, auto dealerships, medical offices, and retail centers driving steady demand for commercial locksmith services, master key systems, and after-hours lockout response. Ongoing revitalization projects are attracting younger residents and first-time homebuyers who often request rekeying, smart lock upgrades, and keyless entry installations shortly after move-in. This mix of older residential neighborhoods, active commercial zones, and new construction keeps our technicians busy across Manchester year-round.',
   metaTitle:
-    'Manchester MO Locksmith - Emergency Lockouts & Rekeying | Nonstop Lock & Key',
+    'Emergency Locksmith in Manchester, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Dependable locksmith services in Manchester, MO. Emergency lockouts, residential rekeying, commercial locks, and car key cutting along Manchester Road. Nonstop Lock & Key responds fast.',
   lat: 38.5971,

@@ -14,7 +14,7 @@ export const universityCity: CityData = {
   ],
   localContext:
     'University City pulses with creative energy, cultural diversity, and academic ambition. The Delmar Loop is a nationally recognized entertainment district, Washington University anchors the southern end of the city, and neighborhoods like Parkview Gardens and Ames Place showcase beautiful early-twentieth-century architecture. A significant student and renter population creates high demand for lockout services, while the mix of historic homes and modern apartments means locksmiths here must be skilled with everything from antique rim locks to electronic access systems.',
-  metaTitle: 'Affordable 24/7 Locksmith University City MO | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in University City, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'University City MO locksmith available 24/7. Serving the Delmar Loop, Parkview Gardens, Olive Boulevard, and all of U City. Student discounts on lockouts. Call Nonstop Lock & Key now.',
   lat: 38.6592,

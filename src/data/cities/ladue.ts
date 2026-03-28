@@ -14,7 +14,7 @@ export const ladue: CityData = {
   ],
   localContext:
     'Ladue is synonymous with exclusivity in the St. Louis metro area. Its winding, tree-canopied streets connect expansive estate properties, many protected by gated entries, multi-point locking systems, and monitored alarm networks. Ladue Horton Watkins High School serves as a community landmark, and the corridors along Conway Road and Lindbergh Boulevard host upscale shops and professional offices. Property values here are among the highest in Missouri, and residents expect locksmith services that match that standard in quality, discretion, and expertise.',
-  metaTitle: 'High-Security Locksmith Ladue MO | Estate Lock Systems | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in Ladue, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Ladue MO high-security locksmith. Estate lock systems, access control, safe services, and emergency lockouts. Serving Ladue Estates, Deer Creek, Conway Road. Call Nonstop Lock & Key.',
   lat: 38.6498,

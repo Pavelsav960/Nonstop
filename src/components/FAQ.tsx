@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BUSINESS } from '../constants';
 
 const faqs = [
@@ -36,6 +37,12 @@ const faqs = [
 ];
 
 export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <>
       <section className="py-16 sm:py-24 bg-gray-50">
@@ -49,18 +56,37 @@ export default function FAQ() {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-shadow"
+                className="bg-white rounded-xl shadow-md overflow-hidden"
               >
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {faq.answer}
-                </p>
+                <button
+                  onClick={() => toggle(index)}
+                  className="w-full flex items-center justify-between p-6 sm:p-8 text-left hover:bg-gray-50 transition-colors"
+                  aria-expanded={openIndex === index}
+                >
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 pr-4">
+                    {faq.question}
+                  </h3>
+                  <svg
+                    className={`w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-200 ${openIndex === index ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {openIndex === index && (
+                  <div className="px-6 sm:px-8 pb-6 sm:pb-8">
+                    <p className="text-gray-700 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
               </div>
             ))}
           </div>

@@ -14,7 +14,7 @@ export const townAndCountry: CityData = {
   ],
   localContext:
     'Town and Country is among the most prestigious residential communities in the entire St. Louis region. The city is characterized by large-lot estate homes on wooded parcels, many of which sit behind gated entries along Clayton Road and Mason Road. Queeny Park provides a green centerpiece, and the surrounding neighborhoods have a distinctly private, secluded feel. Security expectations here are high, and homeowners often invest in layered systems that go well beyond basic door locks.',
-  metaTitle: 'Car Lockout & Lock Rekey Town and Country MO | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in Town and Country, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Expert locksmith for Town and Country, MO. High-security lock installation, emergency lockouts, and car key services for Topping Estates, Bellerive Acres, Huntleigh Woods, and more.',
   lat: 38.612,

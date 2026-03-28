@@ -24,7 +24,7 @@ export const stLouis: CityData = {
   ],
   localContext:
     'St. Louis is a city of distinct neighborhoods, each with its own architectural character and security profile. Soulard and Lafayette Square feature nineteenth-century brick homes with original mortise locks and ornate entry hardware, while Downtown and the Central West End offer modern condominiums and loft conversions secured by electronic access systems. Busy commercial corridors like Cherokee Street, South Grand Boulevard, and The Loop each generate steady demand for business lockouts and storefront security upgrades. The diversity of housing stock, from shotgun-style homes in Dutchtown to gated townhouses in Shaw, means a locksmith working in St. Louis must carry a wide range of hardware and draw on deep experience with both historic and contemporary lock systems.',
-  metaTitle: '24/7 Emergency Locksmith St. Louis MO | Fast Response | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Need a locksmith in St. Louis? Nonstop Lock & Key provides 24/7 emergency lockout service, lock rekeying, and key replacement. 20-30 min response. Call (314) 532-1112.',
   lat: 38.627,

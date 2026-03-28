@@ -15,7 +15,7 @@ export const ballwin: CityData = {
   localContext:
     'Ballwin is a thriving suburban city in west St. Louis County known for excellent schools, active parks like Vlasis Park, and steady residential growth. Manchester Road serves as the primary commercial artery, lined with retail centers, restaurants, and professional offices. Families relocating to Ballwin often need locks rekeyed upon move-in, while the busy retail corridor generates demand for commercial locksmith services and car lockouts in shopping center parking lots.',
   metaTitle:
-    '24/7 Locksmith Ballwin MO | Car Keys & Lock Rekey | Nonstop Lock & Key',
+    'Emergency Locksmith in Ballwin, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Professional locksmith in Ballwin, MO. 24/7 car lockouts, residential rekeying, and lock replacement for homes and businesses along Manchester Road. Call Nonstop Lock & Key now.',
   lat: 38.5951,

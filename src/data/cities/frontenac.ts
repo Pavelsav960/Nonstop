@@ -14,7 +14,7 @@ export const frontenac: CityData = {
   ],
   localContext:
     'Frontenac is one of the most prestigious addresses in the greater St. Louis area, known for sprawling estate properties, Plaza Frontenac\'s luxury retailers, and a quiet, private atmosphere that residents value deeply. Homes here often feature multi-point entry systems, gated access, and sophisticated security hardware. Nonstop Lock & Key has the expertise and discretion to work within this environment, providing high-end lock solutions that complement the caliber of property found throughout Frontenac.',
-  metaTitle: 'Frontenac MO High-Security Locksmith | Luxury Home Service | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in Frontenac, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'High-security locksmith services for Frontenac, MO luxury homes and estates. Nonstop Lock & Key provides premium lock installation, rekeying, and 24/7 emergency service near Plaza Frontenac and Clayton Road.',
   lat: 38.6354,

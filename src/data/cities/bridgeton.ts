@@ -21,7 +21,7 @@ export const bridgeton: CityData = {
   ],
   localContext:
     'Bridgeton occupies a strategic position in north St. Louis County directly adjacent to Lambert-St. Louis International Airport, and that proximity has shaped the community since its post-war residential boom in the 1950s and 1960s. The residential streets are lined with mid-century ranch homes and split-levels built during that era, many of which still have their original lock hardware in need of maintenance or upgrading. Along Natural Bridge Road and the Bridgeton Industrial Park corridor, a substantial commercial and light-industrial base generates steady demand for commercial locksmith services, master key systems, and after-hours lockout response. Large apartment and condo communities near McKelvey Road and Taussig Road house a sizable renter population, creating frequent rekeying needs between tenant turnovers. The constant flow of travelers and airport workers passing through the Lambert corridor means automotive lockout and key replacement calls come in at all hours, making Bridgeton one of our most active service areas around the clock.',
-  metaTitle: 'Bridgeton MO Locksmith Near Lambert Airport | 24/7 | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in Bridgeton, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Emergency locksmith in Bridgeton, MO. Fast response near Lambert Airport, Natural Bridge Road, and all Bridgeton neighborhoods. Car lockouts, rekeying, and lock replacement. Call now.',
   lat: 38.7670,

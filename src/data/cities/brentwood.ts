@@ -21,7 +21,7 @@ export const brentwood: CityData = {
   ],
   localContext:
     'Brentwood is a tight-knit, walkable inner-ring suburb nestled between Clayton and Maplewood, known for its tree-lined residential streets and convenient central location in the St. Louis metro area. The housing stock is largely defined by post-WWII brick bungalows and Cape Cod style homes built in the 1940s and 1950s, many of which still feature their original hardware and lock systems. In recent years, the Manchester Road corridor has undergone significant commercial revitalization, anchored by the Brentwood Promenade mixed-use development that draws shoppers and diners from across the region. The community is home to a loyal base of longtime residents alongside a growing number of younger families attracted by the affordable yet charming housing stock, walkability, and proximity to major employers in Clayton and downtown St. Louis. This blend of older residential properties and modern commercial spaces means lock and key needs in Brentwood range from restoring vintage mortise locks on classic bungalows to installing high-security systems for new retail tenants along Manchester Road.',
-  metaTitle: 'Brentwood MO Locksmith | Emergency & Residential | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in Brentwood, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Trusted locksmith in Brentwood, MO. Emergency lockouts, rekeying, lock replacement, and car key services. Serving Manchester Road, McKnight Place, and all of Brentwood. Call now for 15-25 minute response.',
   lat: 38.6173,

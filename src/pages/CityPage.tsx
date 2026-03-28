@@ -11,6 +11,34 @@ import CityPricing from '../components/city/CityPricing';
 import CityWhyChooseUs from '../components/city/CityWhyChooseUs';
 import CitySecurityTips from '../components/city/CitySecurityTips';
 
+const HERO_BULLETS = [
+  '15-30 Min Response Time',
+  'Licensed & Insured in Missouri',
+  'No Hidden Fees, Upfront Pricing',
+  '24/7 Emergency Service Available',
+  '100+ Five-Star Google Reviews',
+  'Residential, Commercial & Automotive',
+  'All Major Lock Brands Serviced',
+  'Mobile Service, We Come to You',
+  'Free Quotes Over the Phone',
+  'Locally Owned & Operated',
+];
+
+function getCityBullets(slug: string): string[] {
+  // Generate a consistent hash from the slug to pick 3 bullets
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash = ((hash << 5) - hash) + slug.charCodeAt(i);
+    hash |= 0;
+  }
+  const start = Math.abs(hash) % HERO_BULLETS.length;
+  const result: string[] = [];
+  for (let i = 0; i < 3; i++) {
+    result.push(HERO_BULLETS[(start + i * 3) % HERO_BULLETS.length]);
+  }
+  return result;
+}
+
 export default function CityPage() {
   const { citySlug } = useParams<{ citySlug: string }>();
   const city = cityData.find(c => c.slug === citySlug);
@@ -62,23 +90,39 @@ export default function CityPage() {
 
           <header className="pt-8 pb-16 sm:pt-12 sm:pb-24 bg-gradient-to-br from-primary-600 to-primary-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center text-white">
+              <div className="text-white max-w-3xl">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6" itemProp="name">
-                  Locksmith in {city.name}, MO
+                  Emergency Locksmith in {city.name}, MO
                 </h1>
-                <p className="text-xl sm:text-2xl text-primary-100 max-w-3xl mx-auto mb-8" itemProp="description">
+                <p className="text-xl sm:text-2xl text-primary-100 mb-8" itemProp="description">
                   {city.description}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+                {/* Trust bullets - 3 per city, rotated based on slug */}
+                <ul className="flex flex-col gap-3 mb-8">
+                  {getCityBullets(city.slug).map((bullet, i) => (
+                    <li key={i} className="flex items-center gap-2 text-primary-100">
+                      <svg className="w-5 h-5 text-primary-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="font-medium text-sm sm:text-base">{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href={BUSINESS.phoneTel}
-                    className="inline-block px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-lg"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-lg"
                   >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
                     Call Now: {BUSINESS.phone}
                   </a>
                   <Link
                     to="/service-areas"
-                    className="inline-block px-8 py-4 bg-primary-700 text-white font-semibold rounded-lg hover:bg-primary-800 transition-all border-2 border-white/30 text-lg"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-primary-700 text-white font-semibold rounded-lg hover:bg-primary-800 transition-all border-2 border-white/30 text-lg"
                   >
                     View All Service Areas
                   </Link>

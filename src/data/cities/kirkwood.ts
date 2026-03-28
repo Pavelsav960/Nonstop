@@ -14,7 +14,7 @@ export const kirkwood: CityData = {
   ],
   localContext:
     'Kirkwood is one of the most beloved communities in the St. Louis metro area, celebrated for its walkable downtown, historic train station, and strong neighborhood identity. The housing stock spans from pre-war cottages and Cape Cods to modern infill construction, meaning locksmiths encounter everything from skeleton key locks to Bluetooth-enabled deadbolts. Kirkwood Park and the farmer market bring the community together, while the business district along Kirkwood Road and Big Bend Boulevard supports a thriving local economy that values quality craftsmanship and personal service.',
-  metaTitle: 'Locksmith in Kirkwood MO | 24/7 Emergency & Rekey | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in Kirkwood, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Kirkwood MO locksmith offering 24/7 emergency lockouts, rekeying, lock replacement, and car keys. Serving Downtown Kirkwood, Meacham Park, and North Kirkwood. Call Nonstop Lock & Key.',
   lat: 38.5834,

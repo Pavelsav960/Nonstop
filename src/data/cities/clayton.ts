@@ -14,7 +14,7 @@ export const clayton: CityData = {
   ],
   localContext:
     'Clayton functions as the governmental and commercial heart of St. Louis County. The St. Louis County Courthouse anchors the downtown core, surrounded by law firms, financial offices, and a vibrant restaurant scene along Forsyth Boulevard. Residential options range from historic homes in the DeMun neighborhood to modern condominiums and luxury apartments in the downtown area. The walkable urban fabric and high property values make security a top priority for both residents and business owners.',
-  metaTitle: '24/7 Locksmith Clayton MO - Fast Response | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in Clayton, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Locksmith services in Clayton, MO. 15-25 min response for lockouts, rekeying, and lock installation in Downtown Clayton, DeMun, Shaw Park, Hanley Station, and surrounding areas.',
   lat: 38.6426,

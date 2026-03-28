@@ -21,7 +21,7 @@ export const olivette: CityData = {
   ],
   localContext:
     'Olivette is a compact, diverse inner-ring suburb nestled between Creve Coeur, University City, and Ladue in central St. Louis County. The housing stock is largely defined by mid-century ranch homes, Cape Cods, and split-levels built during the 1950s and 1960s, many of which retain their original lock hardware and benefit from periodic rekeying or upgrading. The Olive Boulevard corridor running through the city serves as a busy commercial strip with medical offices, restaurants, retail shops, and professional services generating steady demand for commercial locksmith work. Olivette\'s central county location provides residents with quick access to I-170, Highway 40/I-64, and Olive Boulevard, making it one of the fastest areas for our technicians to reach from nearly any direction. The community has attracted a growing mix of young families, professionals, and longtime residents who value the affordable housing, excellent access to neighboring Ladue and Clayton school options, and a quiet residential character that belies its proximity to major employment centers.',
-  metaTitle: 'Olivette MO Locksmith | Fast Response | Nonstop Lock & Key',
+  metaTitle: 'Emergency Locksmith in Olivette, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription:
     'Trusted locksmith in Olivette, MO. Emergency lockouts, lock rekeying, and car key replacement near Olive Boulevard, Price Road, and all Olivette neighborhoods. 15-25 min response. Call now.',
   lat: 38.6656,
