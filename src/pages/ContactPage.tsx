@@ -49,6 +49,8 @@ export default function ContactPage() {
           name="description"
           content={`Contact ${BUSINESS.name} for 24/7 locksmith services in St. Louis, MO. Call ${BUSINESS.phone} or email ${BUSINESS.email}. Free quotes, fast response, no hidden fees. Available 24/7/365.`}
         />
+        <meta name="author" content={BUSINESS.legalName} />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.url}/contact`} />
 
         {/* Open Graph */}
@@ -89,7 +91,7 @@ export default function ContactPage() {
             address: {
               '@type': 'PostalAddress',
               streetAddress: BUSINESS.streetAddress,
-              addressLocality: BUSINESS.city,
+              addressLocality: BUSINESS.addressCity,
               addressRegion: BUSINESS.state,
               postalCode: BUSINESS.postalCode,
               addressCountry: 'US',
@@ -433,8 +435,7 @@ export default function ContactPage() {
                     {service.name}
                   </h3>
                   <p className="text-gray-600 text-sm mb-3">{service.shortDescription}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-gray-900">From {service.startingPrice}</span>
+                  <div className="flex items-center justify-end">
                     <span className="inline-flex items-center text-primary-600 text-sm font-medium group-hover:text-primary-700 transition-colors">
                       Learn more
                       <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

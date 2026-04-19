@@ -47,8 +47,8 @@ export const emergencyLocksmith: ServiceData = {
     { title: 'Rapid Dispatch', description: 'We send the nearest available mobile locksmith to your St. Louis location. Average arrival time is 20-30 minutes, even on holidays, weekends, and in the middle of the night.' },
     { title: 'Emergency Resolved', description: 'Our technician handles the situation on the spot with the tools and parts already on the van. Lock replaced, door secured, key extracted — whatever it takes to restore your safety immediately.' },
   ],
-  metaTitle: '24 Hour Emergency Locksmith in St. Louis, MO | No Extra Fees | Nonstop Lock & Key',
-  metaDescription: '24/7 emergency locksmith service in St. Louis with no after-hours charges. Fast 20-30 minute response for lockouts, break-ins, and lock emergencies. Call (314) 532-1112 now.',
+  metaTitle: '24 Hour Emergency Locksmith in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
+  metaDescription: '24/7 emergency locksmith service in St. Louis with no after-hours charges. Fast 20-30 minute response for lockouts, break-ins, and lock emergencies. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['car-lockout', 'house-lockout', 'broken-key-extraction'],
   category: 'Emergency',
 };

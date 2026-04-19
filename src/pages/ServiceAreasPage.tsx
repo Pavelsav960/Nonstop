@@ -54,7 +54,7 @@ export default function ServiceAreasPage() {
       <Helmet>
         <title>Locksmith Service Areas | St. Louis Metro | Nonstop Lock & Key</title>
         <meta name="description" content={`Nonstop Lock & Key provides 24/7 locksmith services across 20+ cities in the St. Louis metro area. Find your city for local pricing, response times, and reviews. Call ${BUSINESS.phone}.`} />
-        <meta name="keywords" content="locksmith St. Louis metro, locksmith service areas, St. Louis County locksmith, mobile locksmith near me, 24/7 locksmith Missouri" />
+        <meta name="author" content={BUSINESS.legalName} />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://nonstoplockandkey.com/service-areas" />
         <meta property="og:title" content="Locksmith Service Areas | St. Louis Metro | Nonstop Lock & Key" />

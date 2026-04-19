@@ -130,12 +130,9 @@ export default function ServicesPage() {
                       to={`/services/${service.slug}`}
                       className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all hover:-translate-y-1 group"
                     >
-                      <div className="flex items-center justify-between mb-4">
+                      <div className="mb-4">
                         <span className="text-xs font-medium text-primary-600 uppercase tracking-wide bg-primary-50 px-3 py-1 rounded-full">
                           {service.category}
-                        </span>
-                        <span className="text-sm font-bold text-gray-900">
-                          From {service.startingPrice}
                         </span>
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">

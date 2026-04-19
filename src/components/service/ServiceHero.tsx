@@ -19,9 +19,6 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
           <p className="text-xl sm:text-2xl text-primary-100 max-w-3xl mx-auto mb-4">
             {service.shortDescription}
           </p>
-          <p className="text-lg text-primary-200 mb-8">
-            Starting at <span className="text-white font-bold text-2xl">{service.startingPrice}</span>
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={BUSINESS.phoneTel}

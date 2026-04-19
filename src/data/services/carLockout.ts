@@ -47,8 +47,8 @@ export const carLockout: ServiceData = {
     { title: 'We Unlock Your Car', description: 'Our technician arrives in 20-30 minutes with specialized automotive entry tools designed to open your door without scratching paint, bending the frame, or triggering alarms.' },
     { title: 'Back on the Road', description: 'Once your car is open, we verify the lock and door are functioning properly. You pay the quoted price — no surprises, no hidden fees — and drive away.' },
   ],
-  metaTitle: 'Car Lockout Service in St. Louis, MO | Starting at $55 | Nonstop Lock & Key',
-  metaDescription: 'Locked out of your car in St. Louis? Nonstop Lock & Key provides fast, damage-free car lockout service 24/7. All makes and models. Starting at $55. Call (314) 532-1112.',
+  metaTitle: 'Car Lockout Service in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
+  metaDescription: 'Locked out of your car in St. Louis? Nonstop Lock & Key provides fast, damage-free car lockout service 24/7. All makes and models. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['car-key-replacement', 'key-fob-programming', 'ignition-repair'],
   category: 'Automotive',
 };

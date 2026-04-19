@@ -55,9 +55,23 @@ export default function ServiceAreas() {
             ))}
           </div>
 
-          <div className="mt-8 sm:mt-12 text-center">
+          {/* Google Maps Embed */}
+          <div className="mt-8 sm:mt-12 rounded-xl overflow-hidden shadow-md">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199412.27235498!2d-91.0323892!3d38.6894101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47405523e97a0903%3A0x6d8c00414bcad66e!2sNonstop%20Lock%20%26%20Key!5e0!3m2!1sen!2sus!4v1700000000000"
+              width="100%"
+              height="350"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Nonstop Lock & Key - Locksmith Service Area in St. Louis County"
+            />
+          </div>
+
+          <div className="mt-8 text-center">
             <p className="text-gray-600 mb-4">
-              Don't see your area listed? We serve the entire St. Louis metro area!
+              Don't see your area listed? We serve all of St. Louis County!
             </p>
             <a
               href={BUSINESS.phoneTel}

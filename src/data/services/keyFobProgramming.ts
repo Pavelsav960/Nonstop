@@ -47,8 +47,8 @@ export const keyFobProgramming: ServiceData = {
     { title: 'On-Site Diagnosis and Programming', description: 'Our technician arrives with diagnostic tools and compatible fob inventory. We test your existing fob, identify the issue, and program the new or existing fob to your vehicle in 15-25 minutes.' },
     { title: 'Full Function Test', description: 'We verify every fob button — lock, unlock, trunk, panic, and remote start if equipped. You leave with a fully functional key fob at a fraction of what the dealership charges.' },
   ],
-  metaTitle: 'Key Fob Programming in St. Louis, MO | Starting at $85 | Nonstop Lock & Key',
-  metaDescription: 'Key fob not working? Nonstop Lock & Key programs and replaces key fobs on-site in St. Louis for most makes and models. Starting at $85. Call (314) 532-1112.',
+  metaTitle: 'Key Fob Programming in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
+  metaDescription: 'Key fob not working? Nonstop Lock & Key programs and replaces key fobs on-site in St. Louis for most makes and models. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['car-key-replacement', 'car-lockout', 'ignition-repair'],
   category: 'Automotive',
 };

@@ -47,8 +47,8 @@ export const lockInstallation: ServiceData = {
     { title: 'Professional Installation', description: 'Our locksmith arrives with a selection of Grade 1 and Grade 2 locks from trusted brands. We prep the door, install the hardware, reinforce the strike plate, and align everything for smooth operation.' },
     { title: 'Tested and Keyed', description: 'We test the new lock from both sides of the door, verify the bolt throws fully into the frame, and can key all your new locks to match your existing key or a single new key.' },
   ],
-  metaTitle: 'Lock Installation & Replacement in St. Louis, MO | Starting at $75 | Nonstop Lock & Key',
-  metaDescription: 'Professional lock installation and replacement in St. Louis. Deadbolts, knobs, levers, and high-security locks. All major brands. Starting at $75. Call (314) 532-1112.',
+  metaTitle: 'Lock Installation & Replacement in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
+  metaDescription: 'Professional lock installation and replacement in St. Louis. Deadbolts, knobs, levers, and high-security locks. All major brands. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['lock-rekey', 'smart-lock-installation', 'house-lockout'],
   category: 'Residential',
 };

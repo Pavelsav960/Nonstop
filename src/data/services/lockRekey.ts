@@ -47,8 +47,8 @@ export const lockRekey: ServiceData = {
     { title: 'Cylinders Repinned On-Site', description: 'Our locksmith removes each cylinder, replaces the internal pin configuration, and reassembles the lock — all at your door. Each lock takes about 10-15 minutes.' },
     { title: 'New Keys, Old Keys Disabled', description: 'You receive a fresh set of keys that work on all rekeyed locks. Every old key is instantly rendered useless. We can key all your doors to a single key for convenience.' },
   ],
-  metaTitle: 'Lock Rekey Service in St. Louis, MO | Starting at $25/Lock | Nonstop Lock & Key',
-  metaDescription: 'Professional lock rekeying in St. Louis starting at $25 per lock. Move into a new home? Lost your keys? Rekey all doors to one key. Same-day service. Call (314) 532-1112.',
+  metaTitle: 'Lock Rekey Service in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
+  metaDescription: 'Professional lock rekeying in St. Louis. Move into a new home? Lost your keys? Rekey all doors to one key. Same-day service. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['lock-installation-replacement', 'house-lockout', 'smart-lock-installation'],
   category: 'Residential',
 };

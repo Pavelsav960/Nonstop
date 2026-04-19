@@ -29,7 +29,7 @@ export default function ServiceSEO({ service }: ServiceSEOProps) {
       address: {
         '@type': 'PostalAddress',
         streetAddress: BUSINESS.streetAddress,
-        addressLocality: BUSINESS.city,
+        addressLocality: BUSINESS.addressCity,
         addressRegion: BUSINESS.state,
         postalCode: BUSINESS.postalCode,
         addressCountry: 'US',

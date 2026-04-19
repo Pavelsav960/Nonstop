@@ -47,8 +47,8 @@ export const carKeyReplacement: ServiceData = {
     { title: 'Key Cut and Programmed On-Site', description: 'Our locksmith arrives at your St. Louis location with blank transponder keys and professional programming equipment. The new key is precision-cut and coded to your vehicle\'s immobilizer.' },
     { title: 'Verified and Ready to Drive', description: 'We test the new key in the door lock, trunk, and ignition to confirm it starts the engine and operates all functions. You drive away with a working key — no tow to the dealership needed.' },
   ],
-  metaTitle: 'Car Key Replacement in St. Louis, MO | Starting at $120 | Nonstop Lock & Key',
-  metaDescription: 'Lost your car keys in St. Louis? Nonstop Lock & Key cuts and programs replacement car keys on-site for all makes and models. Cheaper than the dealer. Starting at $120. Call (314) 532-1112.',
+  metaTitle: 'Car Key Replacement in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
+  metaDescription: 'Lost your car keys in St. Louis? Nonstop Lock & Key cuts and programs replacement car keys on-site for all makes and models. Cheaper than the dealer. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['key-fob-programming', 'car-lockout', 'ignition-repair'],
   category: 'Automotive',
 };

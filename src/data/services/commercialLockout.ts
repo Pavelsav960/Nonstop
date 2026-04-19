@@ -47,8 +47,8 @@ export const commercialLockout: ServiceData = {
     { title: 'Professional Commercial Entry', description: 'Our technician arrives in 20-30 minutes with specialized commercial entry tools. We open panic bars, mortise locks, electronic systems, and high-security cylinders without damaging your door, frame, or glass.' },
     { title: 'Back in Business', description: 'Once inside, we can address the root cause — extract a broken key, repair a faulty lock, cut new employee keys, or recommend a master key system to prevent future lockouts.' },
   ],
-  metaTitle: 'Commercial Lockout Service in St. Louis, MO | Starting at $75 | Nonstop Lock & Key',
-  metaDescription: 'Locked out of your business in St. Louis? Nonstop Lock & Key provides 24/7 commercial lockout service for offices, storefronts, restaurants, and warehouses. Starting at $75. Call (314) 532-1112.',
+  metaTitle: 'Commercial Lockout Service in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
+  metaDescription: 'Locked out of your business in St. Louis? Nonstop Lock & Key provides 24/7 commercial lockout service for offices, storefronts, restaurants, and warehouses. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['house-lockout', 'emergency-locksmith', 'lock-installation-replacement'],
   category: 'Emergency',
 };

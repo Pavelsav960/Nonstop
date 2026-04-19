@@ -41,7 +41,7 @@ export default function AboutPage() {
     address: {
       '@type': 'PostalAddress',
       streetAddress: BUSINESS.streetAddress,
-      addressLocality: BUSINESS.city,
+      addressLocality: BUSINESS.addressCity,
       addressRegion: BUSINESS.state,
       postalCode: BUSINESS.postalCode,
       addressCountry: 'US',
@@ -319,8 +319,7 @@ export default function AboutPage() {
                     <p className="text-sm text-gray-600 mt-1 line-clamp-2">
                       {service.shortDescription}
                     </p>
-                    <div className="flex items-center justify-between mt-3">
-                      <span className="text-sm font-semibold text-gray-900">From {service.startingPrice}</span>
+                    <div className="flex items-center justify-end mt-3">
                       <span className="inline-flex items-center text-sm font-medium text-primary-600 group-hover:translate-x-1 transition-transform">
                         Learn More
                         <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

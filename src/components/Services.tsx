@@ -65,9 +65,6 @@ export default function Services() {
               <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-3">
                 {service.shortDescription}
               </p>
-              <p className="text-sm font-semibold text-gray-900 mb-4">
-                Starting at {service.startingPrice}
-              </p>
               <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:gap-2 transition-all gap-1">
                 Learn More
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

@@ -36,7 +36,7 @@ export default function ServiceRelated({ service }: ServiceRelatedProps) {
                 {related.shortDescription}
               </p>
               <span className="inline-flex items-center text-primary-600 font-medium text-sm group-hover:gap-2 transition-all gap-1">
-                Starting at {related.startingPrice}
+                Learn More
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

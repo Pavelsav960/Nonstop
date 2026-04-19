@@ -16,7 +16,7 @@ export default function ServiceCTA({ service }: ServiceCTAProps) {
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
             Our experienced team is available 24/7 across the St. Louis metro area.
-            Fast response, professional service, and upfront pricing starting at {service.startingPrice}.
+            Fast response, professional service, and upfront pricing. Call for a free quote.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a

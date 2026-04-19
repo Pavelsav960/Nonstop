@@ -1,8 +1,6 @@
 import { useState, useRef } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { servicesByCategory } from '../data/serviceData';
-
-const categoryOrder = ['Emergency', 'Automotive', 'Residential', 'General'];
+import { serviceData } from '../data/serviceData';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -89,43 +87,27 @@ export default function Navigation() {
               <div
                 className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-200 ${isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
               >
-                <div className="bg-white rounded-xl shadow-xl border border-gray-200 p-6 w-[580px]">
-                  <div className="grid grid-cols-2 gap-6">
-                    {categoryOrder.map((category) => {
-                      const services = servicesByCategory[category];
-                      if (!services) return null;
-                      return (
-                        <div key={category}>
-                          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                            {category}
-                          </h3>
-                          <ul className="space-y-1">
-                            {services.map((service) => (
-                              <li key={service.slug}>
-                                <Link
-                                  to={`/services/${service.slug}`}
-                                  className="block px-3 py-1.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-md transition-colors"
-                                  onClick={() => setIsServicesOpen(false)}
-                                >
-                                  {service.name}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <div className="border-t border-gray-100 mt-4 pt-4">
+                <div className="bg-white rounded-xl shadow-xl border border-gray-200 p-4 w-[260px]">
+                  <ul className="space-y-1">
+                    {serviceData.map((service) => (
+                      <li key={service.slug}>
+                        <Link
+                          to={`/services/${service.slug}`}
+                          className="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-md transition-colors"
+                          onClick={() => setIsServicesOpen(false)}
+                        >
+                          {service.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="border-t border-gray-100 mt-2 pt-2">
                     <Link
                       to="/services"
-                      className="inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
+                      className="block px-3 py-2 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
                       onClick={() => setIsServicesOpen(false)}
                     >
                       View All Services
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
                     </Link>
                   </div>
                 </div>
@@ -209,27 +191,16 @@ export default function Navigation() {
               </button>
               {mobileServicesOpen && (
                 <div className="pl-4 mt-1 space-y-1">
-                  {categoryOrder.map((category) => {
-                    const services = servicesByCategory[category];
-                    if (!services) return null;
-                    return (
-                      <div key={category} className="mb-2">
-                        <span className="block px-4 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                          {category}
-                        </span>
-                        {services.map((service) => (
-                          <Link
-                            key={service.slug}
-                            to={`/services/${service.slug}`}
-                            onClick={() => { setIsMenuOpen(false); setMobileServicesOpen(false); }}
-                            className="block px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
-                          >
-                            {service.name}
-                          </Link>
-                        ))}
-                      </div>
-                    );
-                  })}
+                  {serviceData.map((service) => (
+                    <Link
+                      key={service.slug}
+                      to={`/services/${service.slug}`}
+                      onClick={() => { setIsMenuOpen(false); setMobileServicesOpen(false); }}
+                      className="block px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
                   <Link
                     to="/services"
                     onClick={() => { setIsMenuOpen(false); setMobileServicesOpen(false); }}

@@ -47,8 +47,8 @@ export const safeOpening: ServiceData = {
     { title: 'Non-Destructive Opening', description: 'Our technician assesses the safe and attempts non-destructive methods first: dial manipulation, electronic bypass, or key override. If drilling is required, we use manufacturer drill points to minimize damage.' },
     { title: 'Serviced and Secured', description: 'Once open, we reset the combination, replace the keypad or batteries if needed, and test the locking mechanism to ensure the safe works properly going forward. Your valuables stay protected.' },
   ],
-  metaTitle: 'Safe Opening Service in St. Louis, MO | Starting at $150 | Nonstop Lock & Key',
-  metaDescription: 'Locked out of your safe in St. Louis? Nonstop Lock & Key opens home safes, gun safes, and commercial vaults without damage. Combination changes available. Starting at $150. Call (314) 532-1112.',
+  metaTitle: 'Safe Opening Service in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
+  metaDescription: 'Locked out of your safe in St. Louis? Nonstop Lock & Key opens home safes, gun safes, and commercial vaults without damage. Combination changes available. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['emergency-locksmith', 'commercial-lockout', 'lock-installation-replacement'],
   category: 'General',
 };

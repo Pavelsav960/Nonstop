@@ -47,8 +47,8 @@ export const ignitionRepair: ServiceData = {
     { title: 'On-Site Diagnosis', description: 'Our locksmith inspects the ignition cylinder, key, and switch to pinpoint the exact cause. Sometimes it is a worn key that needs replacement; other times the cylinder itself needs repair or swap.' },
     { title: 'Repaired and Running', description: 'We fix or replace the faulty component right in your driveway or parking spot. If a new cylinder is installed, we cut matching keys on-site so you leave with a fully working ignition system.' },
   ],
-  metaTitle: 'Ignition Repair Service in St. Louis, MO | Starting at $95 | Nonstop Lock & Key',
-  metaDescription: 'Key stuck or won\'t turn in the ignition? Nonstop Lock & Key provides on-site ignition repair and cylinder replacement in St. Louis. Starting at $95. Call (314) 532-1112.',
+  metaTitle: 'Ignition Repair Service in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
+  metaDescription: 'Key stuck or won\'t turn in the ignition? Nonstop Lock & Key provides on-site ignition repair and cylinder replacement in St. Louis. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['car-key-replacement', 'car-lockout', 'key-fob-programming'],
   category: 'Automotive',
 };

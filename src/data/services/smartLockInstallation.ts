@@ -47,8 +47,8 @@ export const smartLockInstallation: ServiceData = {
     { title: 'Expert Installation', description: 'Our technician removes your old hardware, installs the smart lock with proper alignment and reinforced strike plate, and connects it to your Wi-Fi or Bluetooth network.' },
     { title: 'Configured and Connected', description: 'We set up your access codes, pair the lock with Alexa, Google Home, or Apple HomeKit if applicable, and walk you through the app so you are comfortable managing it on your own.' },
   ],
-  metaTitle: 'Smart Lock Installation in St. Louis, MO | Starting at $85 | Nonstop Lock & Key',
-  metaDescription: 'Professional smart lock installation in St. Louis. Schlage, Kwikset, Yale, August, and more. Wi-Fi setup and smart home integration included. Starting at $85. Call (314) 532-1112.',
+  metaTitle: 'Smart Lock Installation in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
+  metaDescription: 'Professional smart lock installation in St. Louis. Schlage, Kwikset, Yale, August, and more. Wi-Fi setup and smart home integration included. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['lock-installation-replacement', 'lock-rekey', 'house-lockout'],
   category: 'Residential',
 };

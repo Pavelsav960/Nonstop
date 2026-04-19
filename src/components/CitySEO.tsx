@@ -28,7 +28,7 @@ export default function CitySEO({ city }: CitySEOProps) {
     address: {
       '@type': 'PostalAddress',
       streetAddress: BUSINESS.streetAddress,
-      addressLocality: BUSINESS.city,
+      addressLocality: BUSINESS.addressCity,
       addressRegion: 'MO',
       postalCode: BUSINESS.postalCode,
       addressCountry: 'US',
