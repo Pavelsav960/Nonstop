@@ -1,38 +1,9 @@
-import { useState, FormEvent } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { BUSINESS } from '../constants';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    projectType: '',
-    message: '',
-  });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        projectType: '',
-        message: '',
-      });
-    }, 3000);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [state, handleSubmit] = useForm('mbdqkgad');
+  const isSubmitted = state.succeeded;
 
   return (
     <section id="contact" className="py-16 sm:py-24 bg-gray-50">
@@ -139,11 +110,10 @@ export default function Contact() {
                     id="name"
                     name="name"
                     required
-                    value={formData.name}
-                    onChange={handleChange}
                     className="w-full px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-base"
                     placeholder="John Doe"
                   />
+                  <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-600 text-sm mt-1" />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -156,11 +126,10 @@ export default function Contact() {
                       id="email"
                       name="email"
                       required
-                      value={formData.email}
-                      onChange={handleChange}
                       className="w-full px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-base"
                       placeholder="john@example.com"
                     />
+                    <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-600 text-sm mt-1" />
                   </div>
 
                   <div>
@@ -172,11 +141,10 @@ export default function Contact() {
                       id="phone"
                       name="phone"
                       required
-                      value={formData.phone}
-                      onChange={handleChange}
                       className="w-full px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-base"
                       placeholder="(555) 123-4567"
                     />
+                    <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-red-600 text-sm mt-1" />
                   </div>
                 </div>
 
@@ -188,8 +156,7 @@ export default function Contact() {
                     id="projectType"
                     name="projectType"
                     required
-                    value={formData.projectType}
-                    onChange={handleChange}
+                    defaultValue=""
                     className="w-full px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-base"
                   >
                     <option value="">Select a service type</option>
@@ -210,19 +177,19 @@ export default function Contact() {
                     id="message"
                     name="message"
                     required
-                    value={formData.message}
-                    onChange={handleChange}
                     rows={5}
                     className="w-full px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none text-base"
                     placeholder="Tell us about your locksmith needs..."
                   ></textarea>
+                  <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-600 text-sm mt-1" />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg text-base sm:text-lg"
+                  disabled={state.submitting}
+                  className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg text-base sm:text-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  Send Message
+                  {state.submitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}

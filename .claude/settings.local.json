@@ -10,7 +10,8 @@
       "Bash(find /c/Dev/Nonstop -type f -name *404* -o -name *NotFound*)",
       "Bash(find /c/Dev/Nonstop/public -type f \\\\\\(-name *.jpg -o -name *.png -o -name *.webp -o -name *.gif \\\\\\))",
       "Bash(ls:*)",
-      "Bash(grep -v \"//\")"
+      "Bash(grep -v \"//\")",
+      "Bash(cat C:\\\\\\\\Users\\\\\\\\pavel\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\C--Dev-Nonstop\\\\\\\\e4856a61-064a-49c9-aa4f-784783f34a65\\\\\\\\tasks\\\\\\\\bydz2ql1g.output)"
     ]
   }
 }

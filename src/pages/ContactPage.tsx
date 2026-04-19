@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
 import Navigation from '../components/Navigation';
@@ -7,37 +7,8 @@ import { BUSINESS } from '../constants';
 import { serviceData } from '../data/serviceData';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    serviceType: '',
-    message: '',
-  });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        serviceType: '',
-        message: '',
-      });
-    }, 3000);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [state, handleSubmit] = useForm('mbdqkgad');
+  const isSubmitted = state.succeeded;
 
   const popularServices = serviceData.slice(0, 6);
 
@@ -269,11 +240,10 @@ export default function ContactPage() {
                         id="name"
                         name="name"
                         required
-                        value={formData.name}
-                        onChange={handleChange}
                         className="w-full px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-base"
                         placeholder="John Doe"
                       />
+                      <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-600 text-sm mt-1" />
                     </div>
 
                     <div>
@@ -285,11 +255,10 @@ export default function ContactPage() {
                         id="email"
                         name="email"
                         required
-                        value={formData.email}
-                        onChange={handleChange}
                         className="w-full px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-base"
                         placeholder="john@example.com"
                       />
+                      <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-600 text-sm mt-1" />
                     </div>
 
                     <div>
@@ -301,11 +270,10 @@ export default function ContactPage() {
                         id="phone"
                         name="phone"
                         required
-                        value={formData.phone}
-                        onChange={handleChange}
                         className="w-full px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-base"
                         placeholder="(555) 123-4567"
                       />
+                      <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-red-600 text-sm mt-1" />
                     </div>
 
                     <div>
@@ -316,8 +284,7 @@ export default function ContactPage() {
                         id="serviceType"
                         name="serviceType"
                         required
-                        value={formData.serviceType}
-                        onChange={handleChange}
+                        defaultValue=""
                         className="w-full px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-base"
                       >
                         <option value="">Select a service type</option>
@@ -338,19 +305,19 @@ export default function ContactPage() {
                         id="message"
                         name="message"
                         required
-                        value={formData.message}
-                        onChange={handleChange}
                         rows={5}
                         className="w-full px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none text-base"
                         placeholder="Tell us about your locksmith needs..."
                       />
+                      <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-600 text-sm mt-1" />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg text-base sm:text-lg"
+                      disabled={state.submitting}
+                      className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg text-base sm:text-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
-                      Send Message
+                      {state.submitting ? 'Sending...' : 'Send Message'}
                     </button>
 
                     <p className="text-sm text-gray-500 text-center mt-3">

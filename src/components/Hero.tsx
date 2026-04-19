@@ -1,29 +1,10 @@
-import { useState, FormEvent } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { BUSINESS } from '../constants';
 import { serviceData } from '../data/serviceData';
 
 export default function Hero() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    // TODO: Replace with Formspree endpoint
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', phone: '', service: '', message: '' });
-    }, 4000);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [state, handleSubmit] = useForm('mbdqkgad');
+  const isSubmitted = state.succeeded;
 
   return (
     <section id="home" className="relative pt-20 min-h-screen flex items-center">
@@ -106,25 +87,22 @@ export default function Hero() {
                     type="text"
                     name="name"
                     required
-                    value={formData.name}
-                    onChange={handleChange}
                     placeholder="Your Name"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-400 text-base"
                   />
+                  <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-600 text-sm" />
                   <input
                     type="tel"
                     name="phone"
                     required
-                    value={formData.phone}
-                    onChange={handleChange}
                     placeholder="Phone Number"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-400 text-base"
                   />
+                  <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-red-600 text-sm" />
                   <select
                     name="service"
                     required
-                    value={formData.service}
-                    onChange={handleChange}
+                    defaultValue=""
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 text-base"
                   >
                     <option value="">Select a Service</option>
@@ -135,17 +113,17 @@ export default function Hero() {
                   </select>
                   <textarea
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     rows={3}
                     placeholder="Tell us about your situation (optional)"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-400 resize-none text-base"
                   />
+                  <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-600 text-sm" />
                   <button
                     type="submit"
-                    className="w-full px-6 py-4 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-[1.02] shadow-lg text-lg"
+                    disabled={state.submitting}
+                    className="w-full px-6 py-4 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-[1.02] shadow-lg text-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    Get My Free Quote
+                    {state.submitting ? 'Sending...' : 'Get My Free Quote'}
                   </button>
                   <p className="text-xs text-gray-400 text-center">
                     For emergencies, call <a href={BUSINESS.phoneTel} className="text-primary-600 font-semibold">{BUSINESS.phone}</a> directly
