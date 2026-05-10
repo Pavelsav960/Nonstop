@@ -45,13 +45,13 @@ export default function FAQ() {
 
   return (
     <>
-      <section className="py-16 sm:py-24 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="section-ref bg-[#F5F5F5]">
+        <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600">
+            <p className="text-[16px] lg:text-[18px] text-[#333437]">
               Common questions about our St. Louis locksmith services
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function FAQ() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-md overflow-hidden"
+                className="bg-white rounded-[10px] shadow-md overflow-hidden"
               >
                 <button
                   onClick={() => toggle(index)}

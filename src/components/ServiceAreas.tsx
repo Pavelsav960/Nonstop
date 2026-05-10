@@ -4,24 +4,24 @@ import { cityData } from '../data/cityData';
 
 export default function ServiceAreas() {
   return (
-    <section id="service-areas" className="py-16 sm:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="service-areas" className="section-ref bg-[#F5F5F5]">
+      <div className="container-ref">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="mb-4">
             St. Louis Areas We Serve
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-[16px] lg:text-[18px] text-[#333437] max-w-3xl mx-auto">
             Providing fast, reliable locksmith services throughout the greater St. Louis metropolitan area and surrounding communities
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg p-8 sm:p-12">
+        <div className="bg-white rounded-[10px] shadow-lg p-8 sm:p-12">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {cityData.map((city) => (
               <Link
                 key={city.slug}
                 to={`/locksmith/${city.slug}`}
-                className="flex items-center gap-2 p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-all duration-300 group"
+                className="flex items-center gap-2 p-4 bg-[#F5F5F5] rounded-[10px] hover:bg-primary-50 transition-all duration-300 group"
               >
                 <svg
                   className="w-5 h-5 text-primary-600 flex-shrink-0"
@@ -75,7 +75,7 @@ export default function ServiceAreas() {
             </p>
             <a
               href={BUSINESS.phoneTel}
-              className="inline-block px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg"
+              className="btn-accent"
             >
               Call {BUSINESS.phone} to Confirm Service
             </a>

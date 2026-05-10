@@ -1,6 +1,7 @@
 import Navigation from '../components/Navigation';
 import HomeSEO from '../components/HomeSEO';
 import Hero from '../components/Hero';
+import ServiceStrip from '../components/ServiceStrip';
 import Services from '../components/Services';
 import About from '../components/About';
 import ServiceAreas from '../components/ServiceAreas';
@@ -16,10 +17,11 @@ export default function HomePage() {
       <Navigation />
       <main>
         <Hero />
+        <ServiceStrip />
+        <Reviews />
         <Services />
         <About />
         <ServiceAreas />
-        <Reviews />
         <FAQ />
         <Contact />
       </main>

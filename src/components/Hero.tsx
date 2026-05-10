@@ -1,150 +1,274 @@
 import { useForm, ValidationError } from '@formspree/react';
+import { motion } from 'framer-motion';
+import { Phone, Star, ShieldCheck, Clock } from 'lucide-react';
 import { BUSINESS } from '../constants';
-import { serviceData } from '../data/serviceData';
+
+const REGION_NAME = 'St. Louis County';
+const TESTIMONIALS_ID = 'reviews';
+
+const scrollTo = (id: string) =>
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+
+const FeatureRow = ({ icon, text }: { icon: React.ReactNode; text: string }) => (
+  <div className="flex items-center gap-3 md:gap-4">
+    <div className="flex-shrink-0">{icon}</div>
+    <p className="font-bold text-[15px] sm:text-lg md:text-[1.35rem] text-white">{text}</p>
+  </div>
+);
 
 export default function Hero() {
   const [state, handleSubmit] = useForm('mbdqkgad');
   const isSubmitted = state.succeeded;
 
   return (
-    <section id="home" className="relative pt-20 min-h-screen flex items-center">
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/4291/door-green-closed-lock.jpg?auto=compress&cs=tinysrgb&w=1920)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50"></div>
+    <section id="home" className="hero-section relative bg-gray-900 pt-24 pb-16 md:pt-52 md:pb-16 overflow-hidden">
+      {/* Desktop background image */}
+      <div className="hidden md:block absolute inset-0 z-0">
+        <img
+          src="https://images.pexels.com/photos/4291/door-green-closed-lock.jpg?auto=compress&cs=tinysrgb&w=1920"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gray-900/85" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left: Text Content */}
-          <div>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-4 sm:mb-6 leading-[1.1]">
-              24/7 Emergency Locksmith
-              <span className="block text-primary-400">St. Louis, MO</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 leading-relaxed">
-              Locked out of your home, car, or business? {BUSINESS.name} provides fast, affordable locksmith services across St. Louis and surrounding cities. Get a free quote in minutes.
-            </p>
+      {/* Mobile dot pattern */}
+      <div className="md:hidden absolute inset-0 opacity-10">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+          }}
+        />
+      </div>
 
-            <ul className="space-y-2 mb-6 sm:mb-8">
-              <li className="flex items-center space-x-2 text-white">
-                <svg className="w-5 h-5 text-primary-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="font-semibold text-sm">15-30 Min Response Time</span>
-              </li>
-              <li className="flex items-center space-x-2 text-white">
-                <svg className="w-5 h-5 text-primary-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="font-semibold text-sm">Licensed & Insured</span>
-              </li>
-              <li className="flex items-center space-x-2 text-white">
-                <svg className="w-5 h-5 text-primary-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="font-semibold text-sm">No Hidden Fees, Upfront Pricing</span>
-              </li>
-            </ul>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-start w-full max-w-full overflow-hidden">
 
-            <div className="flex justify-center sm:justify-start">
+            {/* LEFT: Value Proposition */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-white w-full max-w-full overflow-hidden"
+            >
+              <h1 className="text-[2.75rem] sm:text-5xl md:text-6xl lg:text-[64px] font-bold mb-4 leading-[1.05] -mr-2 sm:mr-0">
+                <span className="md:whitespace-nowrap">Fast And Reliable</span>
+                <br />
+                <span className="text-primary-500">
+                  Locksmith In<span className="hidden md:inline"><br /></span> {BUSINESS.city}
+                </span>
+              </h1>
+
+              <p className="text-xl md:text-2xl text-white/85 mb-6 leading-relaxed">
+                Locked out or lost your keys? We provide fast<span className="hidden md:inline"><br /></span> car, home, and business locksmith service.
+              </p>
+
+              {/* Average Arrival */}
+              <div className="mb-4">
+                <p className="text-xl sm:text-2xl md:text-[2.5rem] font-bold text-white inline underline decoration-primary-500 decoration-2 md:decoration-4 underline-offset-2 md:underline-offset-4 whitespace-nowrap">
+                  Average Arrival: 15 mins!
+                </p>
+              </div>
+
+              {/* Trust bullets */}
+              <div className="space-y-3 md:space-y-1.5 mb-8 pr-1">
+                <FeatureRow
+                  icon={<ShieldCheck className="h-9 w-9 md:h-11 md:w-11 text-primary-500" strokeWidth={2} />}
+                  text="Upfront Pricing, No Surprises"
+                />
+                <FeatureRow
+                  icon={<ShieldCheck className="h-9 w-9 md:h-11 md:w-11 text-primary-500" strokeWidth={2} />}
+                  text="Local American Technicians"
+                />
+
+                {/* Bouncing letters bullet */}
+                <div className="flex items-center gap-3 md:gap-4">
+                  <ShieldCheck className="h-9 w-9 md:h-11 md:w-11 text-primary-500 flex-shrink-0" strokeWidth={2} />
+                  <p className="font-bold text-[15px] sm:text-lg md:text-[1.35rem] text-white">
+                    5-Star Rated On{' '}
+                    <span
+                      className="cursor-pointer hover:text-primary-400 transition-colors inline-flex"
+                      onClick={() => scrollTo(TESTIMONIALS_ID)}
+                    >
+                      {'Google'.split('').map((char, i) => (
+                        <motion.span
+                          key={i}
+                          initial={{ y: 0 }}
+                          animate={{ y: [0, -4, 0] }}
+                          transition={{
+                            duration: 0.3,
+                            delay: i * 0.05,
+                            ease: 'easeInOut',
+                            repeat: Infinity,
+                            repeatDelay: 5,
+                          }}
+                          className="inline-block"
+                        >
+                          {char}
+                        </motion.span>
+                      ))}
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              {/* Phone CTA */}
               <a
                 href={BUSINESS.phoneTel}
-                className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg text-base sm:text-lg"
+                className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white text-lg font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl tracking-wide mb-4 w-full md:w-auto"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                Call Now: {BUSINESS.phone}
+                <Phone className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3 animate-pulse flex-shrink-0" />
+                <span>Call Now: <span className="phone-number">{BUSINESS.phone}</span></span>
               </a>
-            </div>
-          </div>
 
-          {/* Right: Quote Form */}
-          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-            {/* Form Header */}
-            <div className="bg-primary-600 px-6 sm:px-8 py-4">
-              <h2 className="text-lg sm:text-xl font-bold text-white text-center">24/7 Service Available</h2>
-            </div>
-
-            <div className="p-6 sm:p-8">
-              {isSubmitted ? (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                  <svg className="w-12 h-12 text-green-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Message Sent!</h3>
-                  <p className="text-sm text-gray-600">We'll get back to you shortly. For emergencies, call {BUSINESS.phone}.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-400 text-base"
-                  />
-                  <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-600 text-sm" />
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    placeholder="Phone Number"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-400 text-base"
-                  />
-                  <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-red-600 text-sm" />
-                  <select
-                    name="service"
-                    required
-                    defaultValue=""
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 text-base"
-                  >
-                    <option value="">Select a Service</option>
-                    {serviceData.map((s) => (
-                      <option key={s.slug} value={s.name}>{s.name}</option>
-                    ))}
-                    <option value="Other">Other</option>
-                  </select>
-                  <textarea
-                    name="message"
-                    rows={3}
-                    placeholder="Tell us about your situation (optional)"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-400 resize-none text-base"
-                  />
-                  <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-600 text-sm" />
-                  <button
-                    type="submit"
-                    disabled={state.submitting}
-                    className="w-full px-6 py-4 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-[1.02] shadow-lg text-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
-                  >
-                    {state.submitting ? 'Sending...' : 'Get My Free Quote'}
-                  </button>
-                  <p className="text-xs text-gray-400 text-center">
-                    For emergencies, call <a href={BUSINESS.phoneTel} className="text-primary-600 font-semibold">{BUSINESS.phone}</a> directly
-                  </p>
-                </form>
-              )}
-            </div>
-
-            {/* Form Footer - Rating */}
-            <div className="bg-gray-50 px-6 sm:px-8 py-4 border-t border-gray-100">
-              <div className="flex flex-col items-center gap-1.5">
-                <div className="flex text-yellow-400">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-sm font-semibold text-gray-700">Rated Top Locksmith Company in St. Louis</p>
+              {/* Mobile availability indicator */}
+              <div className="flex md:hidden items-center gap-2 justify-center">
+                <motion.div
+                  className="w-3 h-3 bg-green-500 rounded-full"
+                  animate={{ scale: [1, 1.5, 1], opacity: [1, 0.6, 1] }}
+                  transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                <span className="text-green-400 font-semibold text-sm">
+                  2 Techs Available Now
+                </span>
               </div>
-            </div>
+            </motion.div>
+
+            {/* RIGHT: Form card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="w-full max-w-full overflow-hidden"
+            >
+              <div className="bg-white rounded-2xl shadow-2xl p-5 sm:p-8 md:p-10">
+                <div className="text-center mb-4">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    24/7 Locksmith<br />Service in St. Louis
+                  </h2>
+                </div>
+
+                {isSubmitted ? (
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+                    <Clock className="h-12 w-12 mx-auto mb-2 text-green-600" />
+                    <h3 className="text-lg font-bold text-green-700">Request Received!</h3>
+                    <p className="text-green-700 mt-2">We'll call you back shortly. For emergencies, call {BUSINESS.phone}.</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-3">
+                    {/* Name & Phone — side by side on desktop */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-3">
+                      <input
+                        required
+                        type="text"
+                        name="name"
+                        placeholder="Your Name *"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      />
+                      <div className="mt-3 md:mt-0">
+                        <input
+                          required
+                          type="tel"
+                          name="phone"
+                          placeholder="Phone Number *"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Email — desktop only, optional */}
+                    <div className="hidden md:block">
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email Address"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      />
+                    </div>
+
+                    <select
+                      required
+                      name="service"
+                      defaultValue=""
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white text-gray-900"
+                    >
+                      <option value="" disabled>Select Service *</option>
+                      <option value="Car Lockout">Car Lockout</option>
+                      <option value="House Lockout">House Lockout</option>
+                      <option value="Commercial Lockout">Commercial Lockout</option>
+                      <option value="Emergency Locksmith">Emergency Locksmith</option>
+                      <option value="Broken Key Extraction">Broken Key Extraction</option>
+                      <option value="Lock Rekey">Lock Rekey</option>
+                      <option value="Car Key Replacement">Car Key Replacement</option>
+                      <option value="Key Fob Programming">Key Fob Programming</option>
+                      <option value="Ignition Repair">Ignition Repair</option>
+                      <option value="Lock Installation & Replacement">Lock Installation & Replacement</option>
+                      <option value="Smart Lock Installation">Smart Lock Installation</option>
+                      <option value="Safe Opening & Repair">Safe Opening & Repair</option>
+                      <option value="Other">Other Locksmith Service</option>
+                    </select>
+
+                    {/* Address — desktop only */}
+                    <div className="hidden md:block">
+                      <input
+                        type="text"
+                        name="address"
+                        placeholder="Address (optional)"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      />
+                    </div>
+
+                    <textarea
+                      name="message"
+                      rows={2}
+                      placeholder="Tell us about your situation (optional)"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+                    />
+                    <ValidationError prefix="Form" field="form" errors={state.errors} className="text-red-600 text-xs" />
+
+                    <button
+                      type="submit"
+                      disabled={state.submitting}
+                      className="w-full bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl disabled:transform-none text-lg tracking-wide"
+                    >
+                      {state.submitting ? 'Sending...' : 'GET HELP NOW'}
+                    </button>
+
+                    <p className="text-center text-xs text-gray-500 mt-4 md:hidden">
+                      By submitting, you agree to be contacted by phone.
+                    </p>
+                  </form>
+                )}
+
+                {/* Rated Top Locksmith - desktop only */}
+                <div className="hidden md:flex md:flex-col md:items-center mt-8 text-center">
+                  <p className="text-[15px] lg:text-base font-bold text-gray-900 mb-2 underline decoration-gray-900 decoration-2 underline-offset-2 whitespace-nowrap">
+                    Rated Top Locksmith Company In {REGION_NAME}
+                  </p>
+                  <div className="flex items-center justify-center gap-3 mt-1">
+                    <a href={BUSINESS.gbpUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:opacity-80 transition-opacity" aria-label="View Google reviews">
+                      <svg className="h-8 w-8" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                      </svg>
+                    </a>
+                    <a href={BUSINESS.gbpUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-px hover:opacity-80 transition-opacity" aria-label="View 5-star reviews">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-6 w-6 text-yellow-400 fill-yellow-400" />
+                      ))}
+                    </a>
+                    <span className="text-base font-semibold text-gray-700">({BUSINESS.reviewCount}+ Happy Clients)</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </div>

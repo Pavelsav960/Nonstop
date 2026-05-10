@@ -52,21 +52,21 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20 sm:h-28">
+        <div className="flex justify-between items-center h-16 sm:h-24 relative">
           <div className="flex-shrink-0 cursor-pointer" onClick={handleLogoClick}>
             <img
               src="/nonstop-lock-and-key-st-louis-locksmith-logo-no-bg-final-cut.png"
               alt="Nonstop Lock & Key"
-              className="h-20 sm:h-28 w-auto object-contain"
+              className="h-16 sm:h-24 w-auto object-contain"
             />
           </div>
 
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden md:flex space-x-8 items-center text-[16px]">
             <button
               onClick={() => handleNavigation('home')}
-              className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              className="text-[#17171A] hover:text-primary-600 transition-colors font-semibold"
             >
               Home
             </button>
@@ -77,7 +77,7 @@ export default function Navigation() {
             >
               <Link
                 to="/services"
-                className="text-gray-700 hover:text-primary-600 transition-colors font-medium inline-flex items-center gap-1"
+                className="text-[#17171A] hover:text-primary-600 transition-colors font-semibold inline-flex items-center gap-1"
               >
                 Services
                 <svg className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -115,25 +115,25 @@ export default function Navigation() {
             </div>
             <Link
               to="/about"
-              className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              className="text-[#17171A] hover:text-primary-600 transition-colors font-semibold"
             >
               About
             </Link>
             <Link
               to="/service-areas"
-              className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              className="text-[#17171A] hover:text-primary-600 transition-colors font-semibold"
             >
               Service Areas
             </Link>
             <Link
               to="/reviews"
-              className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              className="text-[#17171A] hover:text-primary-600 transition-colors font-semibold"
             >
               Reviews
             </Link>
             <Link
               to="/contact"
-              className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              className="text-[#17171A] hover:text-primary-600 transition-colors font-semibold"
             >
               Contact
             </Link>

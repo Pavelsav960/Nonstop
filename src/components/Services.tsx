@@ -33,13 +33,13 @@ const categoryColors: Record<string, string> = {
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 sm:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="section-ref bg-[#F5F5F5]">
+      <div className="container-ref">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
+          <h2 className="mb-4 px-2">
             Professional Locksmith Services in St. Louis, MO
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-[16px] lg:text-[18px] text-[#333437] max-w-3xl mx-auto px-4">
             Expert residential, commercial, and automotive locksmith solutions serving St. Louis and surrounding communities
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function Services() {
             <Link
               key={service.slug}
               to={`/services/${service.slug}`}
-              className="bg-white rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block"
+              className="bg-white rounded-[10px] p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group block"
             >
               <div className="flex items-center justify-between mb-4 sm:mb-6">
                 <div className="text-primary-600 group-hover:scale-110 transition-transform">
@@ -59,7 +59,7 @@ export default function Services() {
                   {service.category}
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3 group-hover:text-primary-600 transition-colors" itemProp="name">
+              <h3 className="mb-2 sm:mb-3 group-hover:text-primary-600 transition-colors" itemProp="name">
                 {service.name}
               </h3>
               <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-3">
@@ -78,7 +78,7 @@ export default function Services() {
         <div className="text-center mt-10">
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105"
+            className="btn-accent"
           >
             View All Services
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

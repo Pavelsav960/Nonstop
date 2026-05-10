@@ -6,21 +6,21 @@ export default function Contact() {
   const isSubmitted = state.succeeded;
 
   return (
-    <section id="contact" className="py-16 sm:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="section-ref bg-[#F5F5F5]">
+      <div className="container-ref">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <h2 className="mb-4">
             Get In Touch
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-[16px] lg:text-[18px] text-[#333437] max-w-3xl mx-auto px-4">
             Need a locksmith? Call us now for fast, reliable service or send us a message
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <div>
-            <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg mb-6 sm:mb-8">
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">Contact Information</h3>
+            <div className="bg-white rounded-[10px] p-6 sm:p-8 shadow-lg mb-6 sm:mb-8">
+              <h3 className="mb-4 sm:mb-6">Contact Information</h3>
 
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-start">
@@ -74,7 +74,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="rounded-xl overflow-hidden shadow-lg">
+            <div className="rounded-[10px] overflow-hidden shadow-lg">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199412.27235498!2d-90.48648!3d38.6270!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6d8c00414bcad66e!2sNonstop%20Lock%20%26%20Key!5e0!3m2!1sen!2sus!4v1700000000000"
                 width="100%"
@@ -88,8 +88,8 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
-            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">Send Us a Message</h3>
+          <div className="bg-white rounded-[10px] p-6 sm:p-8 shadow-lg">
+            <h3 className="mb-4 sm:mb-6">Send Us a Message</h3>
 
             {isSubmitted ? (
               <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">

@@ -11,7 +11,17 @@
       "Bash(find /c/Dev/Nonstop/public -type f \\\\\\(-name *.jpg -o -name *.png -o -name *.webp -o -name *.gif \\\\\\))",
       "Bash(ls:*)",
       "Bash(grep -v \"//\")",
-      "Bash(cat C:\\\\\\\\Users\\\\\\\\pavel\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\C--Dev-Nonstop\\\\\\\\e4856a61-064a-49c9-aa4f-784783f34a65\\\\\\\\tasks\\\\\\\\bydz2ql1g.output)"
+      "Bash(cat C:\\\\\\\\Users\\\\\\\\pavel\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\C--Dev-Nonstop\\\\\\\\e4856a61-064a-49c9-aa4f-784783f34a65\\\\\\\\tasks\\\\\\\\bydz2ql1g.output)",
+      "Bash(netstat -ano)",
+      "WebFetch(domain:callorangelocksmith.com)",
+      "Bash(awk -v RS='}' '/0637270|3f5bb7c|a96f86d|389c2b7|b6a4e31|c97d4b3|6c8e955|d5d4f93|a88beb1/{print $0 \"}\"}' C:/Users/pavel/AppData/Local/Temp/post-18.css)",
+      "Bash(awk -v RS='}' '/660a82b|b62620f|f1893e6|a09e650|83e0b1d|0fd832c/{print $0 \"}\"}' C:/Users/pavel/AppData/Local/Temp/post-18.css)",
+      "Bash(xargs -I{} sed -i 's/pt-20/pt-16/g' {})",
+      "Bash(xargs -I{} sed -i 's/pt-16/pt-20/g' {})",
+      "Bash(npm list *)",
+      "Bash(where curl *)",
+      "Bash(where magick *)",
+      "Bash(where ffmpeg *)"
     ]
   }
 }

@@ -10,18 +10,18 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="py-16 sm:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="section-ref bg-white">
+      <div className="container-ref">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <h2 className="mb-5 sm:mb-6">
               Trusted Locksmith Serving St. Louis, MO
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+            <p className="text-[16px] lg:text-[18px] text-[#333437] mb-4 sm:mb-6 leading-[1.5]">
               Nonstop Lock & Key is a fully licensed, 24/7 locksmith service trusted by homeowners, drivers, and businesses across the St. Louis area. With a 30-minute average response time covering{' '}
               <Link to="/service-areas" className="text-primary-600 hover:text-primary-700 font-medium">20 cities across the St. Louis metro</Link>, we're always just a call away when you need help most — day or night, weekends and holidays included.
             </p>
-            <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-[16px] lg:text-[18px] text-[#333437] mb-6 sm:mb-8 leading-[1.5]">
               From{' '}
               <Link to="/services/car-lockout" className="text-primary-600 hover:text-primary-700 font-medium">car lockouts</Link> and{' '}
               <Link to="/services/car-key-replacement" className="text-primary-600 hover:text-primary-700 font-medium">key replacement</Link> to{' '}
@@ -30,11 +30,11 @@ export default function About() {
             </p>
             <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center p-3 sm:p-4 bg-gray-50 rounded-lg">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">
+                <div key={index} className="text-center p-4 bg-[#F5F5F5] rounded-[10px]">
+                  <div className="text-3xl sm:text-4xl font-bold text-primary-600 mb-1 sm:mb-2 leading-tight">
                     {stat.number}
                   </div>
-                  <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">
+                  <div className="text-sm sm:text-base text-[#333437] font-medium">
                     {stat.label}
                   </div>
                 </div>
@@ -54,7 +54,7 @@ export default function About() {
           </div>
 
           <div className="relative mt-8 lg:mt-0">
-            <div className="relative h-80 sm:h-96 lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-80 sm:h-96 lg:h-[600px] rounded-[10px] overflow-hidden shadow-2xl">
               <img
                 src={vanImage}
                 alt="Nonstop Lock & Key mobile locksmith van serving St. Louis, MO and surrounding areas"
@@ -63,7 +63,7 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
-            <div className="absolute -bottom-4 sm:-bottom-6 left-4 right-4 sm:left-auto sm:right-auto sm:-left-6 bg-primary-600 text-white p-4 sm:p-8 rounded-xl shadow-xl sm:max-w-xs">
+            <div className="absolute -bottom-4 sm:-bottom-6 left-4 right-4 sm:left-auto sm:right-auto sm:-left-6 bg-primary-600 text-white p-4 sm:p-8 rounded-[10px] shadow-xl sm:max-w-xs">
               <p className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Licensed & Insured</p>
               <p className="text-xs sm:text-sm opacity-90">
                 Fully certified and insured for your peace of mind
