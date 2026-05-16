@@ -22,19 +22,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero-section relative bg-gray-900 pt-24 pb-16 md:pt-52 md:pb-16 overflow-hidden">
-      {/* Desktop background image */}
-      <div className="hidden md:block absolute inset-0 z-0">
-        <img
-          src="https://images.pexels.com/photos/4291/door-green-closed-lock.jpg?auto=compress&cs=tinysrgb&w=1920"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gray-900/85" />
-      </div>
-
-      {/* Mobile dot pattern */}
-      <div className="md:hidden absolute inset-0 opacity-10">
+      {/* Subtle dot pattern background */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
         <div
           className="absolute inset-0"
           style={{
@@ -55,16 +44,17 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-white w-full max-w-full overflow-hidden"
             >
-              <h1 className="text-[2.75rem] sm:text-5xl md:text-6xl lg:text-[64px] font-bold mb-4 leading-[1.05] -mr-2 sm:mr-0">
+              <h1 className="text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[64px] font-bold mb-4 leading-[1.05]">
                 <span className="md:whitespace-nowrap">Fast And Reliable</span>
                 <br />
                 <span className="text-primary-500">
-                  Locksmith In<span className="hidden md:inline"><br /></span> {BUSINESS.city}
+                  Locksmith In<br />{BUSINESS.city}
                 </span>
               </h1>
 
               <p className="text-xl md:text-2xl text-white/85 mb-6 leading-relaxed">
-                Locked out or lost your keys? We provide fast<span className="hidden md:inline"><br /></span> car, home, and business locksmith service.
+                Locked out or lost your keys?<br />
+                We provide fast car, home, and business locksmith service.
               </p>
 
               {/* Average Arrival */}

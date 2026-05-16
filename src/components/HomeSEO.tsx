@@ -2,6 +2,20 @@ import { Helmet } from 'react-helmet-async';
 import { BUSINESS } from '../constants';
 
 export default function HomeSEO() {
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${BUSINESS.url}#website`,
+    url: BUSINESS.url,
+    name: BUSINESS.legalName,
+    alternateName: 'Nonstop Locksmith St. Louis',
+    description: `Family-owned 24/7 mobile locksmith serving ${BUSINESS.city} and surrounding ${BUSINESS.city} County areas since 2010.`,
+    publisher: {
+      '@id': `${BUSINESS.url}#localbusiness`,
+    },
+    inLanguage: 'en-US',
+  };
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -11,7 +25,7 @@ export default function HomeSEO() {
         name: 'Do you provide 24/7 emergency locksmith services in St. Louis?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "Yes! We offer 24/7 emergency locksmith services throughout St. Louis and surrounding areas. Whether you're locked out at 3am in Clayton or need emergency service in Chesterfield on a Sunday, we're available around the clock with an average 30-minute response time.",
+          text: "Yes! We offer 24/7 emergency locksmith services throughout St. Louis County and surrounding areas. Whether you're locked out at 3am in Clayton or need emergency service in Chesterfield on a Sunday, we're available around the clock with a 15 to 30 minute response time.",
         },
       },
       {
@@ -19,7 +33,7 @@ export default function HomeSEO() {
         name: 'What areas of St. Louis do you serve?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "We serve all of St. Louis and the surrounding metro area, including Clayton, University City, Webster Groves, Kirkwood, Chesterfield, Ballwin, Florissant, Creve Coeur, and more. If you're in the greater St. Louis area, we can help!",
+          text: "We serve all of St. Louis County, including Clayton, University City, Webster Groves, Kirkwood, Chesterfield, Ballwin, Saint Charles, Creve Coeur, Ladue, Town and Country, and more. If you're in the greater St. Louis metro area, we can help!",
         },
       },
       {
@@ -51,7 +65,7 @@ export default function HomeSEO() {
         name: 'How quickly can you respond to a lockout in St. Louis?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Our average response time in the St. Louis metro area is 30 minutes or less. We prioritize emergency lockout situations and have mobile units strategically positioned throughout Clayton, Chesterfield, University City, and other St. Louis neighborhoods for rapid response.',
+          text: 'Our typical response time in the St. Louis County area is 15 to 30 minutes. We prioritize emergency lockout situations and have mobile units strategically positioned throughout Clayton, Chesterfield, University City, and other St. Louis neighborhoods for rapid response.',
         },
       },
       {
@@ -100,6 +114,7 @@ export default function HomeSEO() {
       <meta name="geo.position" content={`${BUSINESS.lat};${BUSINESS.lng}`} />
       <meta name="ICBM" content={`${BUSINESS.lat}, ${BUSINESS.lng}`} />
 
+      <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
     </Helmet>
   );

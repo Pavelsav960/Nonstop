@@ -45,7 +45,7 @@ export default function FAQ() {
 
   return (
     <>
-      <section className="section-ref bg-[#F5F5F5]">
+      <section className="section-ref bg-white">
         <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-4">

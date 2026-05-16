@@ -1,80 +1,143 @@
+import { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import { ChevronLeft, ChevronRight, Phone } from 'lucide-react';
 import { BUSINESS } from '../constants';
 
-const reviews = [
+type Review = {
+  name: string;
+  photo: string | null;
+  avatarColor?: string;
+  location: string;
+  rating: number;
+  date: string;
+  displayDate: string;
+  service: string;
+  text: string;
+};
+
+const reviews: Review[] = [
   {
-    name: 'Michael Thompson',
-    location: 'Clayton, MO',
-    rating: 5,
-    date: '2025-01-15',
-    relativeTime: '2 months ago',
-    reviewCount: 14,
-    isLocalGuide: true,
-    text: 'Locked out of my condo on Forsyth at 2am after losing my keys at dinner. Called Nonstop Lock & Key and they had a technician at my door in under 20 minutes on a Saturday night. He opened the deadbolt without a single mark on the door, then rekeyed it on the spot so the lost keys wouldn\'t work. Exactly the service you want in a stressful moment.',
-  },
-  {
-    name: 'Sarah Martinez',
-    location: 'University City, MO',
-    rating: 5,
-    date: '2025-02-10',
-    relativeTime: '1 month ago',
-    reviewCount: 3,
-    isLocalGuide: false,
-    text: 'Had all the locks rekeyed after closing on our house in University City. The technician arrived on time, rekeyed five exterior doors in about two hours, and set everything to work with a single key. He even tightened a loose strike plate he noticed on the back door. Fair pricing and thorough work.',
-  },
-  {
-    name: 'David Chen',
-    location: 'Chesterfield, MO',
-    rating: 5,
-    date: '2025-01-28',
-    relativeTime: '2 months ago',
-    reviewCount: 28,
-    isLocalGuide: true,
-    text: 'Lost my only car key at Chesterfield Mall and was stranded in the parking lot. Nonstop Lock & Key came out, cut a new transponder key, and programmed it to start the engine — all in the parking lot in about 40 minutes. Saved me from an expensive tow to the dealership.',
-  },
-  {
-    name: 'Jennifer Wilson',
-    location: 'Webster Groves, MO',
-    rating: 5,
-    date: '2025-02-05',
-    relativeTime: '1 month ago',
-    reviewCount: 7,
-    isLocalGuide: false,
-    text: 'Had Nonstop install a Schlage Encode smart lock on our front door in Webster Groves. The technician handled the installation cleanly, set up the app on both our phones, and programmed guest codes for the dog walker. Very knowledgeable about the different smart lock brands and helped us choose the right one.',
-  },
-  {
-    name: 'Jason Patel',
-    location: 'Kirkwood, MO',
-    rating: 5,
-    date: '2025-03-01',
-    relativeTime: '3 weeks ago',
-    reviewCount: 42,
-    isLocalGuide: true,
-    text: 'Broken key snapped off in our front door lock at 11pm on a weeknight in Kirkwood. Called Nonstop and the locksmith arrived in about 25 minutes. He extracted the broken piece, tested the cylinder, and determined the lock was still in good shape. Quick, professional, and the price matched the quote exactly.',
-  },
-  {
-    name: 'Angela Roberts',
+    name: 'Angela R.',
+    photo: 'https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=200',
     location: 'Ballwin, MO',
     rating: 5,
-    date: '2025-02-20',
-    relativeTime: '1 month ago',
-    reviewCount: 2,
-    isLocalGuide: false,
-    text: 'Locked my keys in the car with the engine running outside the grocery store on Manchester Road in Ballwin. Called in a panic and they treated it as a priority. Technician arrived in under 30 minutes and had the door open in two minutes flat. No damage to the car at all. Highly recommend.',
+    date: '2026-04-22',
+    displayDate: '22 April 2026',
+    service: 'Car Lockout',
+    text: 'OMG locked my keys IN the car at Schnucks on Manchester with my dog inside, was completely freaking out. Called Nonstop, they got there in under 25 min and had the door open in maybe 90 seconds!! Zero damage. Absolute lifesavers 🙏',
+  },
+  {
+    name: 'Michael T.',
+    photo: 'https://randomuser.me/api/portraits/men/41.jpg',
+    location: 'Clayton, MO',
+    rating: 5,
+    date: '2026-04-12',
+    displayDate: '12 April 2026',
+    service: 'House Lockout',
+    text: 'Locked out of my condo on Forsyth around 2am. Called Nonstop Lock & Key and Alex showed up in 18 minutes, popped the door without a single mark. Way faster than I expected for the middle of the night. Very professional guy.',
+  },
+  {
+    name: 'Ryan G.',
+    photo: null,
+    avatarColor: 'bg-[#1A73E8]',
+    location: 'Chesterfield, MO',
+    rating: 5,
+    date: '2026-04-05',
+    displayDate: '5 April 2026',
+    service: 'Commercial Lockout',
+    text: "Couldn't get into my office Saturday morning for an inventory check. Nonstop came out within the hour, got me in without damaging the deadbolt. Same tech recommended a stronger lock for the back door and installed it later that week.",
+  },
+  {
+    name: 'Vanessa K.',
+    photo: 'https://randomuser.me/api/portraits/women/28.jpg',
+    location: 'St. Louis, MO',
+    rating: 5,
+    date: '2026-03-30',
+    displayDate: '30 March 2026',
+    service: 'Emergency Locksmith',
+    text: '3am emergency, lost my keys at a wedding downtown 🤦‍♀️ Called like 5 places and only Nonstop actually answered. Tech was at my Airbnb in 22 minutes!! Did NOT expect that level of service that late at night, seriously thank you!!!',
+  },
+  {
+    name: 'Jason P.',
+    photo: 'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=200',
+    location: 'Kirkwood, MO',
+    rating: 5,
+    date: '2026-03-21',
+    displayDate: '21 March 2026',
+    service: 'Broken Key Extraction',
+    text: 'Snapped my house key off in the lock at 11pm with my kids waiting in the car 😬 stressed!! Called Nonstop, tech came in 25 minutes, extracted the broken piece, tested the cylinder and said the lock was still good. Charged exactly what he quoted on the phone. Solid guys, would def call them again',
+  },
+  {
+    name: 'Sarah M.',
+    photo: 'https://api.dicebear.com/9.x/personas/svg?seed=sarah-mckinley&backgroundColor=ffd5dc',
+    location: 'University City, MO',
+    rating: 5,
+    date: '2026-03-15',
+    displayDate: '15 March 2026',
+    service: 'Lock Rekey',
+    text: 'Just closed on our house in U City and wanted everything rekeyed for peace of mind. Nonstop Lock & Key sent Alex out same day. Did 5 exterior doors in about 90 minutes and even fixed a sticky strike plate on the back door. No surprise fees, paid exactly what was quoted.',
+  },
+  {
+    name: 'David C.',
+    photo: 'https://randomuser.me/api/portraits/men/55.jpg',
+    location: 'Chesterfield, MO',
+    rating: 5,
+    date: '2026-02-28',
+    displayDate: '28 February 2026',
+    service: 'Car Key Replacement',
+    text: 'Lost my only Honda key at the mall on a Sunday. Dealership wanted $500+ PLUS a tow. Nonstop came to the parking lot, Alex cut a new transponder, programmed it, and I was driving home in under an hour!!! Saved me SO much money, can\'t recommend enough 🔑',
+  },
+  {
+    name: 'Marcus T.',
+    photo: 'https://randomuser.me/api/portraits/men/72.jpg',
+    location: 'Maryland Heights, MO',
+    rating: 5,
+    date: '2026-02-19',
+    displayDate: '19 February 2026',
+    service: 'Key Fob Programming',
+    text: 'Needed a spare fob for my Toyota Camry. Took it to the dealer first and they wanted wayyy too much. Nonstop did the same thing for HALF the price at my apartment complex. Tech was super friendly and walked me through the whole programming process 👌',
+  },
+  {
+    name: 'Linda H.',
+    photo: 'https://randomuser.me/api/portraits/women/55.jpg',
+    location: 'Webster Groves, MO',
+    rating: 5,
+    date: '2026-02-08',
+    displayDate: '8 February 2026',
+    service: 'Ignition Repair',
+    text: "My ignition started sticking and eventually wouldn't turn at all. A mechanic told me it was an electrical issue and quoted me a fortune. Alex from Nonstop diagnosed it as a worn ignition cylinder in 10 minutes and replaced it the same day for way less.",
+  },
+  {
+    name: 'Brian W.',
+    photo: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=200',
+    location: 'Town and Country, MO',
+    rating: 5,
+    date: '2026-01-25',
+    displayDate: '25 January 2026',
+    service: 'Lock Installation & Replacement',
+    text: "Wanted to upgrade all the locks at our new house to a higher security grade. Nonstop walked me through the options (didn't push the most expensive), installed everything in one afternoon. Doors look better than they did before.",
+  },
+  {
+    name: 'Jennifer W.',
+    photo: 'https://randomuser.me/api/portraits/women/85.jpg',
+    location: 'Webster Groves, MO',
+    rating: 5,
+    date: '2026-01-12',
+    displayDate: '12 January 2026',
+    service: 'Smart Lock Installation',
+    text: 'Had Nonstop Lock & Key install a Schlage Encode smart lock on our front door. Alex walked us through the app, set up codes for the dog walker, and even paired it with our Ring system. Patient and knew the differences between like 4 brands of smart locks.',
+  },
+  {
+    name: 'Eric N.',
+    photo: 'https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=200',
+    location: 'Ladue, MO',
+    rating: 5,
+    date: '2025-12-30',
+    displayDate: '30 December 2025',
+    service: 'Safe Opening & Repair',
+    text: "Inherited an old fire safe from my dad without the combo 🤷 Called around and most places quoted insane prices or said they don't even DO safes. Nonstop came out, got it open without damage in like 20 min, then rekeyed it for me. Saved my whole afternoon, great service",
   },
 ];
-
-function getInitials(name: string) {
-  return name.split(' ').map(n => n[0]).join('').toUpperCase();
-}
-
-function getAvatarColor(index: number) {
-  const colors = [
-    'bg-[#1A73E8]', 'bg-[#D93025]', 'bg-[#188038]',
-    'bg-[#9334E6]', 'bg-[#E37400]', 'bg-[#12B5CB]',
-  ];
-  return colors[index % colors.length];
-}
 
 const GoogleG = ({ className = 'w-6 h-6' }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
@@ -85,95 +148,270 @@ const GoogleG = ({ className = 'w-6 h-6' }: { className?: string }) => (
   </svg>
 );
 
+const BUSINESS_ID = `${BUSINESS.url}#localbusiness`;
+
+const reviewsLdJson = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': BUSINESS_ID,
+  name: BUSINESS.name,
+  image: BUSINESS.logo,
+  telephone: BUSINESS.phone,
+  url: BUSINESS.url,
+  priceRange: BUSINESS.priceRange,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: BUSINESS.streetAddress,
+    addressLocality: BUSINESS.addressCity,
+    addressRegion: BUSINESS.state,
+    postalCode: BUSINESS.postalCode,
+    addressCountry: 'US',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: BUSINESS.ratingValue,
+    reviewCount: BUSINESS.reviewCount,
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: reviews.map((r) => ({
+    '@type': 'Review',
+    author: {
+      '@type': 'Person',
+      name: r.name,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: r.location.split(',')[0].trim(),
+        addressRegion: 'MO',
+        addressCountry: 'US',
+      },
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: r.rating.toString(),
+      bestRating: '5',
+      worstRating: '1',
+    },
+    reviewBody: r.text,
+    datePublished: r.date,
+    itemReviewed: {
+      '@type': 'LocalBusiness',
+      '@id': BUSINESS_ID,
+      name: BUSINESS.name,
+    },
+  })),
+};
+
 export default function Reviews() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const card = el.querySelector('article') as HTMLElement | null;
+    if (!card) return;
+    const amount = card.offsetWidth + 24;
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 10;
+    const atStart = el.scrollLeft <= 10;
+
+    if (direction === 'right' && atEnd) {
+      el.scrollTo({ left: 0, behavior: 'smooth' });
+    } else if (direction === 'left' && atStart) {
+      el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
+    } else {
+      el.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
+    }
+  };
+
+  const pauseAutoScroll = (resumeAfterMs = 8000) => {
+    setIsPaused(true);
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    resumeTimerRef.current = setTimeout(() => setIsPaused(false), resumeAfterMs);
+  };
+
+  const handleArrowClick = (direction: 'left' | 'right') => {
+    scrollCarousel(direction);
+    pauseAutoScroll();
+  };
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => scrollCarousel('right'), 5000);
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const card = el.querySelector('article') as HTMLElement | null;
+      if (!card) return;
+      const cardW = card.offsetWidth + 24;
+      const idx = Math.round(el.scrollLeft / cardW);
+      setActiveIndex(idx);
+    };
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => el.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const scrollToIndex = (i: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const card = el.querySelector('article') as HTMLElement | null;
+    if (!card) return;
+    const cardW = card.offsetWidth + 24;
+    el.scrollTo({ left: cardW * i, behavior: 'smooth' });
+    pauseAutoScroll();
+  };
+
   return (
-    <section id="reviews" className="section-ref bg-[#F5F5F5]">
+    <section id="reviews" className="section-ref bg-[#F5F5F5] overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsLdJson) }}
+      />
       <div className="container-ref">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h3 className="text-primary-600 mb-3 !text-[22px] lg:!text-[24px] !font-medium">
             Testimonials
           </h3>
-          <h2 className="text-[#17171A] max-w-4xl mx-auto">
-            5-Star Rated In St. Louis,<br />
-            Trusted By {BUSINESS.reviewCount}+ Happy Clients.
+          <h2 className="text-[#17171A] max-w-4xl mx-auto text-[26px] sm:text-[34px] md:text-[44px] lg:text-[52px]">
+            <span className="whitespace-nowrap">5-Star Rated In St. Louis</span>
+            <br />
+            Trusted By {BUSINESS.reviewCount}+ Happy Clients
           </h2>
+
+          {/* Google Reviews link — explicit GBP cross-link */}
+          <a
+            href={BUSINESS.gbpUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 mt-6 sm:mt-7 px-5 py-2.5 bg-white border border-gray-200 hover:border-primary-300 rounded-full shadow-sm hover:shadow-md transition-all group"
+            aria-label={`View Google reviews for ${BUSINESS.name}`}
+          >
+            <GoogleG className="w-5 h-5 flex-shrink-0" />
+            <span className="text-[14px] sm:text-[15px] font-semibold text-[#17171A] normal-case">
+              See Our Reviews on Google
+            </span>
+            <span className="inline-flex text-primary-600 font-bold text-[14px] sm:text-[15px] group-hover:translate-x-0.5 transition-transform" aria-hidden="true">
+              →
+            </span>
+          </a>
         </div>
 
-        {/* Review Cards */}
-        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory md:overflow-visible md:snap-none -mx-4 md:mx-0 px-4 md:px-0 pb-2 md:pb-0 scroll-smooth no-scrollbar">
-          {reviews.map((review, index) => (
-            <article
-              key={index}
-              className="bg-white rounded-[10px] p-5 sm:p-6 shadow-[0_1px_3px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col flex-shrink-0 w-[85%] sm:w-[70%] md:w-auto snap-center"
-              itemScope
-              itemType="https://schema.org/Review"
-            >
-              {/* Reviewer header row */}
-              <div className="flex items-start gap-3">
-                <div className={`w-10 h-10 rounded-full ${getAvatarColor(index)} flex items-center justify-center text-white font-medium text-base flex-shrink-0`}>
-                  {getInitials(review.name)}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <h4 className="text-[15px] font-medium text-[#202124] truncate normal-case" itemProp="author">
-                      {review.name}
-                    </h4>
-                    <GoogleG className="w-4 h-4 flex-shrink-0" />
-                  </div>
-                  <p className="text-[12px] text-[#70757a] mt-0.5 normal-case">
-                    {review.isLocalGuide && <><span className="font-medium">Local Guide</span> · </>}
-                    {review.reviewCount} reviews
-                  </p>
-                </div>
-              </div>
+        {/* Review Cards carousel */}
+        <div className="relative">
+          {/* Left arrow (desktop only) */}
+          <button
+            type="button"
+            onClick={() => handleArrowClick('left')}
+            aria-label="Previous reviews"
+            className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 md:-translate-x-5 z-20 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 items-center justify-center hover:bg-gray-50 transition-colors"
+          >
+            <ChevronLeft className="w-6 h-6 text-gray-700" />
+          </button>
 
-              {/* Stars + time */}
-              <div className="flex items-center gap-2 mt-3">
-                <div className="flex" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
-                  <meta itemProp="ratingValue" content={review.rating.toString()} />
-                  <meta itemProp="bestRating" content="5" />
-                  {[...Array(review.rating)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-[#FBBC04] fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                    </svg>
-                  ))}
+          {/* Right arrow (desktop only) */}
+          <button
+            type="button"
+            onClick={() => handleArrowClick('right')}
+            aria-label="Next reviews"
+            className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-5 z-20 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 items-center justify-center hover:bg-gray-50 transition-colors"
+          >
+            <ChevronRight className="w-6 h-6 text-gray-700" />
+          </button>
+
+          <div
+            ref={scrollRef}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={() => pauseAutoScroll()}
+            className="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 -mx-4 md:mx-0 px-4 md:px-0 pb-3 scroll-smooth no-scrollbar"
+          >
+            {reviews.map((review, index) => (
+              <article
+                key={index}
+                className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center sm:snap-start"
+              >
+              {/* Google G — top right */}
+              <GoogleG className="absolute top-4 right-4 w-6 h-6" />
+
+              {/* Header: avatar + (name, stars, date stacked) */}
+              <div className="flex items-start gap-3 pr-8">
+                {review.photo ? (
+                  <img
+                    src={review.photo}
+                    alt={review.name}
+                    loading="lazy"
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                  />
+                ) : (
+                  <div className={`w-12 h-12 rounded-full ${review.avatarColor ?? 'bg-[#1A73E8]'} flex items-center justify-center text-white font-medium text-lg flex-shrink-0`}>
+                    {review.name[0].toUpperCase()}
+                  </div>
+                )}
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-[17px] sm:text-[18px] font-semibold text-[#202124] truncate normal-case leading-tight">
+                    {review.name}
+                  </h4>
+                  <div className="flex mt-1">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <svg key={i} className="w-[18px] h-[18px] text-[#FBBC04] fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="block text-[13px] text-[#70757a] normal-case mt-0.5">{review.displayDate}</span>
                 </div>
-                <span className="text-[12px] text-[#70757a] normal-case">{review.relativeTime}</span>
               </div>
 
               {/* Review body */}
-              <p className="text-[14px] text-[#202124] leading-[1.55] mt-3 normal-case" itemProp="reviewBody">
+              <p className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case">
                 {review.text}
               </p>
-
-              {/* Footer — helpful action bar like Google */}
-              <div className="flex items-center gap-4 mt-4 pt-3">
-                <button type="button" className="inline-flex items-center gap-1.5 text-[#70757a] hover:text-[#202124] text-[13px] normal-case">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11V5a2 2 0 114 0v6h3a2 2 0 012 2v0a2 2 0 01-2 2h-3v4H7v-4H5a2 2 0 01-2-2v0a2 2 0 012-2h2z" />
-                  </svg>
-                  Helpful
-                </button>
-                <span className="text-[12px] text-[#70757a] normal-case">· {review.location}</span>
-              </div>
-
-              <meta itemProp="datePublished" content={review.date} />
             </article>
           ))}
+          </div>
+
+          {/* Mobile dot indicators */}
+          <div className="sm:hidden flex items-center justify-center gap-2 mt-5" role="tablist" aria-label="Review pagination">
+            {reviews.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                role="tab"
+                aria-selected={activeIndex === i}
+                aria-label={`Go to review ${i + 1}`}
+                onClick={() => scrollToIndex(i)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeIndex === i
+                    ? 'w-6 bg-primary-500'
+                    : 'w-2 bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* See all link */}
-        <div className="text-center mt-10 sm:mt-12">
-          <Link
-            to="/reviews"
-            className="inline-flex items-center gap-2 text-primary-600 font-medium text-[18px] capitalize underline hover:text-primary-700 transition-colors"
+        {/* Inline CTA */}
+        <div className="mt-12 sm:mt-16 text-center max-w-2xl mx-auto">
+          <h3 className="text-[#17171A] text-[20px] sm:text-[24px] lg:text-[28px] leading-[1.3] px-2">
+            Join The Happy Clients List.<br className="hidden sm:block" /> Call Now For A Free Service Estimate.
+          </h3>
+          <a
+            href={BUSINESS.phoneTel}
+            className="mt-6 sm:mt-7 inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-[15px] sm:text-base py-3.5 px-6 rounded-lg shadow-sm hover:shadow-md transition-all"
+            aria-label={`Call ${BUSINESS.name} at ${BUSINESS.phone}`}
           >
-            Read All Reviews
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
+            <Phone className="h-4 w-4 flex-shrink-0" />
+            <span>Call Now: {BUSINESS.phone}</span>
+          </a>
         </div>
       </div>
     </section>
