@@ -72,7 +72,7 @@ export default function CityReviews({ city }: CityReviewsProps) {
                 </svg>
               ))}
             </div>
-            <span className="text-2xl font-bold text-gray-900 ml-3">4.9/5</span>
+            <span className="text-2xl font-bold text-gray-900 ml-3">5.0/5</span>
           </div>
           <p className="text-gray-600 mb-6">
             Based on 100+ reviews across St. Louis

@@ -3,7 +3,7 @@ import { Star, MapPin, Clock } from 'lucide-react';
 const differentiators = [
   {
     label: 'We Have',
-    stat: '5.0 Star Rating',
+    stat: '5 Star Rating',
     sub: 'Trusted By 100+ Local Customers',
     Icon: Star,
   },

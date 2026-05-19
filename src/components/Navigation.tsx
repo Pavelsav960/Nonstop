@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { Phone } from 'lucide-react';
 import { serviceData } from '../data/serviceData';
+import { BUSINESS } from '../constants';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,7 +65,7 @@ export default function Navigation() {
             />
           </div>
 
-          <div className="hidden md:flex space-x-8 items-center text-[16px]">
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-7 items-center text-[16px]">
             <button
               onClick={() => handleNavigation('home')}
               className="text-[#17171A] hover:text-primary-600 transition-colors font-semibold"
@@ -138,6 +140,16 @@ export default function Navigation() {
               Contact
             </Link>
           </div>
+
+          {/* Desktop Call CTA — right side */}
+          <a
+            href={BUSINESS.phoneTel}
+            aria-label={`Call ${BUSINESS.name} at ${BUSINESS.phone}`}
+            className="hidden md:inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-[15px] py-3 px-5 rounded-lg shadow-sm hover:shadow-md transition-all whitespace-nowrap"
+          >
+            <Phone className="w-4 h-4 flex-shrink-0 animate-pulse" />
+            <span>Call {BUSINESS.phone}</span>
+          </a>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}

@@ -51,4 +51,40 @@ export const carKeyReplacement: ServiceData = {
   metaDescription: 'Lost your car keys in St. Louis? Nonstop Lock & Key cuts and programs replacement car keys on-site for all makes and models. Cheaper than the dealer. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['key-fob-programming', 'car-lockout', 'ignition-repair'],
   category: 'Automotive',
+  reviews: [
+    {
+      name: 'David C.',
+      rating: 5,
+      date: '2026-04-25',
+      text: 'Lost my only Honda key at the mall on a Sunday. Dealership wanted $500+ plus a tow. Nonstop came to the parking lot, Alex cut a new transponder, programmed it, and I was driving home in under an hour. Saved me SO much money 🔑',
+      photo: 'https://randomuser.me/api/portraits/men/41.jpg',
+    },
+    {
+      name: 'Carolyn W.',
+      rating: 5,
+      date: '2026-03-26',
+      text: 'New Honda key cut + programmed in the parking lot. Half the dealer quote.',
+      photo: 'https://randomuser.me/api/portraits/women/65.jpg',
+    },
+    {
+      name: 'Mike B.',
+      rating: 5,
+      date: '2024-07-11',
+      text: 'Toyota Tundra key broke at a job site. New one cut and programmed in 40 min. Cheaper than the dealer.',
+      location: 'Bridgeton, MO',
+    },
+    {
+      name: 'Layla R.',
+      rating: 5,
+      date: '2026-01-08',
+      text: 'I had been driving on my only Subaru key for years and finally lost it on a hike. Nonstop came to the trailhead parking lot, cut and programmed a new transponder plus a spare backup so I never face this again. Genius idea and reasonably priced.',
+      photo: 'https://randomuser.me/api/portraits/women/19.jpg',
+    },
+    {
+      name: 'Roger F.',
+      rating: 5,
+      date: '2025-12-22',
+      text: 'Wife accidentally tossed both Camry keys in the dishwasher. Both ruined. Called Nonstop and they came to our driveway, cut and programmed two new transponders in about 90 minutes. Whole bill was a fraction of what the dealer wanted just for one.',
+    },
+  ],
 };

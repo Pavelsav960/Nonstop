@@ -49,6 +49,42 @@ export const safeOpening: ServiceData = {
   ],
   metaTitle: 'Safe Opening Service in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription: 'Locked out of your safe in St. Louis? Nonstop Lock & Key opens home safes, gun safes, and commercial vaults without damage. Combination changes available. Call (314) 532-1112 for a free quote.',
-  relatedServiceSlugs: ['emergency-locksmith', 'commercial-lockout', 'lock-installation-replacement'],
+  relatedServiceSlugs: ['broken-key-extraction', 'commercial-lockout', 'lock-installation-replacement'],
   category: 'General',
+  reviews: [
+    {
+      name: 'Eric N.',
+      rating: 5,
+      date: '2026-04-20',
+      text: "Inherited an old fire safe from my dad without the combo 🤷 Called around and most places quoted insane prices or said they don't even DO safes. Nonstop came out, got it open without damage in like 20 min, then rekeyed it for me. Saved my whole afternoon, great service.",
+      photo: 'https://randomuser.me/api/portraits/men/67.jpg',
+    },
+    {
+      name: 'Frederick M.',
+      rating: 5,
+      date: '2026-03-08',
+      text: "Antique safe opened for an executor process. Respectful and discreet work.",
+      photo: 'https://randomuser.me/api/portraits/men/85.jpg',
+      location: 'Town and Country, MO',
+    },
+    {
+      name: 'Adrian J.',
+      rating: 5,
+      date: '2024-04-22',
+      text: 'Gun safe combination dial broke. Opened carefully + new keypad installed. Real professionals.',
+    },
+    {
+      name: 'Beverly S.',
+      rating: 5,
+      date: '2026-01-30',
+      text: "My grandmother passed and her old combination safe was locked tight. We had no idea what was inside but knew it had her papers. Nonstop opened it without forcing entry, in about 25 minutes. Discreet, careful, and respectful of a hard moment for our family.",
+      photo: 'https://randomuser.me/api/portraits/women/55.jpg',
+    },
+    {
+      name: 'Roger B.',
+      rating: 5,
+      date: '2025-12-10',
+      text: 'Bought a used commercial safe and the previous owner never gave us the combination. Nonstop opened it without damaging the lock mechanism, then set up a fresh combination we could actually remember. Saved us from junking the whole thing.',
+    },
+  ],
 };

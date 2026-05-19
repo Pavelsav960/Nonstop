@@ -1,52 +1,47 @@
 import { Link } from 'react-router';
+import { MapPin } from 'lucide-react';
 import { cityData } from '../../data/cityData';
 import type { ServiceData } from '../../data/serviceData';
 
-interface ServiceAreaLinksProps {
-  service: ServiceData;
-}
+type Props = { service: ServiceData };
 
-export default function ServiceAreaLinks({ service }: ServiceAreaLinksProps) {
+export default function ServiceAreaLinks({ service }: Props) {
   return (
-    <section className="py-16 sm:py-24 bg-gray-50" aria-labelledby="service-areas-heading">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 id="service-areas-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Get {service.name} Near You
+    <section className="section-ref bg-[#F5F5F5]" aria-labelledby="service-areas-heading">
+      <div className="container-ref">
+        <div className="text-center mb-10 sm:mb-12">
+          <p className="text-primary-600 text-[14px] sm:text-[16px] font-semibold tracking-wide normal-case mb-3">
+            Service Areas
+          </p>
+          <h2 id="service-areas-heading" className="text-[#17171A] max-w-4xl mx-auto px-2">
+            {service.name} Across St. Louis County
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We provide {service.name.toLowerCase()} throughout the greater St. Louis metro area. Select your city for local details.
+          <p className="mt-4 text-[16px] sm:text-[18px] lg:text-[19px] text-gray-700 max-w-2xl mx-auto leading-relaxed px-4 font-medium">
+            We provide <strong className="text-[#17171A] font-bold">{service.name.toLowerCase()}</strong> in <strong className="text-[#17171A] font-bold">{cityData.length} cities</strong> across the St. Louis metro. Click your city for local pricing and response times.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
           {cityData.map((city) => (
             <Link
               key={city.slug}
               to={`/locksmith/${city.slug}`}
-              className="flex items-start p-5 bg-white rounded-lg hover:bg-primary-50 transition-all group shadow-sm hover:shadow-md"
+              aria-label={`${service.name} in ${city.name}, MO`}
+              className="group flex items-center gap-2.5 sm:gap-3 bg-white rounded-2xl px-3 py-3 sm:px-4 sm:py-3.5 border border-gray-200 hover:border-primary-300 shadow-sm hover:shadow-md transition-all duration-300"
             >
-              <svg className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-              </svg>
-              <div className="ml-3">
-                <span className="text-sm font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
-                  {service.name} in {city.name}
+              <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-primary-50 group-hover:bg-primary-500 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                <MapPin className="w-4 h-4 text-primary-600 group-hover:text-white transition-colors duration-300" strokeWidth={2.5} />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-[13px] sm:text-[15px] font-bold text-[#17171A] group-hover:text-primary-600 transition-colors normal-case leading-tight">
+                  {city.name}
                 </span>
-                <p className="text-xs text-gray-500 mt-1">{city.responseTime}</p>
-              </div>
+                <span className="block text-[11px] sm:text-[12px] text-gray-500 normal-case mt-1">
+                  {city.responseTime}
+                </span>
+              </span>
             </Link>
           ))}
-        </div>
-        <div className="mt-8 text-center">
-          <Link
-            to="/service-areas"
-            className="inline-flex items-center space-x-2 text-primary-600 hover:text-primary-700 font-semibold text-lg"
-          >
-            <span>View All Service Areas</span>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </Link>
         </div>
       </div>
     </section>

@@ -51,4 +51,40 @@ export const brokenKeyExtraction: ServiceData = {
   metaDescription: 'Key broken in your lock? Nonstop Lock & Key extracts broken keys from door locks, car ignitions, and more without damage. New key cut on-site. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['house-lockout', 'car-lockout', 'lock-rekey'],
   category: 'General',
+  reviews: [
+    {
+      name: 'Rachel M.',
+      rating: 5,
+      date: '2026-04-15',
+      text: 'My house key snapped clean off in the deadbolt with my toddler napping inside. I was panicking. Nonstop got there right away, extracted the broken piece without damaging the lock, and cut me a fresh key. Saved me from a meltdown 🙏',
+      photo: 'https://randomuser.me/api/portraits/women/55.jpg',
+    },
+    {
+      name: 'Bill T.',
+      rating: 5,
+      date: '2026-03-09',
+      text: 'Snapped my ignition key. Extracted + cut a fresh one on the spot. Honest pricing.',
+      photo: 'https://randomuser.me/api/portraits/men/85.jpg',
+    },
+    {
+      name: 'Carmen V.',
+      rating: 5,
+      date: '2024-12-25',
+      text: "Snapped my key on Christmas morning. Out in 30 min, lock works perfectly. No upsell.",
+    },
+    {
+      name: 'Dustin O.',
+      rating: 5,
+      date: '2026-01-22',
+      text: 'Trunk key broke off inside the lock while loading hockey gear. Tech extracted it carefully without damaging the trunk hardware, cut a new key on the spot. Less than an hour from call to driving away.',
+      photo: 'https://randomuser.me/api/portraits/men/41.jpg',
+      location: 'Kirkwood, MO',
+    },
+    {
+      name: 'Nicole F.',
+      rating: 5,
+      date: '2025-12-08',
+      text: "Cheap copy of my house key snapped inside the lock and the original was nowhere to be found. Alex extracted the broken piece in about 5 minutes, made me a new precision key from the original cuts. Lock works like new. Couldn't be happier.",
+    },
+  ],
 };

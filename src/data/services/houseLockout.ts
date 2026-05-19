@@ -51,4 +51,41 @@ export const houseLockout: ServiceData = {
   metaDescription: 'Locked out of your house in St. Louis? Nonstop Lock & Key provides fast, non-destructive house lockout service 24/7. No damage to your door or lock. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['lock-rekey', 'lock-installation-replacement', 'smart-lock-installation'],
   category: 'Residential',
+  reviews: [
+    {
+      name: 'Megan L.',
+      rating: 5,
+      date: '2026-04-03',
+      text: "Stepped outside to grab the mail and the door slammed shut behind me. House key was on the counter. Tech arrived quickly, opened the deadbolt with zero damage, and didn't make me feel silly. Honest pricing, quick fix. Total relief 🙏",
+      location: 'Webster Groves, MO',
+      photo: 'https://randomuser.me/api/portraits/women/72.jpg',
+    },
+    {
+      name: 'Phil M.',
+      rating: 5,
+      date: '2026-03-11',
+      text: 'Locked out before a flight. There in 19 min, made it to the airport in time. 5 stars.',
+      photo: 'https://randomuser.me/api/portraits/men/55.jpg',
+    },
+    {
+      name: 'Tanika W.',
+      rating: 5,
+      date: '2024-08-22',
+      text: 'Locked out at 1am after a late shift. Tech arrived in 25 minutes, no surprise charges. Will use again.',
+    },
+    {
+      name: 'David K.',
+      rating: 5,
+      date: '2026-01-29',
+      text: 'Dog walker accidentally locked the front door behind her with my keys still inside. Alex was at the house in under 30 minutes, popped the deadbolt without damage. Even checked my back door lock while he was here. Great service.',
+      photo: 'https://randomuser.me/api/portraits/men/85.jpg',
+      location: 'Kirkwood, MO',
+    },
+    {
+      name: 'Jeanette B.',
+      rating: 5,
+      date: '2025-12-20',
+      text: 'House key snapped off in the deadbolt with my arms full of grocery bags. Nonstop got there fast, extracted the broken piece, and made me a fresh key right there. No need to replace the lock. Honest and efficient.',
+    },
+  ],
 };

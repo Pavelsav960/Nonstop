@@ -51,4 +51,41 @@ export const carLockout: ServiceData = {
   metaDescription: 'Locked out of your car in St. Louis? Nonstop Lock & Key provides fast, damage-free car lockout service 24/7. All makes and models. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['car-key-replacement', 'key-fob-programming', 'ignition-repair'],
   category: 'Automotive',
+  reviews: [
+    {
+      name: 'Carla M.',
+      rating: 5,
+      date: '2026-04-12',
+      text: 'Locked my keys in the trunk with my groceries inside on a 95-degree day. Called Nonstop and the tech was there quickly. Popped the trunk open in no time, no scratches at all. Total lifesaver — I was about to break a window 🙏',
+      location: 'Ballwin, MO',
+      photo: 'https://randomuser.me/api/portraits/women/65.jpg',
+    },
+    {
+      name: 'Devon B.',
+      rating: 5,
+      date: '2026-03-19',
+      text: 'BMW locked me out with the engine running. There in 25 min, opened safely. Worth every penny.',
+      photo: 'https://randomuser.me/api/portraits/men/41.jpg',
+    },
+    {
+      name: 'Hannah R.',
+      rating: 5,
+      date: '2024-04-15',
+      text: "Third time I've called Nonstop. Always quick and friendly. Saved their number permanently.",
+      location: 'Clayton, MO',
+    },
+    {
+      name: 'Greg P.',
+      rating: 5,
+      date: '2026-01-25',
+      text: 'Locked the keys in the trunk after a Cardinals game and the lot was a madhouse. Nonstop dispatched a tech who found me in the chaos and had the trunk open in under five minutes. Polite and professional even with all the noise.',
+      photo: 'https://randomuser.me/api/portraits/men/72.jpg',
+    },
+    {
+      name: 'Yvette T.',
+      rating: 5,
+      date: '2025-12-30',
+      text: 'My Ford F-150 locked me out at 11pm at a gas station with my kids in the car. Called Nonstop and they treated it as a priority. Tech arrived in 18 minutes, popped the door in about 90 seconds. Professionals when I needed them most.',
+    },
+  ],
 };

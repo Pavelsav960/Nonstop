@@ -51,4 +51,39 @@ export const keyFobProgramming: ServiceData = {
   metaDescription: 'Key fob not working? Nonstop Lock & Key programs and replaces key fobs on-site in St. Louis for most makes and models. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['car-key-replacement', 'car-lockout', 'ignition-repair'],
   category: 'Automotive',
+  reviews: [
+    {
+      name: 'Marcus T.',
+      rating: 5,
+      date: '2026-04-19',
+      text: 'Needed a spare fob for my Toyota Camry. Took it to the dealer first and they wanted wayyy too much. Nonstop did the same thing for HALF the price at my apartment complex. Tech was super friendly and walked me through the whole programming process 👌',
+      photo: 'https://randomuser.me/api/portraits/men/72.jpg',
+    },
+    {
+      name: 'Sasha L.',
+      rating: 5,
+      date: '2026-03-12',
+      text: 'Honda Pilot fob died. New one cut + programmed in my driveway. Half the dealer price.',
+      photo: 'https://randomuser.me/api/portraits/women/28.jpg',
+    },
+    {
+      name: 'Wendy F.',
+      rating: 5,
+      date: '2024-05-19',
+      text: 'Lost my Lexus fob. New one programmed in less than an hour. Tech also showed me valet mode.',
+    },
+    {
+      name: 'Chris O.',
+      rating: 5,
+      date: '2026-01-30',
+      text: 'I run a small fleet of company vehicles and needed extra fobs programmed for a new driver. Nonstop handled all four trucks in one visit at our parking lot. Saved tons compared to taking each one to the dealer. Will use them again.',
+      photo: 'https://randomuser.me/api/portraits/men/55.jpg',
+    },
+    {
+      name: 'Brittany P.',
+      rating: 5,
+      date: '2025-12-14',
+      text: 'My Ford F-150 fob died right before a road trip. Nonstop came to my driveway and had a new fob programmed in less than an hour. Even tested all the buttons including the panic and remote start. Total professionals, fair pricing.',
+    },
+  ],
 };

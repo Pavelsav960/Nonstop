@@ -187,10 +187,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-gray-400">
+        <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <p className="text-gray-400 text-sm">
             &copy; {currentYear} Nonstop Lock & Key. All rights reserved.
           </p>
+          <div className="flex items-center gap-5 text-sm">
+            <Link to="/privacy" className="text-gray-400 hover:text-primary-400 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="text-gray-400 hover:text-primary-400 transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

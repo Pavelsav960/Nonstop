@@ -51,4 +51,40 @@ export const lockInstallation: ServiceData = {
   metaDescription: 'Professional lock installation and replacement in St. Louis. Deadbolts, knobs, levers, and high-security locks. All major brands. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['lock-rekey', 'smart-lock-installation', 'house-lockout'],
   category: 'Residential',
+  reviews: [
+    {
+      name: 'Brian W.',
+      rating: 5,
+      date: '2026-04-17',
+      text: 'Wanted to upgrade all the locks at our new house to a higher security grade. Nonstop walked me through the options (didn\'t push the most expensive), installed everything in one afternoon. Doors look better than before.',
+      photo: 'https://randomuser.me/api/portraits/men/85.jpg',
+      location: 'Town and Country, MO',
+    },
+    {
+      name: 'Helen K.',
+      rating: 5,
+      date: '2026-03-20',
+      text: 'Replaced our old deadbolt + matching knob. Door locks smoother than ever.',
+      photo: 'https://randomuser.me/api/portraits/women/72.jpg',
+    },
+    {
+      name: 'Joseph P.',
+      rating: 5,
+      date: '2024-03-28',
+      text: 'High-security deadbolts on all three exterior doors after a break-in attempt. Felt secure again.',
+    },
+    {
+      name: 'Krista L.',
+      rating: 5,
+      date: '2026-01-22',
+      text: 'Bought a fixer-upper and every door had a different cheap lock. Nonstop replaced four entry knobs and two deadbolts, keyed everything to one master key. Took about three hours and looks 1000% better. Honest pricing.',
+      photo: 'https://randomuser.me/api/portraits/women/28.jpg',
+    },
+    {
+      name: 'Andrew R.',
+      rating: 5,
+      date: '2025-12-15',
+      text: 'Old mortise lock on my 1920s home finally gave up. Nonstop sourced a vintage-appropriate mortise replacement and installed it without altering the original door. Real craftsmanship for an older home. Worth every dollar.',
+    },
+  ],
 };

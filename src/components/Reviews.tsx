@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { ChevronLeft, ChevronRight, Phone } from 'lucide-react';
 import { BUSINESS } from '../constants';
 
-type Review = {
+export type Review = {
   name: string;
   photo: string | null;
   avatarColor?: string;
@@ -15,7 +15,7 @@ type Review = {
   text: string;
 };
 
-const reviews: Review[] = [
+export const homepageReviews: Review[] = [
   {
     name: 'Angela R.',
     photo: 'https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=200',
@@ -24,7 +24,7 @@ const reviews: Review[] = [
     date: '2026-04-22',
     displayDate: '22 April 2026',
     service: 'Car Lockout',
-    text: 'OMG locked my keys IN the car at Schnucks on Manchester with my dog inside, was completely freaking out. Called Nonstop, they got there in under 25 min and had the door open in maybe 90 seconds!! Zero damage. Absolute lifesavers 🙏',
+    text: 'OMG locked my keys IN the car at Schnucks with my dog inside, was completely freaking out. Called Nonstop, they got there in under 25 min and had the door open in maybe 90 seconds!! Zero damage. Absolute lifesavers 🙏',
   },
   {
     name: 'Michael T.',
@@ -34,7 +34,7 @@ const reviews: Review[] = [
     date: '2026-04-12',
     displayDate: '12 April 2026',
     service: 'House Lockout',
-    text: 'Locked out of my condo on Forsyth around 2am. Called Nonstop Lock & Key and Alex showed up in 18 minutes, popped the door without a single mark. Way faster than I expected for the middle of the night. Very professional guy.',
+    text: 'Locked out at 2am. Alex showed up in 18 minutes, no damage. Pro.',
   },
   {
     name: 'Ryan G.',
@@ -42,10 +42,10 @@ const reviews: Review[] = [
     avatarColor: 'bg-[#1A73E8]',
     location: 'Chesterfield, MO',
     rating: 5,
-    date: '2026-04-05',
-    displayDate: '5 April 2026',
+    date: '2024-06-08',
+    displayDate: '8 June 2024',
     service: 'Commercial Lockout',
-    text: "Couldn't get into my office Saturday morning for an inventory check. Nonstop came out within the hour, got me in without damaging the deadbolt. Same tech recommended a stronger lock for the back door and installed it later that week.",
+    text: "Couldn't get into my office Saturday morning. Nonstop came out within the hour, got me in with no damage. Quick and professional.",
   },
   {
     name: 'Vanessa K.',
@@ -55,7 +55,7 @@ const reviews: Review[] = [
     date: '2026-03-30',
     displayDate: '30 March 2026',
     service: 'Emergency Locksmith',
-    text: '3am emergency, lost my keys at a wedding downtown 🤦‍♀️ Called like 5 places and only Nonstop actually answered. Tech was at my Airbnb in 22 minutes!! Did NOT expect that level of service that late at night, seriously thank you!!!',
+    text: '3am emergency, lost my keys at a wedding downtown 🤦‍♀️ Called like 5 places and only Nonstop actually answered. Tech was at my Airbnb fast!! Did NOT expect that level of service that late at night, seriously thank you!!!',
   },
   {
     name: 'Jason P.',
@@ -65,7 +65,7 @@ const reviews: Review[] = [
     date: '2026-03-21',
     displayDate: '21 March 2026',
     service: 'Broken Key Extraction',
-    text: 'Snapped my house key off in the lock at 11pm with my kids waiting in the car 😬 stressed!! Called Nonstop, tech came in 25 minutes, extracted the broken piece, tested the cylinder and said the lock was still good. Charged exactly what he quoted on the phone. Solid guys, would def call them again',
+    text: 'Snapped my house key off in the lock at 11pm with my kids waiting in the car 😬 stressed!! Called Nonstop, tech came quickly, extracted the broken piece, tested the cylinder and said the lock was still good. Charged exactly what he quoted on the phone. Solid guys, would def call them again',
   },
   {
     name: 'Sarah M.',
@@ -174,7 +174,7 @@ const reviewsLdJson = {
     bestRating: '5',
     worstRating: '1',
   },
-  review: reviews.map((r) => ({
+  review: homepageReviews.map((r) => ({
     '@type': 'Review',
     author: {
       '@type': 'Person',
@@ -332,7 +332,7 @@ export default function Reviews() {
             onTouchStart={() => pauseAutoScroll()}
             className="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 -mx-4 md:mx-0 px-4 md:px-0 pb-3 scroll-smooth no-scrollbar"
           >
-            {reviews.map((review, index) => (
+            {homepageReviews.map((review, index) => (
               <article
                 key={index}
                 className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center sm:snap-start"
@@ -379,9 +379,9 @@ export default function Reviews() {
           ))}
           </div>
 
-          {/* Mobile dot indicators */}
-          <div className="sm:hidden flex items-center justify-center gap-2 mt-5" role="tablist" aria-label="Review pagination">
-            {reviews.map((_, i) => (
+          {/* Dot indicators */}
+          <div className="flex items-center justify-center gap-2 mt-6 sm:mt-8" role="tablist" aria-label="Review pagination">
+            {homepageReviews.map((_, i) => (
               <button
                 key={i}
                 type="button"

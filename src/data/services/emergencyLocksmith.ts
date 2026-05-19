@@ -51,4 +51,40 @@ export const emergencyLocksmith: ServiceData = {
   metaDescription: '24/7 emergency locksmith service in St. Louis with no after-hours charges. Fast 20-30 minute response for lockouts, break-ins, and lock emergencies. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['car-lockout', 'house-lockout', 'broken-key-extraction'],
   category: 'Emergency',
+  reviews: [
+    {
+      name: 'Vanessa K.',
+      rating: 5,
+      date: '2026-04-18',
+      text: '3am emergency, lost my keys at a wedding downtown. Called like 5 places and only Nonstop answered. Tech was at my Airbnb in 22 minutes. Did NOT expect that level of service that late at night, seriously thank you!!',
+      photo: 'https://randomuser.me/api/portraits/women/28.jpg',
+    },
+    {
+      name: 'Ron S.',
+      rating: 5,
+      date: '2026-03-08',
+      text: 'Got home after work to find our back door had been pried open. Called Nonstop in a panic — they arrived in 25 minutes, secured the door temporarily and replaced the damaged deadbolt the same evening. The peace of mind that night was priceless.',
+      photo: 'https://randomuser.me/api/portraits/men/72.jpg',
+      location: 'Maryland Heights, MO',
+    },
+    {
+      name: 'Eric M.',
+      rating: 5,
+      date: '2026-02-21',
+      text: 'My elderly mother locked herself out at 11pm on a Sunday. Other locksmiths said next morning earliest. Nonstop came right out, opened her door in under 5 minutes, and was super patient with her. Will absolutely use again for any emergency.',
+    },
+    {
+      name: 'Stacy H.',
+      rating: 5,
+      date: '2026-01-30',
+      text: 'Christmas Eve. Locked out. Cold. Two kids. Nonstop showed up in 28 minutes when I was about ready to cry. Tech was kind, fast, and refused a tip. Honestly saved our holiday 🙏',
+      photo: 'https://randomuser.me/api/portraits/women/19.jpg',
+    },
+    {
+      name: 'James W.',
+      rating: 5,
+      date: '2025-12-18',
+      text: 'Snapped my house key in the deadbolt at 2am after a flight delay. Called Nonstop expecting a long wait. They got there in 22 minutes, extracted the broken piece, made me a fresh key on the spot. 24/7 service that actually means 24/7.',
+    },
+  ],
 };

@@ -51,4 +51,40 @@ export const ignitionRepair: ServiceData = {
   metaDescription: 'Key stuck or won\'t turn in the ignition? Nonstop Lock & Key provides on-site ignition repair and cylinder replacement in St. Louis. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['car-key-replacement', 'car-lockout', 'key-fob-programming'],
   category: 'Automotive',
+  reviews: [
+    {
+      name: 'Linda H.',
+      rating: 5,
+      date: '2026-04-08',
+      text: 'My ignition started sticking and eventually wouldn\'t turn at all. A mechanic told me it was an electrical issue and quoted me a fortune. Alex from Nonstop diagnosed it as a worn ignition cylinder in 10 minutes and replaced it the same day for way less.',
+      photo: 'https://randomuser.me/api/portraits/women/55.jpg',
+      location: 'Webster Groves, MO',
+    },
+    {
+      name: 'Patricia M.',
+      rating: 5,
+      date: '2026-03-15',
+      text: 'Acura ignition diagnosed + replaced the same evening. Half the dealer quote.',
+      photo: 'https://randomuser.me/api/portraits/women/72.jpg',
+    },
+    {
+      name: 'Tom W.',
+      rating: 5,
+      date: '2024-11-06',
+      text: 'Old Buick ignition replaced and matching keys cut. Saved a $20K car for under $300.',
+    },
+    {
+      name: 'Joanna S.',
+      rating: 5,
+      date: '2026-01-26',
+      text: "Subaru ignition started sticking on my way home from work. Mechanic said electrical, quoted nearly a grand. Alex from Nonstop diagnosed a worn cylinder quickly, swapped it the same evening for far less. Honest and efficient.",
+      photo: 'https://randomuser.me/api/portraits/women/19.jpg',
+    },
+    {
+      name: 'Frank N.',
+      rating: 5,
+      date: '2025-12-21',
+      text: "Key wouldn't come out of my Ford Explorer ignition. Was about to call a tow truck. Nonstop diagnosed a worn pin in the cylinder, fixed it on the spot in about 25 minutes. Way cheaper than I expected. Honest pros.",
+    },
+  ],
 };

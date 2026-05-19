@@ -92,12 +92,47 @@ export default function Contact() {
             <h3 className="mb-4 sm:mb-6">Send Us a Message</h3>
 
             {isSubmitted ? (
-              <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                <svg className="w-12 h-12 sm:w-16 sm:h-16 text-green-500 mx-auto mb-3 sm:mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Thank You!</h4>
-                <p className="text-sm sm:text-base text-gray-600">We'll get back to you within 24 hours.</p>
+              <div className="bg-green-50 border border-green-200 rounded-2xl p-6 sm:p-8">
+                <div className="text-center mb-6 sm:mb-7">
+                  <svg className="w-12 h-12 sm:w-16 sm:h-16 text-green-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
+                    Thank You! Message Received.
+                  </h4>
+                  <p className="text-[14px] sm:text-[15px] text-gray-700 normal-case">
+                    Here's what happens next:
+                  </p>
+                </div>
+
+                <ol className="space-y-4 sm:space-y-5">
+                  {[
+                    { title: 'We Review Your Request', desc: 'Our team reads through the details you sent and matches you with the right technician for the job.' },
+                    { title: 'We Call You Back', desc: 'A real team member calls to confirm the details, share an upfront price, and set a window for arrival.' },
+                    { title: 'Technician Dispatched', desc: 'Our nearest mobile locksmith heads to your location and gets the job done on-site.' },
+                  ].map((step, i) => (
+                    <li key={i} className="flex items-start gap-3 sm:gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-primary-500 text-white font-bold text-[14px] sm:text-[15px] flex items-center justify-center shadow-sm">
+                        {i + 1}
+                      </span>
+                      <div className="min-w-0 flex-1 pt-0.5">
+                        <p className="text-[15px] sm:text-[16px] font-bold text-gray-900 leading-tight mb-1 normal-case">
+                          {step.title}
+                        </p>
+                        <p className="text-[13px] sm:text-[14px] text-gray-700 leading-[1.55] normal-case">
+                          {step.desc}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+
+                <p className="mt-6 sm:mt-7 pt-5 sm:pt-6 border-t border-green-200 text-center text-[13px] sm:text-[14px] text-gray-700 normal-case">
+                  Need help right now? Call{' '}
+                  <a href={BUSINESS.phoneTel} className="text-primary-600 hover:text-primary-700 font-bold underline underline-offset-2">
+                    {BUSINESS.phone}
+                  </a>
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">

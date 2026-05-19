@@ -9,6 +9,7 @@ export interface CityReview {
   date: string;
   text: string;
   service: string;
+  photo?: string;
 }
 
 export interface CityPricing {

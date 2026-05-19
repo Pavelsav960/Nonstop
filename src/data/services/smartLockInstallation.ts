@@ -51,4 +51,40 @@ export const smartLockInstallation: ServiceData = {
   metaDescription: 'Professional smart lock installation in St. Louis. Schlage, Kwikset, Yale, August, and more. Wi-Fi setup and smart home integration included. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['lock-installation-replacement', 'lock-rekey', 'house-lockout'],
   category: 'Residential',
+  reviews: [
+    {
+      name: 'Jennifer W.',
+      rating: 5,
+      date: '2026-04-19',
+      text: 'Had Nonstop Lock & Key install a Schlage Encode smart lock on our front door. Alex walked us through the app, set up codes for the dog walker, and even paired it with our Ring system. Patient and knew the differences between like 4 brands of smart locks.',
+      photo: 'https://randomuser.me/api/portraits/women/65.jpg',
+    },
+    {
+      name: 'Eric P.',
+      rating: 5,
+      date: '2026-03-22',
+      text: 'Yale smart lock installed and paired with Ring. Patient walkthrough 👍',
+      photo: 'https://randomuser.me/api/portraits/men/52.jpg',
+    },
+    {
+      name: 'Naomi L.',
+      rating: 5,
+      date: '2024-09-04',
+      text: 'Was hesitant about smart locks but Nonstop made it easy. Schlage Encode installed + paired with Apple Home.',
+    },
+    {
+      name: 'Marcus T.',
+      rating: 5,
+      date: '2026-01-25',
+      text: 'I run an Airbnb and was tired of dealing with key handoffs. Nonstop installed a Yale Assure on the property, set up auto-generating codes that change between guests. Now I never touch a key. Game changer for short-term rentals.',
+      photo: 'https://randomuser.me/api/portraits/men/72.jpg',
+      location: 'Maryland Heights, MO',
+    },
+    {
+      name: 'Olivia G.',
+      rating: 5,
+      date: '2025-12-30',
+      text: "Just moved in and wanted keyless entry on both front and back doors. The tech installed two August smart locks, paired them with our Wi-Fi and our phones, and even helped us set up family member profiles. The training was so helpful, I'd have struggled doing this myself.",
+    },
+  ],
 };

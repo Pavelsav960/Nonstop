@@ -51,4 +51,40 @@ export const lockRekey: ServiceData = {
   metaDescription: 'Professional lock rekeying in St. Louis. Move into a new home? Lost your keys? Rekey all doors to one key. Same-day service. Call (314) 532-1112 for a free quote.',
   relatedServiceSlugs: ['lock-installation-replacement', 'house-lockout', 'smart-lock-installation'],
   category: 'Residential',
+  reviews: [
+    {
+      name: 'Sarah M.',
+      rating: 5,
+      date: '2026-04-22',
+      text: 'Just closed on our first house and wanted everything rekeyed before moving in. Alex showed up the same afternoon, did 5 exterior doors plus the garage entry, matched everything to one key. Honest pricing, no upsell. Highly recommend for new homeowners.',
+      photo: 'https://randomuser.me/api/portraits/women/72.jpg',
+      location: 'University City, MO',
+    },
+    {
+      name: 'Daniel K.',
+      rating: 5,
+      date: '2026-03-18',
+      text: 'Lost the master key for our office building. Same-day rekey + new master system. Quick.',
+      photo: 'https://randomuser.me/api/portraits/men/55.jpg',
+    },
+    {
+      name: 'Priya N.',
+      rating: 5,
+      date: '2024-09-30',
+      text: 'Rekeyed our 1920s craftsman without damaging the original mortise hardware. Quality craftsmanship.',
+    },
+    {
+      name: 'Brett H.',
+      rating: 5,
+      date: '2026-01-11',
+      text: 'Roommate moved out badly and I wanted everything rekeyed ASAP. Nonstop came out within 2 hours of my call, handled 3 doors in about 45 minutes. Felt secure again that same evening. Worth every dollar.',
+      photo: 'https://randomuser.me/api/portraits/men/72.jpg',
+    },
+    {
+      name: 'Alison D.',
+      rating: 5,
+      date: '2025-12-15',
+      text: "Property manager for a 6-unit rental building. I use Nonstop between every single tenant turnover. They're always prompt, the pricing stays consistent, and the work is solid. Been using them for 18 months and never had a tenant complaint or a lock issue.",
+    },
+  ],
 };

@@ -4,13 +4,17 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import ServiceSEO from '../components/ServiceSEO';
 import ServiceHero from '../components/service/ServiceHero';
+import ServiceStrip from '../components/ServiceStrip';
 import ServiceContent from '../components/service/ServiceContent';
-import ServiceBenefits from '../components/service/ServiceBenefits';
 import ServiceHowItWorks from '../components/service/ServiceHowItWorks';
+import ServiceBenefits from '../components/service/ServiceBenefits';
+import ServiceReviewsSection from '../components/service/ServiceReviewsSection';
+import HowWeAreDifferent from '../components/HowWeAreDifferent';
+import ServiceAreaLinks from '../components/service/ServiceAreaLinks';
+import Guarantee from '../components/Guarantee';
 import ServiceFAQ from '../components/service/ServiceFAQ';
 import ServiceRelated from '../components/service/ServiceRelated';
-import ServiceAreaLinks from '../components/service/ServiceAreaLinks';
-import ServiceCTA from '../components/service/ServiceCTA';
+import Contact from '../components/Contact';
 
 export default function ServicePage() {
   const { serviceSlug } = useParams<{ serviceSlug: string }>();
@@ -39,50 +43,30 @@ export default function ServicePage() {
     );
   }
 
+  const relatedStripServices = service.relatedServiceSlugs
+    .map((slug) => serviceData.find((s) => s.slug === slug))
+    .filter((s): s is typeof serviceData[number] => Boolean(s))
+    .map((s) => ({ slug: s.slug, label: s.name }));
+
   return (
-    <div className="min-h-screen animate-fade-in">
+    <>
       <ServiceSEO service={service} />
       <Navigation />
-
-      <nav aria-label="Breadcrumb" className="bg-gray-100 pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <ol className="flex items-center space-x-2 text-sm text-gray-600">
-            <li>
-              <Link to="/" className="hover:text-primary-600 transition-colors">Home</Link>
-            </li>
-            <li className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-              <Link to="/services" className="hover:text-primary-600 transition-colors">Services</Link>
-            </li>
-            <li className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-              <span className="font-medium text-gray-900">{service.name}</span>
-            </li>
-          </ol>
-        </div>
-      </nav>
-
       <main>
-        <article itemScope itemType="https://schema.org/Service">
-          <meta itemProp="serviceType" content={service.name} />
-          <meta itemProp="provider" content="Nonstop Lock & Key" />
-
-          <ServiceHero service={service} />
-          <ServiceHowItWorks service={service} />
-          <ServiceContent service={service} />
-          <ServiceBenefits service={service} />
-          <ServiceAreaLinks service={service} />
-          <ServiceFAQ service={service} />
-          <ServiceRelated service={service} />
-          <ServiceCTA service={service} />
-        </article>
+        <ServiceHero service={service} />
+        <ServiceStrip services={relatedStripServices} heading="Related Services" />
+        <ServiceHowItWorks service={service} />
+        <ServiceReviewsSection service={service} />
+        <ServiceBenefits service={service} />
+        <HowWeAreDifferent />
+        <ServiceContent service={service} />
+        <ServiceAreaLinks service={service} />
+        <Guarantee />
+        <ServiceFAQ service={service} />
+        <ServiceRelated service={service} />
+        <Contact />
       </main>
-
       <Footer />
-    </div>
+    </>
   );
 }

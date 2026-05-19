@@ -8,6 +8,15 @@ export interface ServiceHowItWorksStep {
   description: string;
 }
 
+export interface ServiceReview {
+  name: string;
+  rating: number;
+  date: string;
+  text: string;
+  location?: string;
+  photo?: string;
+}
+
 export interface ServiceData {
   name: string;
   slug: string;
@@ -22,6 +31,7 @@ export interface ServiceData {
   metaDescription: string;
   relatedServiceSlugs: string[];
   category: 'Automotive' | 'Residential' | 'Emergency' | 'General';
+  reviews?: ServiceReview[];
 }
 
 export { serviceData, servicesByCategory } from './services/index';

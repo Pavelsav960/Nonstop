@@ -2,7 +2,6 @@ import type { ServiceData } from '../serviceData';
 import { carLockout } from './carLockout';
 import { houseLockout } from './houseLockout';
 import { commercialLockout } from './commercialLockout';
-import { emergencyLocksmith } from './emergencyLocksmith';
 import { brokenKeyExtraction } from './brokenKeyExtraction';
 import { lockRekey } from './lockRekey';
 import { carKeyReplacement } from './carKeyReplacement';
@@ -16,7 +15,6 @@ export const serviceData: ServiceData[] = [
   carLockout,
   houseLockout,
   commercialLockout,
-  emergencyLocksmith,
   brokenKeyExtraction,
   lockRekey,
   carKeyReplacement,

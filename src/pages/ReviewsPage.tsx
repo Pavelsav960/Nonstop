@@ -1,108 +1,17 @@
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
+import { Phone, KeyRound, MapPin, ShieldCheck } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import HowWeAreDifferent from '../components/HowWeAreDifferent';
+import Guarantee from '../components/Guarantee';
+import Contact from '../components/Contact';
+import ReviewsGrid, { reviews } from '../components/reviews/ReviewsGrid';
+import LeaveReviewSection from '../components/reviews/LeaveReviewSection';
 import { BUSINESS } from '../constants';
 import { cityData } from '../data/cityData';
-
-const reviews = [
-  {
-    name: 'Michael T.',
-    location: 'Clayton',
-    rating: 5,
-    date: '2025-01-15',
-    service: 'House Lockout',
-    text: 'Locked out of my condo on Forsyth at 2am after losing my keys at dinner. Called Nonstop Lock & Key and they had a technician at my door in under 20 minutes on a Saturday night. He opened the deadbolt without a single mark on the door, then rekeyed it on the spot so the lost keys wouldn\'t work.',
-  },
-  {
-    name: 'Sarah M.',
-    location: 'University City',
-    rating: 5,
-    date: '2025-02-10',
-    service: 'Lock Rekeying',
-    text: 'Had all the locks rekeyed after closing on our house in University City. The technician arrived on time, rekeyed five exterior doors in about two hours, and set everything to work with a single key. He even tightened a loose strike plate he noticed on the back door.',
-  },
-  {
-    name: 'David C.',
-    location: 'Chesterfield',
-    rating: 5,
-    date: '2025-01-28',
-    service: 'Car Key Replacement',
-    text: 'Lost my only car key at Chesterfield Mall and was stranded in the parking lot. Nonstop Lock & Key came out, cut a new transponder key, and programmed it to start the engine — all in the parking lot in about 40 minutes. Saved me from an expensive tow to the dealership.',
-  },
-  {
-    name: 'Jennifer W.',
-    location: 'Webster Groves',
-    rating: 5,
-    date: '2025-02-05',
-    service: 'Smart Lock Installation',
-    text: 'Had Nonstop install a Schlage Encode smart lock on our front door in Webster Groves. The technician handled the installation cleanly, set up the app on both our phones, and programmed guest codes for the dog walker. Very knowledgeable about smart lock brands.',
-  },
-  {
-    name: 'Jason P.',
-    location: 'Kirkwood',
-    rating: 5,
-    date: '2025-03-01',
-    service: 'Emergency Locksmith',
-    text: 'Broken key snapped off in our front door lock at 11pm on a weeknight in Kirkwood. Called Nonstop and the locksmith arrived in about 25 minutes. He extracted the broken piece, tested the cylinder, and determined the lock was still in good shape. Quick and professional.',
-  },
-  {
-    name: 'Angela R.',
-    location: 'Ballwin',
-    rating: 5,
-    date: '2025-02-20',
-    service: 'Car Lockout',
-    text: 'Locked my keys in the car with the engine running outside the grocery store on Manchester Road in Ballwin. Called in a panic and they treated it as a priority. Technician arrived in under 30 minutes and had the door open in two minutes flat. No damage at all.',
-  },
-  {
-    name: 'Marcus J.',
-    location: 'Maryland Heights',
-    rating: 5,
-    date: '2025-03-10',
-    service: 'Car Lockout',
-    text: 'Locked my keys in the car at the Hollywood Casino parking garage on a Friday night. Called Nonstop Lock & Key expecting a long wait, but the technician arrived in about 20 minutes. He had the door open quickly without any damage. Great service when I really needed it.',
-  },
-  {
-    name: 'Patricia W.',
-    location: 'Olivette',
-    rating: 5,
-    date: '2025-01-22',
-    service: 'Lock Replacement',
-    text: 'The deadbolt on our front door off Price Road had a worn-out mechanism that was getting harder to turn every day. The technician from Nonstop replaced it with a heavy-duty Kwikset deadbolt and made sure everything was aligned perfectly. Door locks and unlocks smoothly now.',
-  },
-  {
-    name: 'Karen M.',
-    location: 'Creve Coeur',
-    rating: 5,
-    date: '2025-02-15',
-    service: 'Car Lockout',
-    text: 'Locked my keys inside the car at Dierbergs on Olive Boulevard while loading groceries. Called Nonstop Lock & Key and the technician was there in about 25 minutes. He had the door open in no time without a scratch. Fair price and fast response — exactly what you need in that situation.',
-  },
-  {
-    name: 'Greg M.',
-    location: 'Bridgeton',
-    rating: 5,
-    date: '2025-03-05',
-    service: 'Car Lockout',
-    text: 'Locked my keys in the car near Lambert Airport after getting back from a red-eye at 5am. Called Nonstop and they dispatched someone to the parking area right away. Technician arrived quickly and got me back in without any fuss. A lifesaver at that hour.',
-  },
-  {
-    name: 'Michelle W.',
-    location: 'Manchester',
-    rating: 5,
-    date: '2025-02-28',
-    service: 'Lock Rekeying',
-    text: 'Had six doors rekeyed at our office plaza on Manchester Road after a staff change. The technician was efficient, professional, and rekeyed all six locks to work with a single master key in under two hours. Great communication throughout the process.',
-  },
-  {
-    name: 'Linda S.',
-    location: 'Overland',
-    rating: 5,
-    date: '2025-01-30',
-    service: 'Car Key Replacement',
-    text: 'Needed a replacement key for my Honda after losing the spare. The technician came to my house on Midland Avenue, cut and programmed a new transponder key on the spot. Cost significantly less than what the Honda dealer quoted. Will definitely use them again.',
-  },
-];
+import { serviceData } from '../data/services';
+import vanImage from '../assets/images/nonstop-lock-and-key-mobile-locksmith-van-st-louis-mo.jpeg';
 
 export default function ReviewsPage() {
   const logoUrl = BUSINESS.logo;
@@ -110,19 +19,10 @@ export default function ReviewsPage() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    '@id': `${BUSINESS.url}/reviews#breadcrumb`,
     itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: BUSINESS.url,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Reviews',
-        item: `${BUSINESS.url}/reviews`,
-      },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BUSINESS.url },
+      { '@type': 'ListItem', position: 2, name: 'Reviews', item: `${BUSINESS.url}/reviews` },
     ],
   };
 
@@ -130,6 +30,7 @@ export default function ReviewsPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     additionalType: 'Locksmith',
+    '@id': `${BUSINESS.url}#localbusiness`,
     name: BUSINESS.legalName,
     image: logoUrl,
     url: BUSINESS.url,
@@ -143,11 +44,7 @@ export default function ReviewsPage() {
       postalCode: BUSINESS.postalCode,
       addressCountry: 'US',
     },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: BUSINESS.lat,
-      longitude: BUSINESS.lng,
-    },
+    geo: { '@type': 'GeoCoordinates', latitude: BUSINESS.lat, longitude: BUSINESS.lng },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: BUSINESS.ratingValue,
@@ -166,41 +63,38 @@ export default function ReviewsPage() {
         bestRating: '5',
         worstRating: '1',
       },
+      itemReviewed: {
+        '@type': 'LocalBusiness',
+        '@id': `${BUSINESS.url}#localbusiness`,
+        name: BUSINESS.name,
+      },
     })),
-    sameAs: [
-      BUSINESS.gbpUrl,
-    ],
+    sameAs: [BUSINESS.gbpUrl],
   };
 
   return (
     <div className="min-h-screen animate-fade-in">
       <Helmet>
-        <title>Customer Reviews | {BUSINESS.name} | 4.9 Stars in St. Louis</title>
+        <title>Customer Reviews | {BUSINESS.name} | 5-Star Locksmith in St. Louis</title>
         <meta
           name="description"
-          content={`Read 100+ five-star reviews from real customers. ${BUSINESS.name} is the trusted locksmith in ${BUSINESS.city}, ${BUSINESS.state} for car lockouts, lock rekeying, key replacement, and emergency service. Call ${BUSINESS.phone}.`}
+          content={`Read ${BUSINESS.reviewCount}+ five-star customer reviews of ${BUSINESS.name}. Real testimonials from St. Louis County residents who trusted us for lockouts, key replacement, rekeys, and 24/7 emergency service. Call ${BUSINESS.phone}.`}
         />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.url}/reviews`} />
-        <meta property="og:title" content={`Customer Reviews | ${BUSINESS.name} | 4.9 Stars in St. Louis`} />
-        <meta
-          property="og:description"
-          content={`Read 100+ five-star reviews from real customers. ${BUSINESS.name} is the trusted locksmith in ${BUSINESS.city} for car lockouts, lock rekeying, key replacement, and 24/7 emergency service.`}
-        />
+        <meta property="og:title" content={`Customer Reviews | ${BUSINESS.name} | 5-Star Locksmith in St. Louis`} />
+        <meta property="og:description" content={`Read ${BUSINESS.reviewCount}+ five-star reviews from real customers. Trusted locksmith in ${BUSINESS.city} for car lockouts, lock rekeying, key replacement, and 24/7 emergency service.`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${BUSINESS.url}/reviews`} />
         <meta property="og:image" content={logoUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:site_name" content={BUSINESS.legalName} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Customer Reviews | ${BUSINESS.name} | 4.9 Stars in St. Louis`} />
-        <meta
-          name="twitter:description"
-          content={`Read 100+ five-star reviews from real customers. ${BUSINESS.name} is the trusted locksmith in ${BUSINESS.city} for car lockouts, lock rekeying, and emergency service.`}
-        />
+        <meta name="twitter:title" content={`Customer Reviews | ${BUSINESS.name} | 5-Star Locksmith in St. Louis`} />
+        <meta name="twitter:description" content={`Read ${BUSINESS.reviewCount}+ five-star reviews from real customers. Trusted locksmith in ${BUSINESS.city}.`} />
         <meta name="twitter:image" content={logoUrl} />
         <meta name="geo.region" content={BUSINESS.region} />
-        <meta name="geo.placename" content={BUSINESS.city} />
+        <meta name="geo.placename" content={`${BUSINESS.city}, ${BUSINESS.state}`} />
         <meta name="geo.position" content={`${BUSINESS.lat};${BUSINESS.lng}`} />
         <meta name="ICBM" content={`${BUSINESS.lat}, ${BUSINESS.lng}`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
@@ -209,213 +103,168 @@ export default function ReviewsPage() {
 
       <Navigation />
 
-      {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="bg-gray-100 pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <ol className="flex items-center space-x-2 text-sm text-gray-600">
-            <li>
-              <Link to="/" className="hover:text-primary-600 transition-colors">Home</Link>
-            </li>
-            <li className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-              <span className="font-medium text-gray-900">Reviews</span>
-            </li>
-          </ol>
-        </div>
-      </nav>
-
       <main>
-        {/* Hero Section */}
-        <header className="pt-8 pb-16 sm:pt-12 sm:pb-24 bg-gradient-to-br from-primary-600 to-primary-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              What Our Customers Say
-            </h1>
-            <p className="text-xl sm:text-2xl text-primary-100 max-w-3xl mx-auto mb-8">
-              Real reviews from real people across the St. Louis metro area. See why homeowners and drivers trust {BUSINESS.name} for all their lock and key needs.
-            </p>
-            <div className="flex items-center justify-center space-x-3">
-              <div className="flex text-yellow-300">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-9 h-9 sm:w-10 sm:h-10 fill-current" viewBox="0 0 20 20">
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                ))}
-              </div>
-              <span className="text-3xl sm:text-4xl font-bold">{BUSINESS.ratingValue}/5</span>
-              <span className="text-primary-200 text-lg sm:text-xl">from {BUSINESS.reviewCount}+ reviews</span>
-            </div>
+        {/* HERO — dark navy + dot pattern, 2-col asymmetric like homepage */}
+        <section className="relative bg-gray-900 pt-24 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+                backgroundSize: '40px 40px',
+              }}
+            />
           </div>
-        </header>
 
-        {/* Reviews Grid */}
-        <section className="py-16 sm:py-24 bg-white" aria-labelledby="reviews-grid-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="reviews-grid-heading" className="sr-only">Customer Reviews</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {reviews.map((review, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-50 rounded-xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-shadow"
-                  itemScope
-                  itemType="https://schema.org/Review"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900" itemProp="author">
-                        {review.name}
-                      </h3>
-                      <p className="text-sm text-gray-500 flex items-center mt-1">
-                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                        </svg>
-                        {review.location}, MO
-                      </p>
-                    </div>
-                    <div className="flex text-yellow-400" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
-                      <meta itemProp="ratingValue" content={review.rating.toString()} />
-                      <meta itemProp="bestRating" content="5" />
-                      {[...Array(review.rating)].map((_, i) => (
-                        <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                        </svg>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="inline-block text-xs font-medium bg-primary-50 text-primary-700 px-2 py-1 rounded-full">
-                      {review.service}
-                    </span>
-                    <time className="text-xs text-gray-400" itemProp="datePublished" dateTime={review.date}>
-                      {new Date(review.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                    </time>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed" itemProp="reviewBody">
-                    &ldquo;{review.text}&rdquo;
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-start w-full max-w-full overflow-hidden">
+
+                {/* LEFT — Value prop */}
+                <div className="text-white w-full max-w-full">
+                  <p className="text-primary-500 text-[14px] sm:text-[16px] font-semibold tracking-[0.15em] uppercase mb-4">
+                    Customer Reviews
                   </p>
-                  <div itemProp="itemReviewed" itemScope itemType="https://schema.org/LocalBusiness">
-                    <meta itemProp="name" content={BUSINESS.legalName} />
+                  <h1 className="!text-[2.25rem] sm:!text-5xl md:!text-6xl lg:!text-[64px] !font-bold !leading-[1.05] mb-6">
+                    Real Reviews From<br />
+                    <span className="text-primary-500">Real St. Louis Customers</span>
+                  </h1>
+                  <p className="text-xl md:text-2xl text-white/85 leading-relaxed mb-8">
+                    See why your neighbors trust {BUSINESS.name} for their lock and key needs.
+                  </p>
+
+                  {/* CTAs */}
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <a
+                      href={BUSINESS.phoneTel}
+                      className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white text-lg font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl tracking-wide"
+                      aria-label={`Call ${BUSINESS.name} at ${BUSINESS.phone}`}
+                    >
+                      <Phone className="h-5 w-5 animate-pulse flex-shrink-0" />
+                      <span>Call Now: {BUSINESS.phone}</span>
+                    </a>
+                    <a
+                      href={BUSINESS.gbpReviewUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white text-lg font-semibold py-4 px-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 tracking-wide"
+                    >
+                      Leave A Review
+                    </a>
                   </div>
                 </div>
-              ))}
+
+                {/* RIGHT — Branded van photo with floating badge */}
+                <div className="w-full max-w-full relative pb-10 sm:pb-12">
+                  <div className="relative h-72 sm:h-96 md:h-[420px] lg:h-[460px] rounded-2xl overflow-hidden shadow-2xl">
+                    <img
+                      src={vanImage}
+                      alt={`${BUSINESS.name} mobile locksmith van serving St. Louis County, MO`}
+                      loading="eager"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+                  </div>
+
+                  {/* Floating brand badge */}
+                  <div className="absolute -bottom-1 sm:-bottom-2 left-4 right-4 sm:left-6 sm:right-auto sm:max-w-[280px] bg-primary-500 text-white p-5 sm:p-6 rounded-2xl shadow-lg">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <ShieldCheck className="w-5 h-5 flex-shrink-0" strokeWidth={2.5} />
+                      <p className="text-[15px] sm:text-base font-bold normal-case">
+                        Family-Owned Since 2010
+                      </p>
+                    </div>
+                    <p className="text-[13px] sm:text-[14px] opacity-90 normal-case leading-snug">
+                      Licensed, insured, and trusted by St. Louis County for over 16 years.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Review Summary Stats */}
-        <section className="py-16 sm:py-20 bg-gray-50" aria-labelledby="stats-heading">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="stats-heading" className="sr-only">Review Statistics</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div className="bg-white rounded-xl p-8 shadow-md">
-                <p className="text-4xl sm:text-5xl font-bold text-primary-600 mb-2">{BUSINESS.reviewCount}+</p>
-                <p className="text-lg text-gray-600 font-medium">Verified Reviews</p>
-              </div>
-              <div className="bg-white rounded-xl p-8 shadow-md">
-                <p className="text-4xl sm:text-5xl font-bold text-primary-600 mb-2">{BUSINESS.ratingValue}/5</p>
-                <p className="text-lg text-gray-600 font-medium">Average Rating</p>
-              </div>
-              <div className="bg-white rounded-xl p-8 shadow-md">
-                <p className="text-4xl sm:text-5xl font-bold text-primary-600 mb-2">20+</p>
-                <p className="text-lg text-gray-600 font-medium">Cities Represented</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* REVIEWS GRID — main content */}
+        <ReviewsGrid />
 
-        {/* Google Review CTA */}
-        <section className="py-16 sm:py-24 bg-white" aria-labelledby="google-review-heading">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 sm:p-12 shadow-lg border border-gray-100">
-              <svg className="w-12 h-12 mx-auto mb-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-              <h2 id="google-review-heading" className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-                Had a Great Experience? Leave Us a Review!
-              </h2>
-              <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
-                Your feedback helps other St. Louis residents find a locksmith they can trust. It only takes a minute and means the world to our small business.
+        {/* LEAVE A GOOGLE REVIEW CTA */}
+        <LeaveReviewSection />
+
+        {/* HOW WE ARE DIFFERENT — universal */}
+        <HowWeAreDifferent />
+
+        {/* SERVICE AREAS — chips linking to city pages */}
+        <section className="section-ref bg-[#F5F5F5]" aria-labelledby="reviews-areas-heading">
+          <div className="container-ref">
+            <div className="text-center mb-10 sm:mb-12">
+              <p className="text-primary-600 text-[14px] sm:text-[16px] font-semibold tracking-wide normal-case mb-3">
+                Reviews By Location
               </p>
-              <a
-                href={BUSINESS.gbpReviewUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg text-lg"
-              >
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#fff"/>
-                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#fff" opacity="0.8"/>
-                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#fff" opacity="0.6"/>
-                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#fff" opacity="0.9"/>
-                </svg>
-                Leave a Google Review
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Serving All of St. Louis */}
-        <section className="py-16 sm:py-24 bg-gray-50" aria-labelledby="service-areas-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 id="service-areas-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Serving All of St. Louis
+              <h2 id="reviews-areas-heading" className="text-[#17171A] max-w-4xl mx-auto px-2">
+                See What Neighbors In Your City Are Saying
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                We proudly serve over 20 cities across the St. Louis metro area. Click on your city to see local reviews, pricing, and response times.
+              <p className="mt-4 text-[16px] sm:text-[18px] text-gray-700 max-w-2xl mx-auto leading-relaxed px-4 font-medium">
+                Tap your city for local reviews, response times, and pricing specific to your area.
               </p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {cityData.map((city) => (
-                <Link
-                  key={city.slug}
-                  to={`/locksmith/${city.slug}`}
-                  className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all border border-gray-100 group"
-                >
-                  <p className="text-sm font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
-                    Locksmith in {city.name}
-                  </p>
-                </Link>
-              ))}
+
+            <div className="max-w-5xl mx-auto">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5">
+                {cityData.map((city) => (
+                  <Link
+                    key={city.slug}
+                    to={`/locksmith/${city.slug}`}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-gray-200 hover:border-primary-400 hover:bg-primary-50 rounded-full text-[14px] sm:text-[15px] font-medium text-[#17171A] hover:text-primary-700 shadow-sm hover:shadow-md transition-all group"
+                    aria-label={`Locksmith reviews in ${city.name}, MO`}
+                  >
+                    <MapPin className="w-3.5 h-3.5 text-primary-500 group-hover:text-primary-600 transition-colors" strokeWidth={2.5} aria-hidden="true" />
+                    {city.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 sm:py-24 bg-gradient-to-br from-primary-600 to-primary-800" aria-labelledby="cta-heading">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-            <h2 id="cta-heading" className="text-3xl sm:text-4xl font-bold mb-6">
-              Ready to Experience 5-Star Locksmith Service?
-            </h2>
-            <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-              Join hundreds of satisfied customers across St. Louis. Available 24/7 for emergencies, with fast response times and upfront pricing.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <a
-                href={BUSINESS.phoneTel}
-                className="inline-block px-10 py-5 bg-white text-primary-600 font-bold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-xl"
-              >
-                Call Now: {BUSINESS.phone}
-              </a>
-              <Link
-                to="/contact"
-                className="inline-block px-8 py-5 bg-primary-700 text-white font-bold rounded-lg hover:bg-primary-900 transition-all border-2 border-white/30 text-xl"
-              >
-                Request a Free Quote
-              </Link>
+        {/* GUARANTEE — universal mid-page breaker */}
+        <Guarantee />
+
+        {/* SERVICES — chips linking to service pages */}
+        <section className="section-ref bg-white" aria-labelledby="reviews-services-heading">
+          <div className="container-ref">
+            <div className="text-center mb-10 sm:mb-12">
+              <p className="text-primary-600 text-[14px] sm:text-[16px] font-semibold tracking-wide normal-case mb-3">
+                Reviews By Service
+              </p>
+              <h2 id="reviews-services-heading" className="text-[#17171A] max-w-4xl mx-auto px-2">
+                Browse Reviews By What We Do
+              </h2>
+              <p className="mt-4 text-[16px] sm:text-[18px] text-gray-700 max-w-2xl mx-auto leading-relaxed px-4 font-medium">
+                Each service page includes reviews from customers who used that exact service.
+              </p>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-6 text-primary-100 text-sm">
-              <Link to="/about" className="hover:text-white transition-colors underline underline-offset-2">About Us</Link>
-              <Link to="/services" className="hover:text-white transition-colors underline underline-offset-2">Our Services</Link>
-              <Link to="/service-areas" className="hover:text-white transition-colors underline underline-offset-2">Service Areas</Link>
+
+            <div className="max-w-5xl mx-auto">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5">
+                {serviceData.map((service) => (
+                  <Link
+                    key={service.slug}
+                    to={`/services/${service.slug}`}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-gray-200 hover:border-primary-400 hover:bg-primary-50 rounded-full text-[14px] sm:text-[15px] font-medium text-[#17171A] hover:text-primary-700 shadow-sm hover:shadow-md transition-all group"
+                    aria-label={`Read reviews about ${service.name}`}
+                  >
+                    <KeyRound className="w-3.5 h-3.5 text-primary-500 group-hover:text-primary-600 transition-colors" strokeWidth={2.5} aria-hidden="true" />
+                    {service.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
+
+        {/* CONTACT — universal */}
+        <Contact />
       </main>
 
       <Footer />

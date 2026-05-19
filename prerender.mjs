@@ -18,7 +18,7 @@ const citySlugs = [
 
 // All service slugs
 const serviceSlugs = [
-  'car-lockout', 'house-lockout', 'commercial-lockout', 'emergency-locksmith',
+  'car-lockout', 'house-lockout', 'commercial-lockout',
   'broken-key-extraction', 'lock-rekey', 'car-key-replacement',
   'key-fob-programming', 'ignition-repair', 'lock-installation-replacement',
   'smart-lock-installation', 'safe-opening',
@@ -32,6 +32,8 @@ const routes = [
   '/about',
   '/contact',
   '/reviews',
+  '/privacy',
+  '/terms',
   ...citySlugs.map(slug => `/locksmith/${slug}`),
   ...serviceSlugs.map(slug => `/services/${slug}`),
 ]

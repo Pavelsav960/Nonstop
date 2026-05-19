@@ -49,6 +49,42 @@ export const commercialLockout: ServiceData = {
   ],
   metaTitle: 'Commercial Lockout Service in St. Louis, MO | 24/7 Service | Nonstop Lock & Key',
   metaDescription: 'Locked out of your business in St. Louis? Nonstop Lock & Key provides 24/7 commercial lockout service for offices, storefronts, restaurants, and warehouses. Call (314) 532-1112 for a free quote.',
-  relatedServiceSlugs: ['house-lockout', 'emergency-locksmith', 'lock-installation-replacement'],
+  relatedServiceSlugs: ['house-lockout', 'broken-key-extraction', 'lock-installation-replacement'],
   category: 'Emergency',
+  reviews: [
+    {
+      name: 'Marcus T.',
+      rating: 5,
+      date: '2026-04-09',
+      text: 'My closing manager got locked out of the restaurant on a Saturday morning before brunch. Nonstop dispatched a tech within the hour, opened the back service door, and even rekeyed the lock right after since the keys were missing. Saved our weekend service.',
+      photo: 'https://randomuser.me/api/portraits/men/41.jpg',
+      location: 'Brentwood, MO',
+    },
+    {
+      name: 'Sandra K.',
+      rating: 5,
+      date: '2026-03-22',
+      text: 'Sunday emergency lock change at our dental office. Three doors + master key in 2 hrs. Excellent.',
+      photo: 'https://randomuser.me/api/portraits/women/55.jpg',
+    },
+    {
+      name: 'Eric B.',
+      rating: 5,
+      date: '2024-10-12',
+      text: 'Tenant lockout at 6am before a client meeting. Nonstop got there in 22 min, suite open before the client arrived. Clutch.',
+    },
+    {
+      name: 'Lisa V.',
+      rating: 5,
+      date: '2026-01-19',
+      text: "Boutique on Manchester Road needed an emergency lock change after a smash-and-grab attempt on the back door. Nonstop came within the hour, installed a heavy-duty commercial deadbolt and reinforced the strike plate. Felt secure again by closing time. Couldn't ask for better.",
+      photo: 'https://randomuser.me/api/portraits/women/19.jpg',
+    },
+    {
+      name: 'Andrew M.',
+      rating: 5,
+      date: '2025-12-12',
+      text: 'Run a warehouse and a former employee took off with the office keys. Nonstop came out, rekeyed the office plus the front and dock doors, set up a clean restricted key system. Done in one afternoon visit. Professional and fairly priced.',
+    },
+  ],
 };

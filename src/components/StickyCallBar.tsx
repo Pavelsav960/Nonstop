@@ -1,44 +1,42 @@
 import { useEffect, useState } from 'react';
+import { Phone } from 'lucide-react';
 import { BUSINESS } from '../constants';
 
 export default function StickyCallBar() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const trigger = document.getElementById('services-include-heading');
-
-    // Pages without the heading (non-home): show immediately so the bar still works there.
-    if (!trigger) {
-      setShow(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setShow(!entry.isIntersecting && entry.boundingClientRect.top < 0);
-      },
-      { threshold: 0 }
-    );
-
-    observer.observe(trigger);
-    return () => observer.disconnect();
+    // Show after the user has scrolled past most of the hero (≈80% viewport height).
+    const onScroll = () => {
+      setShow(window.scrollY > window.innerHeight * 0.8);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-50 md:hidden bg-primary-600 shadow-[0_-2px_10px_rgba(0,0,0,0.15)] transition-all duration-700 ease-out ${
+      className={`fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 shadow-[0_-2px_12px_rgba(0,0,0,0.08)] transition-all duration-500 ease-out ${
         show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full pointer-events-none'
       }`}
+      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+      role="region"
+      aria-label="Quick contact"
     >
-      <a
-        href={BUSINESS.phoneTel}
-        className="flex items-center justify-center gap-2 py-3.5 text-white font-semibold text-lg"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-        Call Now: {BUSINESS.phone}
-      </a>
+      <div className="px-4 pt-2.5 pb-3">
+        <p className="text-center text-[14px] font-semibold text-[#17171A] normal-case mb-2 tracking-tight">
+          Reliable Locksmiths In St. Louis
+        </p>
+        <a
+          href={BUSINESS.phoneTel}
+          className="flex items-center justify-center gap-2 w-full bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white font-bold text-[15px] py-3.5 px-4 rounded-lg shadow-sm transition-colors"
+          aria-label={`Call ${BUSINESS.name} at ${BUSINESS.phone} to talk to an available technician`}
+        >
+          <Phone className="w-[18px] h-[18px] flex-shrink-0" strokeWidth={2.5} />
+          <span>Talk To An Available Technician</span>
+        </a>
+      </div>
     </div>
   );
 }

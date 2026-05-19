@@ -81,26 +81,10 @@ export default function Hero() {
                   <p className="font-bold text-[15px] sm:text-lg md:text-[1.35rem] text-white">
                     5-Star Rated On{' '}
                     <span
-                      className="cursor-pointer hover:text-primary-400 transition-colors inline-flex"
+                      className="cursor-pointer hover:text-primary-400 transition-colors"
                       onClick={() => scrollTo(TESTIMONIALS_ID)}
                     >
-                      {'Google'.split('').map((char, i) => (
-                        <motion.span
-                          key={i}
-                          initial={{ y: 0 }}
-                          animate={{ y: [0, -4, 0] }}
-                          transition={{
-                            duration: 0.3,
-                            delay: i * 0.05,
-                            ease: 'easeInOut',
-                            repeat: Infinity,
-                            repeatDelay: 5,
-                          }}
-                          className="inline-block"
-                        >
-                          {char}
-                        </motion.span>
-                      ))}
+                      Google
                     </span>
                   </p>
                 </div>
