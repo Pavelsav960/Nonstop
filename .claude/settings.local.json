@@ -24,7 +24,8 @@
       "Bash(where ffmpeg *)",
       "Bash(awk -F'to={' '{print $2}')",
       "Bash(awk -F'`' '{print $2}')",
-      "Bash(awk '{print $5, $NF}')"
+      "Bash(awk '{print $5, $NF}')",
+      "Bash(git rm *)"
     ]
   }
 }
