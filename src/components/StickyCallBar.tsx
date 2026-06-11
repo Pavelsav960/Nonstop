@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
 import { Phone } from 'lucide-react';
 import { BUSINESS } from '../constants';
 
 export default function StickyCallBar() {
   const [show, setShow] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     // Show after the user has scrolled past most of the hero (≈80% viewport height).
@@ -14,6 +16,9 @@ export default function StickyCallBar() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  // Hide on blog pages — blog content is purely informational, no conversion CTAs.
+  if (location.pathname.startsWith('/blog')) return null;
 
   return (
     <div

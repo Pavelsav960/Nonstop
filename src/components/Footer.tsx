@@ -126,6 +126,11 @@ export default function Footer() {
                   All Service Areas
                 </Link>
               </li>
+              <li>
+                <Link to="/blog" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
+                  Blog
+                </Link>
+              </li>
             </ul>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2">

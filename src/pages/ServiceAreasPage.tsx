@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
-import { MapPin, Phone, Clock, ShieldCheck, Star, Users, Award } from 'lucide-react';
+import { MapPin, Phone } from 'lucide-react';
 import { BUSINESS } from '../constants';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -8,6 +8,9 @@ import ServiceStrip from '../components/ServiceStrip';
 import HowWeAreDifferent from '../components/HowWeAreDifferent';
 import Guarantee from '../components/Guarantee';
 import Contact from '../components/Contact';
+import ServiceAreasReviewsSection from '../components/serviceAreas/ServiceAreasReviewsSection';
+import ServiceAreasServicesSection from '../components/serviceAreas/ServiceAreasServicesSection';
+import ServiceAreasFAQSection from '../components/serviceAreas/ServiceAreasFAQSection';
 import { cityData } from '../data/cityData';
 import serviceAreasImage from '../assets/images/nonstop-lock-and-key-st-louis-service-areas.webp';
 
@@ -236,37 +239,29 @@ export default function ServiceAreasPage() {
                 Full Metro Coverage
               </p>
               <h2 id="coverage-heading" className="text-[#17171A] max-w-4xl mx-auto px-2">
-                Serving The Entire St. Louis Metro
+                One Local Crew. Every City In St. Louis County.
               </h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center max-w-6xl mx-auto">
-              {/* Left: copy + features */}
+              {/* Left: copy */}
               <div>
-                <p className="text-[16px] lg:text-[18px] text-[#333437] leading-[1.65] mb-5">
-                  Nonstop Lock & Key operates a fleet of fully equipped mobile locksmith units strategically positioned across the St. Louis metropolitan area. Whether you are in downtown St. Louis, the western suburbs of Chesterfield or Ballwin, or anywhere in between, a licensed locksmith can reach you fast.
+                <p className="text-[16px] lg:text-[18px] text-[#333437] leading-[1.7] mb-5">
+                  Nonstop Lock & Key runs a fleet of fully equipped mobile vans positioned across the metro, so whether you are stuck in a parking garage downtown or locked out of a home off Manchester Road, the closest tech heads your way the moment you call.
                 </p>
-                <p className="text-[16px] lg:text-[18px] text-[#333437] leading-[1.65] mb-7">
-                  Our service area spans St. Louis city and the surrounding St. Louis County communities. If your city is not listed, call us anyway — we likely cover your area.
+                <p className="text-[16px] lg:text-[18px] text-[#333437] leading-[1.7] mb-5">
+                  From the historic streets of DeMun and University City, through the family neighborhoods of Kirkwood and Webster Groves, out to the western suburbs of Chesterfield, Ballwin, and Town and Country — we cover the corridors locals actually live and work in. Our techs know the difference between a tight DeMun side street and a Chesterfield cul-de-sac, and we route accordingly.
+                </p>
+                <p className="text-[16px] lg:text-[18px] text-[#333437] leading-[1.7] mb-7">
+                  Same pricing in every city. Same upfront quote. Same family-owned crew. If you do not see your city or zip code on the list, call us anyway — we likely already serve your block.
                 </p>
 
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {[
-                    { Icon: Clock, text: '24/7 service, 365 days a year' },
-                    { Icon: ShieldCheck, text: 'Licensed & insured technicians' },
-                    { Icon: Users, text: 'Local technicians, not call center' },
-                    { Icon: Award, text: 'Family-owned since 2010' },
-                    { Icon: Star, text: `${BUSINESS.ratingValue} stars from ${BUSINESS.reviewCount}+ reviews` },
-                    { Icon: MapPin, text: `${cityData.length} cities served` },
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2.5">
-                      <item.Icon className="w-5 h-5 text-primary-500 flex-shrink-0" strokeWidth={2.5} />
-                      <span className="text-[14px] sm:text-[15px] text-[#17171A] font-medium normal-case">
-                        {item.text}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="inline-flex items-center gap-3 bg-primary-50 border border-primary-200 rounded-xl px-4 py-3.5">
+                  <MapPin className="w-5 h-5 text-primary-600 flex-shrink-0" strokeWidth={2.5} />
+                  <p className="text-[14px] sm:text-[15px] text-[#17171A] font-semibold normal-case">
+                    Don't see your city? <a href={BUSINESS.phoneTel} className="text-primary-600 hover:text-primary-700 font-bold underline underline-offset-2">Call {BUSINESS.phone}</a> — we probably cover it.
+                  </p>
+                </div>
               </div>
 
               {/* Right: map */}
@@ -285,6 +280,15 @@ export default function ServiceAreasPage() {
             </div>
           </div>
         </section>
+
+        {/* CUSTOMER REVIEWS — carousel of 8 area-focused reviews */}
+        <ServiceAreasReviewsSection />
+
+        {/* SERVICES — chip grid linking to all 11 services */}
+        <ServiceAreasServicesSection />
+
+        {/* FAQ — area-specific questions */}
+        <ServiceAreasFAQSection />
 
         {/* GUARANTEE — universal */}
         <Guarantee />

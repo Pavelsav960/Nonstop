@@ -9,6 +9,15 @@
     <meta name="apple-domain-verification" content="FKuoCaSXlov8yHcIkaCjo_A331iX-xWQ4rGEKsYPFxE" />
     <meta name="trustpilot-one-time-domain-verification-id" content="00e58759-1a33-496c-85f0-b082e0a1fd31" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z381QG5BPL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Z381QG5BPL');
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" />
@@ -39,6 +48,7 @@
       "additionalType": "Locksmith",
       "name": "Nonstop Lock & Key",
       "image": "https://nonstoplockandkey.com/nonstop-lock-and-key-st-louis-locksmith-logo-no-bg-final-cut.png",
+      "logo": "https://nonstoplockandkey.com/nonstop-lock-and-key-st-louis-locksmith-logo-no-bg-final-cut.png",
       "@id": "https://nonstoplockandkey.com#localbusiness",
       "url": "https://nonstoplockandkey.com",
       "telephone": "+13145321112",
@@ -47,6 +57,10 @@
       "foundingDate": "2010",
       "numberOfEmployees": "5",
       "slogan": "Family-owned 24/7 mobile locksmith serving St. Louis County since 2010.",
+      "paymentAccepted": "Cash, Credit Card, Debit Card",
+      "currenciesAccepted": "USD",
+      "knowsLanguage": "English",
+      "hasMap": "https://g.page/r/CW7WyktBAIxtEBM",
       "sameAs": [
         "https://g.page/r/CW7WyktBAIxtEBM"
       ],
@@ -195,68 +209,132 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "serviceType": "Emergency Lockout Service",
-              "name": "24/7 Emergency Lockout Service St. Louis",
-              "description": "Fast response 24/7 emergency lockout services for homes, cars, and businesses in St. Louis",
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "Nonstop Lock & Key"
-              },
-              "areaServed": {
-                "@type": "City",
-                "name": "St. Louis"
-              }
+              "serviceType": "Car Lockout",
+              "name": "Car Lockout Service St. Louis",
+              "description": "Fast 24/7 mobile car lockout service across St. Louis County. Non-destructive entry, no damage to vehicle.",
+              "url": "https://nonstoplockandkey.com/services/car-lockout",
+              "provider": { "@id": "https://nonstoplockandkey.com#localbusiness" },
+              "areaServed": { "@type": "AdministrativeArea", "name": "St. Louis County, MO" }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "serviceType": "Residential Locksmith",
-              "name": "Residential Locksmith Services St. Louis",
-              "description": "Home lock installation, repair, rekeying, and security upgrades in St. Louis",
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "Nonstop Lock & Key"
-              },
-              "areaServed": {
-                "@type": "City",
-                "name": "St. Louis"
-              }
+              "serviceType": "House Lockout",
+              "name": "House Lockout Service St. Louis",
+              "description": "Emergency residential lockout service with non-destructive entry. 24/7 mobile dispatch across St. Louis County.",
+              "url": "https://nonstoplockandkey.com/services/house-lockout",
+              "provider": { "@id": "https://nonstoplockandkey.com#localbusiness" },
+              "areaServed": { "@type": "AdministrativeArea", "name": "St. Louis County, MO" }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "serviceType": "Commercial Locksmith",
-              "name": "Commercial Locksmith Services St. Louis",
-              "description": "Business security solutions including master key systems, access control, and panic bars in St. Louis",
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "Nonstop Lock & Key"
-              },
-              "areaServed": {
-                "@type": "City",
-                "name": "St. Louis"
-              }
+              "serviceType": "Commercial Lockout",
+              "name": "Commercial Lockout Service St. Louis",
+              "description": "24/7 commercial property lockout service for offices, retail, and businesses. Verified entry only.",
+              "url": "https://nonstoplockandkey.com/services/commercial-lockout",
+              "provider": { "@id": "https://nonstoplockandkey.com#localbusiness" },
+              "areaServed": { "@type": "AdministrativeArea", "name": "St. Louis County, MO" }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "serviceType": "Automotive Locksmith",
-              "name": "Automotive Locksmith Services St. Louis",
-              "description": "Car key replacement, key fob programming, ignition repair, and vehicle lockout services in St. Louis",
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "Nonstop Lock & Key"
-              },
-              "areaServed": {
-                "@type": "City",
-                "name": "St. Louis"
-              }
+              "serviceType": "Broken Key Extraction",
+              "name": "Broken Key Extraction St. Louis",
+              "description": "Professional broken key removal from locks and ignitions without damaging the cylinder.",
+              "url": "https://nonstoplockandkey.com/services/broken-key-extraction",
+              "provider": { "@id": "https://nonstoplockandkey.com#localbusiness" },
+              "areaServed": { "@type": "AdministrativeArea", "name": "St. Louis County, MO" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "serviceType": "Lock Rekey",
+              "name": "Lock Rekey Service St. Louis",
+              "description": "Mobile lock rekeying for homes and businesses. Make old keys obsolete without replacing the lock hardware.",
+              "url": "https://nonstoplockandkey.com/services/lock-rekey",
+              "provider": { "@id": "https://nonstoplockandkey.com#localbusiness" },
+              "areaServed": { "@type": "AdministrativeArea", "name": "St. Louis County, MO" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "serviceType": "Car Key Replacement",
+              "name": "Car Key Replacement St. Louis",
+              "description": "On-site car key cutting and transponder programming for all major makes. Half the dealer price.",
+              "url": "https://nonstoplockandkey.com/services/car-key-replacement",
+              "provider": { "@id": "https://nonstoplockandkey.com#localbusiness" },
+              "areaServed": { "@type": "AdministrativeArea", "name": "St. Louis County, MO" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "serviceType": "Key Fob Programming",
+              "name": "Key Fob Programming St. Louis",
+              "description": "Mobile key fob and remote programming for Toyota, Honda, Ford, GM, Hyundai, and other major brands.",
+              "url": "https://nonstoplockandkey.com/services/key-fob-programming",
+              "provider": { "@id": "https://nonstoplockandkey.com#localbusiness" },
+              "areaServed": { "@type": "AdministrativeArea", "name": "St. Louis County, MO" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "serviceType": "Ignition Repair",
+              "name": "Ignition Repair Service St. Louis",
+              "description": "Car ignition cylinder repair and replacement at your location for keys that won't turn or ignitions that fail.",
+              "url": "https://nonstoplockandkey.com/services/ignition-repair",
+              "provider": { "@id": "https://nonstoplockandkey.com#localbusiness" },
+              "areaServed": { "@type": "AdministrativeArea", "name": "St. Louis County, MO" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "serviceType": "Lock Installation",
+              "name": "Lock Installation & Replacement St. Louis",
+              "description": "Professional installation of residential and commercial locks, deadbolts, and high-security hardware.",
+              "url": "https://nonstoplockandkey.com/services/lock-installation-replacement",
+              "provider": { "@id": "https://nonstoplockandkey.com#localbusiness" },
+              "areaServed": { "@type": "AdministrativeArea", "name": "St. Louis County, MO" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "serviceType": "Smart Lock Installation",
+              "name": "Smart Lock Installation St. Louis",
+              "description": "Installation and app setup for Schlage Encode, Yale Assure, August, Kwikset Halo, and other smart locks.",
+              "url": "https://nonstoplockandkey.com/services/smart-lock-installation",
+              "provider": { "@id": "https://nonstoplockandkey.com#localbusiness" },
+              "areaServed": { "@type": "AdministrativeArea", "name": "St. Louis County, MO" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "serviceType": "Safe Opening",
+              "name": "Safe Opening & Repair St. Louis",
+              "description": "Professional safe opening, lockout, and combination reset for residential and commercial safes.",
+              "url": "https://nonstoplockandkey.com/services/safe-opening",
+              "provider": { "@id": "https://nonstoplockandkey.com#localbusiness" },
+              "areaServed": { "@type": "AdministrativeArea", "name": "St. Louis County, MO" }
             }
           }
         ]

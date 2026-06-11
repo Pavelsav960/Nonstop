@@ -24,6 +24,11 @@ const serviceSlugs = [
   'smart-lock-installation', 'safe-opening',
 ]
 
+// All blog post slugs — keep in sync with src/data/blog/index.ts
+const blogPostSlugs = [
+  'locksmith-scams-and-how-to-avoid-them',
+]
+
 // All routes to prerender
 const routes = [
   '/',
@@ -34,8 +39,10 @@ const routes = [
   '/reviews',
   '/privacy',
   '/terms',
+  '/blog',
   ...citySlugs.map(slug => `/locksmith/${slug}`),
   ...serviceSlugs.map(slug => `/services/${slug}`),
+  ...blogPostSlugs.map(slug => `/blog/${slug}`),
 ]
 
 // Simple static file server for the dist folder

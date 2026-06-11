@@ -134,6 +134,12 @@ export default function Navigation() {
               Reviews
             </Link>
             <Link
+              to="/blog"
+              className="text-[#17171A] hover:text-primary-600 transition-colors font-semibold"
+            >
+              Blog
+            </Link>
+            <Link
               to="/contact"
               className="text-[#17171A] hover:text-primary-600 transition-colors font-semibold"
             >
@@ -243,6 +249,13 @@ export default function Navigation() {
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
             >
               Reviews
+            </Link>
+            <Link
+              to="/blog"
+              onClick={() => setIsMenuOpen(false)}
+              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              Blog
             </Link>
             <Link
               to="/contact"
