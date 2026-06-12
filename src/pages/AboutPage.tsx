@@ -11,7 +11,7 @@ import AboutFAQSection from '../components/about/AboutFAQSection';
 import AboutBrandsSection from '../components/about/AboutBrandsSection';
 import { BUSINESS } from '../constants';
 import { cityData } from '../data/cityData';
-import vanImage from '../assets/images/nonstop-lock-and-key-mobile-locksmith-van-st-louis-mo.jpeg';
+import vanImage from '../assets/images/nonstop-lock-and-key-mobile-locksmith-van-st-louis-mo.webp';
 import technicianImage from '../assets/images/nonstop-lock-and-key-technician-rekeying-lock-st-louis.webp';
 
 export default function AboutPage() {

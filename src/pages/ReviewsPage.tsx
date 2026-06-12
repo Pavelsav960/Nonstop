@@ -11,7 +11,7 @@ import LeaveReviewSection from '../components/reviews/LeaveReviewSection';
 import { BUSINESS } from '../constants';
 import { cityData } from '../data/cityData';
 import { serviceData } from '../data/services';
-import vanImage from '../assets/images/nonstop-lock-and-key-mobile-locksmith-van-st-louis-mo.jpeg';
+import vanImage from '../assets/images/nonstop-lock-and-key-mobile-locksmith-van-st-louis-mo.webp';
 
 export default function ReviewsPage() {
   const logoUrl = BUSINESS.logo;

@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import vanImage from '../assets/images/nonstop-lock-and-key-mobile-locksmith-van-st-louis-mo.jpeg';
+import vanImage from '../assets/images/nonstop-lock-and-key-mobile-locksmith-van-st-louis-mo.webp';
 
 export default function About() {
   return (

@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { BUSINESS } from '../../constants';
-import vanImage from '../../assets/images/nonstop-lock-and-key-mobile-locksmith-van-st-louis-mo.jpeg';
+import vanImage from '../../assets/images/nonstop-lock-and-key-mobile-locksmith-van-st-louis-mo.webp';
 import type { CityData } from '../../data/cityData';
 
 type Props = { city: CityData };
