@@ -25,30 +25,7 @@
       "Bash(awk -F'to={' '{print $2}')",
       "Bash(awk -F'`' '{print $2}')",
       "Bash(awk '{print $5, $NF}')",
-      "Bash(git rm *)",
-      "Bash(node -e \"const html = require\\('fs'\\).readFileSync\\('index.html', 'utf8'\\); const json = html.match\\(/<script type=\\\\\"application\\\\/ld\\\\+json\\\\\">\\\\s*\\([\\\\s\\\\S]*?\\)\\\\s*<\\\\/script>/\\)[1]; JSON.parse\\(json\\); console.log\\('Schema valid JSON: yes'\\); console.log\\('Service count:', JSON.parse\\(json\\).hasOfferCatalog.itemListElement.length\\);\")",
-      "Skill(deep-research)",
-      "Workflow(deep-research)",
-      "WebSearch",
-      "WebFetch(domain:fox4kc.com)",
-      "WebFetch(domain:www.nytimes.com)",
-      "WebFetch(domain:rainbowlocksmithny.com)",
-      "WebFetch(domain:ago.mo.gov)",
-      "WebFetch(domain:alolocksmithmanhattan.com)",
-      "WebFetch(domain:www.wate.com)",
-      "WebFetch(domain:en.wikipedia.org)",
-      "WebFetch(domain:www.sopl.us)",
-      "WebFetch(domain:boingboing.net)",
-      "WebFetch(domain:searchengineland.com)",
-      "WebFetch(domain:www.brickunderground.com)",
-      "WebFetch(domain:fortune.com)",
-      "WebFetch(domain:www.techlicious.com)",
-      "WebFetch(domain:www.findalocksmith.com)",
-      "WebFetch(domain:www.bbb.org)",
-      "WebFetch(domain:www.atg.wa.gov)",
-      "WebFetch(domain:www.aloa.org)",
-      "Bash(node -e \"const c = require\\('fs'\\).readFileSync\\('src/data/blog/locksmithScamsAndHowToAvoidThem.tsx', 'utf8'\\); const m = c.match\\(/const LocksmithScamsContent[\\\\s\\\\S]*?const locksmithScamsPost/\\); const body = m[0]; const text = body.replace\\(/<[^>]+>/g, ' '\\).replace\\(/\\\\s+/g, ' '\\); console.log\\('Approx word count:', text.split\\(' '\\).filter\\(Boolean\\).length\\);\")",
-      "Bash(node -e \"const html = require\\('fs'\\).readFileSync\\('index.html', 'utf8'\\); const json = html.match\\(/<script type=\\\\\"application\\\\/ld\\\\+json\\\\\">\\\\s*\\([\\\\s\\\\S]*?\\)\\\\s*<\\\\/script>/\\)[1]; const data = JSON.parse\\(json\\); console.log\\('Schema valid: yes'\\); console.log\\('sameAs count:', data.sameAs.length\\); console.log\\('sameAs:', data.sameAs\\);\")"
+      "Bash(git rm *)"
     ]
   }
 }

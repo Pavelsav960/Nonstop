@@ -49,7 +49,7 @@ export default function ContactPage() {
         closes: '23:59',
       },
     },
-    sameAs: [...BUSINESS.sameAs],
+    sameAs: [BUSINESS.gbpUrl],
     openingHours: 'Mo-Su 00:00-23:59',
     aggregateRating: {
       '@type': 'AggregateRating',

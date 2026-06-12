@@ -24,7 +24,7 @@ export default function ServiceSEO({ service }: ServiceSEOProps) {
       image: logoUrl,
       telephone: BUSINESS.phoneRaw,
       email: BUSINESS.email,
-      sameAs: [...BUSINESS.sameAs],
+      sameAs: [BUSINESS.gbpUrl],
       priceRange: BUSINESS.priceRange,
       address: {
         '@type': 'PostalAddress',
