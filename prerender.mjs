@@ -39,10 +39,8 @@ const routes = [
   '/reviews',
   '/privacy',
   '/terms',
-  '/blog',
   ...citySlugs.map(slug => `/locksmith/${slug}`),
   ...serviceSlugs.map(slug => `/services/${slug}`),
-  ...blogPostSlugs.map(slug => `/blog/${slug}`),
 ]
 
 // Simple static file server for the dist folder

@@ -47,7 +47,8 @@
       "WebFetch(domain:www.bbb.org)",
       "WebFetch(domain:www.atg.wa.gov)",
       "WebFetch(domain:www.aloa.org)",
-      "Bash(node -e \"const c = require\\('fs'\\).readFileSync\\('src/data/blog/locksmithScamsAndHowToAvoidThem.tsx', 'utf8'\\); const m = c.match\\(/const LocksmithScamsContent[\\\\s\\\\S]*?const locksmithScamsPost/\\); const body = m[0]; const text = body.replace\\(/<[^>]+>/g, ' '\\).replace\\(/\\\\s+/g, ' '\\); console.log\\('Approx word count:', text.split\\(' '\\).filter\\(Boolean\\).length\\);\")"
+      "Bash(node -e \"const c = require\\('fs'\\).readFileSync\\('src/data/blog/locksmithScamsAndHowToAvoidThem.tsx', 'utf8'\\); const m = c.match\\(/const LocksmithScamsContent[\\\\s\\\\S]*?const locksmithScamsPost/\\); const body = m[0]; const text = body.replace\\(/<[^>]+>/g, ' '\\).replace\\(/\\\\s+/g, ' '\\); console.log\\('Approx word count:', text.split\\(' '\\).filter\\(Boolean\\).length\\);\")",
+      "Bash(node -e \"const html = require\\('fs'\\).readFileSync\\('index.html', 'utf8'\\); const json = html.match\\(/<script type=\\\\\"application\\\\/ld\\\\+json\\\\\">\\\\s*\\([\\\\s\\\\S]*?\\)\\\\s*<\\\\/script>/\\)[1]; const data = JSON.parse\\(json\\); console.log\\('Schema valid: yes'\\); console.log\\('sameAs count:', data.sameAs.length\\); console.log\\('sameAs:', data.sameAs\\);\")"
     ]
   }
 }

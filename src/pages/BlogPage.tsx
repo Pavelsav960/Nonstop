@@ -44,7 +44,7 @@ export default function BlogPage() {
           name="description"
           content={`The ${BUSINESS.name} blog. Safety guides, locksmith scam alerts, smart-lock how-tos, and consumer protection tips from a licensed St. Louis locksmith.`}
         />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href={`${BUSINESS.url}/blog`} />
         <meta property="og:title" content={`Locksmith Blog | ${BUSINESS.name}`} />
         <meta property="og:description" content="Safety guides, locksmith scam alerts, and how-to articles from a licensed St. Louis locksmith." />

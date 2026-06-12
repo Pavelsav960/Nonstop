@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router';
 import { cityData } from '../data/cityData';
 import { serviceData } from '../data/serviceData';
 import { BUSINESS } from '../constants';
+import SocialLinks from './SocialLinks';
 
 const featuredCities = cityData.slice(0, 10);
 
@@ -41,6 +42,14 @@ export default function Footer() {
                 </svg>
                 <span className="text-sm">{BUSINESS.email}</span>
               </a>
+            </div>
+
+            {/* Follow us — top of footer, prominent placement */}
+            <div className="mt-6">
+              <p className="text-white text-sm font-semibold mb-3 normal-case">
+                Follow Us
+              </p>
+              <SocialLinks variant="footer" />
             </div>
           </div>
 
@@ -124,11 +133,6 @@ export default function Footer() {
               <li>
                 <Link to="/service-areas" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
                   All Service Areas
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
-                  Blog
                 </Link>
               </li>
             </ul>

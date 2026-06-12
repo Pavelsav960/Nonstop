@@ -69,7 +69,7 @@ export default function ReviewsPage() {
         name: BUSINESS.name,
       },
     })),
-    sameAs: [BUSINESS.gbpUrl],
+    sameAs: [...BUSINESS.sameAs],
   };
 
   return (

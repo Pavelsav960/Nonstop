@@ -52,7 +52,7 @@ export default function BlogPostPage() {
       <Helmet>
         <title>{post.metaTitle}</title>
         <meta name="description" content={post.metaDescription} />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="author" content={post.author} />
         <meta property="og:title" content={post.metaTitle} />
