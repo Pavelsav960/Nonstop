@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { BUSINESS } from '../../constants';
-import VerifiedBadge from '../VerifiedBadge';
 
 type Review = {
   name: string;
@@ -345,12 +344,9 @@ export default function ReviewsGrid() {
                   </div>
                 )}
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-1 min-w-0">
-                    <h3 className="text-[17px] sm:text-[18px] font-semibold text-[#202124] truncate normal-case leading-tight">
-                      {review.name}
-                    </h3>
-                    <VerifiedBadge className="w-4 h-4 flex-shrink-0" />
-                  </div>
+                  <h3 className="text-[17px] sm:text-[18px] font-semibold text-[#202124] truncate normal-case leading-tight">
+                    {review.name}
+                  </h3>
                   <div className="flex mt-1">
                     {[...Array(review.rating)].map((_, i) => (
                       <svg key={i} className="w-[18px] h-[18px] text-[#FBBC04] fill-current" viewBox="0 0 20 20" aria-hidden="true">

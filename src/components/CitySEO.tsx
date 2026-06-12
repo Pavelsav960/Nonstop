@@ -21,7 +21,7 @@ export default function CitySEO({ city }: CitySEOProps) {
     telephone: BUSINESS.phoneRaw,
     priceRange: BUSINESS.priceRange,
     email: BUSINESS.email,
-    sameAs: [...BUSINESS.sameAs],
+    sameAs: [BUSINESS.gbpUrl],
     paymentAccepted: 'Cash, Credit Card, Debit Card',
     currenciesAccepted: 'USD',
     knowsLanguage: 'English',

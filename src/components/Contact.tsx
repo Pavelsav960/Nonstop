@@ -1,6 +1,5 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { BUSINESS } from '../constants';
-import SocialLinks from './SocialLinks';
 
 export default function Contact() {
   const [state, handleSubmit] = useForm('mbdqkgad');
@@ -72,12 +71,6 @@ export default function Contact() {
                     <p className="text-base sm:text-lg text-gray-900">24/7 Emergency Service<br />Always Available</p>
                   </div>
                 </div>
-              </div>
-
-              {/* Follow us — social links */}
-              <div className="mt-6 sm:mt-8 pt-6 border-t border-gray-200">
-                <p className="text-xs sm:text-sm font-medium text-gray-500 mb-3 normal-case">Follow Us</p>
-                <SocialLinks variant="contact" />
               </div>
             </div>
 

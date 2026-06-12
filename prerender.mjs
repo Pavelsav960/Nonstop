@@ -24,11 +24,6 @@ const serviceSlugs = [
   'smart-lock-installation', 'safe-opening',
 ]
 
-// All blog post slugs — keep in sync with src/data/blog/index.ts
-const blogPostSlugs = [
-  'locksmith-scams-and-how-to-avoid-them',
-]
-
 // All routes to prerender
 const routes = [
   '/',

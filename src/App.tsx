@@ -9,18 +9,14 @@ import ContactPage from './pages/ContactPage';
 import ReviewsPage from './pages/ReviewsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
-import BlogPage from './pages/BlogPage';
-import BlogPostPage from './pages/BlogPostPage';
 import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 import StickyCallBar from './components/StickyCallBar';
-import AnalyticsTracker from './components/AnalyticsTracker';
 
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <AnalyticsTracker />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
@@ -32,8 +28,6 @@ export default function App() {
         <Route path="/reviews" element={<ReviewsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog/:postSlug" element={<BlogPostPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <StickyCallBar />

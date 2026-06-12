@@ -61,7 +61,7 @@ export default function AboutPage() {
       opens: '00:00',
       closes: '23:59',
     },
-    sameAs: [...BUSINESS.sameAs],
+    sameAs: [BUSINESS.gbpUrl],
     areaServed: cityData.map((city) => ({
       '@type': 'City',
       name: city.name,
