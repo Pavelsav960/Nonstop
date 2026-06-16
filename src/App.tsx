@@ -12,11 +12,13 @@ import TermsPage from './pages/TermsPage';
 import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 import StickyCallBar from './components/StickyCallBar';
+import AnalyticsTracker from './components/AnalyticsTracker';
 
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <AnalyticsTracker />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />

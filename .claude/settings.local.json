@@ -25,7 +25,10 @@
       "Bash(awk -F'to={' '{print $2}')",
       "Bash(awk -F'`' '{print $2}')",
       "Bash(awk '{print $5, $NF}')",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(node -e \"const h = require\\('fs'\\).readFileSync\\('index.html', 'utf8'\\); const j = h.match\\(/<script type=\\\\\"application\\\\/ld\\\\+json\\\\\">\\\\s*\\([\\\\s\\\\S]*?\\)\\\\s*<\\\\/script>/\\)[1]; const d = JSON.parse\\(j\\); console.log\\('index.html sameAs count:', d.sameAs.length\\);\")",
+      "Bash(node -e \"const h=require\\('fs'\\).readFileSync\\('index.html','utf8'\\);const j=h.match\\(/<script type=\\\\\"application\\\\/ld\\\\+json\\\\\">\\\\s*\\([\\\\s\\\\S]*?\\)\\\\s*<\\\\/script>/\\)[1];const d=JSON.parse\\(j\\);console.log\\(d.hasOfferCatalog?d.hasOfferCatalog.itemListElement.length:'NO hasOfferCatalog'\\);\")",
+      "Bash(node -e \"const h = require\\('fs'\\).readFileSync\\('index.html', 'utf8'\\); const j = h.match\\(/<script type=\\\\\"application\\\\/ld\\\\+json\\\\\">\\\\s*\\([\\\\s\\\\S]*?\\)\\\\s*<\\\\/script>/\\)[1]; const d = JSON.parse\\(j\\); console.log\\('Schema valid: yes'\\); console.log\\('Services in OfferCatalog:', d.hasOfferCatalog.itemListElement.length\\); console.log\\('paymentAccepted:', d.paymentAccepted\\); console.log\\('hasMap:', d.hasMap\\); console.log\\('logo present:', !!d.logo\\);\")"
     ]
   }
 }

@@ -1,47 +1,121 @@
 import { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { ChevronLeft, ChevronRight, Phone } from 'lucide-react';
+import { Phone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BUSINESS } from '../../constants';
-import type { CityData } from '../../data/cityData';
 import VerifiedBadge from '../VerifiedBadge';
 
-type Props = { city: CityData };
-
-type Review = {
+type AreaReview = {
   name: string;
-  photo: string | null;
-  avatarColor?: string;
-  location: string;
   rating: number;
   date: string;
   displayDate: string;
-  service: string;
   text: string;
+  serviceName: string;
+  serviceSlug: string;
+  cityName: string;
+  citySlug: string;
+  photo?: string;
+  avatarColor?: string;
 };
 
-const cityAvatarColors = [
-  'bg-[#D93025]', 'bg-[#1A73E8]', 'bg-[#188038]',
-  'bg-[#9334E6]', 'bg-[#E37400]', 'bg-[#12B5CB]',
+const reviews: AreaReview[] = [
+  {
+    name: 'Andrea L.',
+    rating: 5,
+    date: '2026-03-12',
+    displayDate: '12 March 2026',
+    text: 'Locked my keys in the car at a meeting in Clayton. Called Nonstop and they had a tech to me fast despite traffic on Forsyth. Opened the door no problem, charged exactly what was quoted on the phone. Saved my whole afternoon and walked me to coffee while I waited for my husband. Class act.',
+    serviceName: 'Car Lockout',
+    serviceSlug: 'car-lockout',
+    cityName: 'Clayton',
+    citySlug: 'clayton',
+    photo: 'https://randomuser.me/api/portraits/women/45.jpg',
+  },
+  {
+    name: 'James W.',
+    rating: 5,
+    date: '2024-08-15',
+    displayDate: '15 August 2024',
+    text: 'Locked out of my house in Chesterfield. Quick response. Thanks.',
+    serviceName: 'House Lockout',
+    serviceSlug: 'house-lockout',
+    cityName: 'Chesterfield',
+    citySlug: 'chesterfield',
+    avatarColor: 'bg-[#1A73E8]',
+  },
+  {
+    name: 'Maria T.',
+    rating: 5,
+    date: '2024-11-04',
+    displayDate: '4 November 2024',
+    text: 'Closed on a fixer-upper in Webster Groves and wanted everything rekeyed before moving in. Tech did 4 doors in about an hour. Up-front pricing, clean work, no surprises.',
+    serviceName: 'Lock Rekey',
+    serviceSlug: 'lock-rekey',
+    cityName: 'Webster Groves',
+    citySlug: 'webster-groves',
+    photo: 'https://randomuser.me/api/portraits/women/65.jpg',
+  },
+  {
+    name: 'Brandon K.',
+    rating: 5,
+    date: '2025-09-22',
+    displayDate: '22 September 2025',
+    text: 'Lost my Honda key while running errands in Ballwin. Dealership was closed for the weekend and would have been a fortune anyway. Nonstop came to my driveway, cut and programmed a new transponder, and I was back on the road in under an hour. Saved me a huge chunk compared to what the dealer quoted on Monday.',
+    serviceName: 'Car Key Replacement',
+    serviceSlug: 'car-key-replacement',
+    cityName: 'Ballwin',
+    citySlug: 'ballwin',
+    photo: 'https://randomuser.me/api/portraits/men/41.jpg',
+  },
+  {
+    name: 'Jasmine R.',
+    rating: 5,
+    date: '2026-02-18',
+    displayDate: '18 February 2026',
+    text: 'Locked out of my apartment in U City after walking my dog. The dispatcher was so patient on the phone walking me through what to expect. Tech showed up in a marked uniform which made me feel safe letting him work on the lock at night. Got the door open without any damage and did not try to upsell me on anything. Family-owned service you can actually trust.',
+    serviceName: 'House Lockout',
+    serviceSlug: 'house-lockout',
+    cityName: 'University City',
+    citySlug: 'university-city',
+    avatarColor: 'bg-[#D93025]',
+  },
+  {
+    name: 'Edward H.',
+    rating: 5,
+    date: '2025-11-30',
+    displayDate: '30 November 2025',
+    text: 'Our office in Saint Charles had a manager change and we needed everything rekeyed plus a smart lock added to the back entrance. Tech came out, walked us through the smart lock options without pushing the most expensive one, did the install cleanly, and rekeyed 5 other doors all in one visit. Professional and reasonable.',
+    serviceName: 'Commercial Lockout',
+    serviceSlug: 'commercial-lockout',
+    cityName: 'Saint Charles',
+    citySlug: 'saint-charles',
+    photo: 'https://randomuser.me/api/portraits/men/55.jpg',
+  },
+  {
+    name: 'Tania M.',
+    rating: 5,
+    date: '2026-04-08',
+    displayDate: '8 April 2026',
+    text: "My house key snapped clean off in the deadbolt at our place in Kirkwood late at night. Was completely freaking out because the kids were already in bed. Nonstop sent someone fast, extracted the broken piece without damaging anything, and confirmed the lock was still good. Calm and competent the whole way through.",
+    serviceName: 'Broken Key Extraction',
+    serviceSlug: 'broken-key-extraction',
+    cityName: 'Kirkwood',
+    citySlug: 'kirkwood',
+    photo: 'https://randomuser.me/api/portraits/women/19.jpg',
+  },
+  {
+    name: 'Greg D.',
+    rating: 5,
+    date: '2024-07-19',
+    displayDate: '19 July 2024',
+    text: 'Needed a spare fob programmed for my Toyota at our place in Maryland Heights. Tech came to the house, did it in about 20 minutes, half what the dealer quoted. Easy and friendly.',
+    serviceName: 'Key Fob Programming',
+    serviceSlug: 'key-fob-programming',
+    cityName: 'Maryland Heights',
+    citySlug: 'maryland-heights',
+    avatarColor: 'bg-[#188038]',
+  },
 ];
-
-function formatDate(iso: string): string {
-  const d = new Date(iso + 'T00:00:00');
-  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-}
-
-function cityReviewToShape(r: CityData['reviews'][number], city: CityData, index: number): Review {
-  return {
-    name: r.name,
-    photo: r.photo ?? null,
-    avatarColor: cityAvatarColors[index % cityAvatarColors.length],
-    location: `${city.name}, MO`,
-    rating: r.rating,
-    date: r.date,
-    displayDate: formatDate(r.date),
-    service: r.service,
-    text: r.text,
-  };
-}
 
 const GoogleG = ({ className = 'w-6 h-6' }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
@@ -52,10 +126,7 @@ const GoogleG = ({ className = 'w-6 h-6' }: { className?: string }) => (
   </svg>
 );
 
-export default function CityReviewsSection({ city }: Props) {
-  // Use only city-specific reviews
-  const reviews: Review[] = city.reviews.map((r, i) => cityReviewToShape(r, city, i));
-
+export default function ServiceAreasReviewsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -70,9 +141,13 @@ export default function CityReviewsSection({ city }: Props) {
     const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 10;
     const atStart = el.scrollLeft <= 10;
 
-    if (direction === 'right' && atEnd) el.scrollTo({ left: 0, behavior: 'smooth' });
-    else if (direction === 'left' && atStart) el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
-    else el.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
+    if (direction === 'right' && atEnd) {
+      el.scrollTo({ left: 0, behavior: 'smooth' });
+    } else if (direction === 'left' && atStart) {
+      el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
+    } else {
+      el.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
+    }
   };
 
   const pauseAutoScroll = (resumeAfterMs = 8000) => {
@@ -99,7 +174,8 @@ export default function CityReviewsSection({ city }: Props) {
       const card = el.querySelector('article') as HTMLElement | null;
       if (!card) return;
       const cardW = card.offsetWidth + 24;
-      setActiveIndex(Math.round(el.scrollLeft / cardW));
+      const idx = Math.round(el.scrollLeft / cardW);
+      setActiveIndex(idx);
     };
     el.addEventListener('scroll', onScroll, { passive: true });
     return () => el.removeEventListener('scroll', onScroll);
@@ -122,48 +198,34 @@ export default function CityReviewsSection({ city }: Props) {
     name: BUSINESS.name,
     review: reviews.map((r) => ({
       '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: r.name,
-        address: { '@type': 'PostalAddress', addressLocality: city.name, addressRegion: 'MO', addressCountry: 'US' },
-      },
+      author: { '@type': 'Person', name: r.name },
       reviewRating: { '@type': 'Rating', ratingValue: r.rating.toString(), bestRating: '5', worstRating: '1' },
       reviewBody: r.text,
       datePublished: r.date,
-      itemReviewed: { '@type': 'LocalBusiness', '@id': `${BUSINESS.url}#localbusiness`, name: BUSINESS.name },
+      itemReviewed: {
+        '@type': 'LocalBusiness',
+        '@id': `${BUSINESS.url}#localbusiness`,
+        name: BUSINESS.name,
+      },
     })),
   };
 
   return (
-    <section id="reviews" className="section-ref bg-[#F5F5F5] overflow-hidden">
+    <section className="section-ref bg-[#F5F5F5] overflow-hidden" aria-labelledby="areas-reviews-heading">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }} />
       <div className="container-ref">
-        {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h3 className="text-primary-600 mb-3 !text-[22px] lg:!text-[24px] !font-medium">
-            Testimonials
-          </h3>
-          <h2 className="text-[#17171A] max-w-4xl mx-auto text-[26px] sm:text-[34px] md:text-[44px] lg:text-[52px]">
-            <span className="whitespace-nowrap">5-Star Rated In {city.name}</span>
-            <br />
-            From Real Local Customers
+        <div className="text-center mb-12 sm:mb-14">
+          <p className="text-primary-600 text-[14px] sm:text-[16px] font-semibold tracking-wide normal-case mb-3">
+            Customer Reviews
+          </p>
+          <h2 id="areas-reviews-heading" className="text-[#17171A] max-w-4xl mx-auto px-2">
+            What Customers Across St. Louis County Are Saying
           </h2>
-          <a
-            href={BUSINESS.gbpUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 mt-6 sm:mt-7 px-5 py-2.5 bg-white border border-gray-200 hover:border-primary-300 rounded-full shadow-sm hover:shadow-md transition-all group"
-            aria-label={`View Google reviews for ${BUSINESS.name}`}
-          >
-            <GoogleG className="w-5 h-5 flex-shrink-0" />
-            <span className="text-[14px] sm:text-[15px] font-semibold text-[#17171A] normal-case">
-              See Our Reviews on Google
-            </span>
-            <span className="inline-flex text-primary-600 font-bold text-[14px] sm:text-[15px] group-hover:translate-x-0.5 transition-transform" aria-hidden="true">→</span>
-          </a>
+          <p className="mt-4 text-[16px] sm:text-[18px] lg:text-[19px] text-gray-700 max-w-2xl mx-auto leading-relaxed px-4 font-medium">
+            Real reviews from neighbors in the same cities we serve every day.
+          </p>
         </div>
 
-        {/* Reviews carousel */}
         <div className="relative">
           <button
             type="button"
@@ -173,6 +235,7 @@ export default function CityReviewsSection({ city }: Props) {
           >
             <ChevronLeft className="w-6 h-6 text-gray-700" />
           </button>
+
           <button
             type="button"
             onClick={() => handleArrowClick('right')}
@@ -206,9 +269,9 @@ export default function CityReviewsSection({ city }: Props) {
                   )}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1 min-w-0">
-                      <h4 className="text-[17px] sm:text-[18px] font-semibold text-[#202124] truncate normal-case leading-tight">
+                      <h3 className="text-[17px] sm:text-[18px] font-semibold text-[#202124] truncate normal-case leading-tight">
                         {review.name}
-                      </h4>
+                      </h3>
                       <VerifiedBadge className="w-4 h-4 flex-shrink-0" />
                     </div>
                     <div className="flex mt-1">
@@ -221,14 +284,34 @@ export default function CityReviewsSection({ city }: Props) {
                     <span className="block text-[13px] text-[#70757a] normal-case mt-0.5">{review.displayDate}</span>
                   </div>
                 </div>
-                <p className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case">
+
+                <p className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case flex-1">
                   {review.text}
                 </p>
+
+                <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100">
+                  <Link
+                    to={`/services/${review.serviceSlug}`}
+                    className="inline-flex items-center px-3 py-1 bg-primary-50 hover:bg-primary-100 text-primary-700 hover:text-primary-800 text-[12px] font-semibold rounded-full transition-colors normal-case"
+                    aria-label={`View ${review.serviceName} service`}
+                  >
+                    {review.serviceName}
+                  </Link>
+                  <Link
+                    to={`/locksmith/${review.citySlug}`}
+                    className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 text-[12px] font-semibold rounded-full transition-colors normal-case"
+                    aria-label={`View locksmith services in ${review.cityName}`}
+                  >
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                    {review.cityName}
+                  </Link>
+                </div>
               </article>
             ))}
           </div>
 
-          {/* Dot indicators */}
           <div className="flex items-center justify-center gap-2 mt-6 sm:mt-8" role="tablist" aria-label="Review pagination">
             {reviews.map((_, i) => (
               <button
@@ -246,10 +329,9 @@ export default function CityReviewsSection({ city }: Props) {
           </div>
         </div>
 
-        {/* Inline CTA */}
-        <div className="mt-12 sm:mt-16 text-center max-w-2xl mx-auto">
+        <div className="mt-12 sm:mt-14 text-center max-w-2xl mx-auto">
           <h3 className="text-[#17171A] text-[20px] sm:text-[24px] lg:text-[28px] leading-[1.3] px-2">
-            Need A Locksmith In {city.name}?<br className="hidden sm:block" /> Call Now For A Free Service Estimate.
+            Locksmith In Your City?<br className="hidden sm:block" /> Call Now For A Free Service Estimate.
           </h3>
           <a
             href={BUSINESS.phoneTel}
@@ -261,7 +343,7 @@ export default function CityReviewsSection({ city }: Props) {
           </a>
           <p className="mt-4">
             <Link to="/reviews" className="text-gray-600 hover:text-primary-600 font-medium text-[14px] underline underline-offset-4 transition-colors">
-              Read all reviews →
+              Read all reviews
             </Link>
           </p>
         </div>

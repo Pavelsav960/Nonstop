@@ -23,4 +23,20 @@ export const BUSINESS = {
   lng: -90.1994,
   gbpUrl: 'https://g.page/r/CW7WyktBAIxtEBM',
   gbpReviewUrl: 'https://g.page/r/CW7WyktBAIxtEBM/review',
+  social: {
+    facebook: 'https://www.facebook.com/profile.php?id=61587625812146',
+    instagram: 'https://www.instagram.com/nonstoplockandkey/',
+    tiktok: 'https://www.tiktok.com/@saint_louis_locksmith',
+    youtube: 'https://www.youtube.com/@NonstopLockAndKey',
+    pinterest: 'https://www.pinterest.com/nonstoplockandkeyco/',
+  },
+  // Master list of profile URLs for LocalBusiness `sameAs` schema across the site.
+  sameAs: [
+    'https://g.page/r/CW7WyktBAIxtEBM',
+    'https://www.facebook.com/profile.php?id=61587625812146',
+    'https://www.instagram.com/nonstoplockandkey/',
+    'https://www.tiktok.com/@saint_louis_locksmith',
+    'https://www.youtube.com/@NonstopLockAndKey',
+    'https://www.pinterest.com/nonstoplockandkeyco/',
+  ],
 } as const;

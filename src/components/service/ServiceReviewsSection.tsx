@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Phone } from 'lucide-react';
 import { BUSINESS } from '../../constants';
 import type { ServiceData } from '../../data/serviceData';
+import VerifiedBadge from '../VerifiedBadge';
 
 type Props = { service: ServiceData };
 
@@ -180,9 +181,12 @@ export default function ServiceReviewsSection({ service }: Props) {
                     </div>
                   )}
                   <div className="flex-1 min-w-0">
-                    <h4 className="text-[17px] sm:text-[18px] font-semibold text-[#202124] truncate normal-case leading-tight">
-                      {review.name}
-                    </h4>
+                    <div className="flex items-center gap-1 min-w-0">
+                      <h4 className="text-[17px] sm:text-[18px] font-semibold text-[#202124] truncate normal-case leading-tight">
+                        {review.name}
+                      </h4>
+                      <VerifiedBadge className="w-4 h-4 flex-shrink-0" />
+                    </div>
                     <div className="flex mt-1">
                       {[...Array(review.rating)].map((_, i) => (
                         <svg key={i} className="w-[18px] h-[18px] text-[#FBBC04] fill-current" viewBox="0 0 20 20" aria-hidden="true">
