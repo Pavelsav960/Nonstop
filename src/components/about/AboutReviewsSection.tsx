@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
 import { Phone } from 'lucide-react';
 import { BUSINESS } from '../../constants';
@@ -16,75 +17,75 @@ type AboutReview = {
 
 const reviews: AboutReview[] = [
   {
-    name: 'Tony D.',
+    name: 'Megan P.',
     rating: 5,
-    date: '2025-09-12',
-    displayDate: '12 September 2025',
-    text: 'Locked my keys in the car at the worst possible time — driving my daughter to her dance recital. Called Nonstop in a panic and they had a tech to us in 22 minutes flat. Got the door open without a scratch, and we made it with 10 minutes to spare. Cannot thank them enough.',
-    service: 'Car Lockout',
-    photo: 'https://randomuser.me/api/portraits/men/41.jpg',
+    date: '2026-03-20',
+    displayDate: '20 March 2026',
+    text: "We bought a townhouse last spring and the previous owner mentioned a former tenant might still have a key. I needed the locks changed that day and was nervous about being overcharged on an emergency call. Alex showed up within an hour, did 4 doors, and the price was almost exactly what other reviews on Google said it should be. No upsell, no upcharge for same-day, no nothing. The trust thing isn't a slogan with these guys, it's actually how they run their business.",
+    service: 'Lock Rekey',
+    photo: 'https://randomuser.me/api/portraits/women/41.jpg',
   },
   {
-    name: 'Lisa B.',
+    name: 'Eddie R.',
     rating: 5,
     date: '2024-04-15',
     displayDate: '15 April 2024',
-    text: 'Same-day rekey on our new house. Quick, fair, done right. Thanks Alex.',
-    service: 'Lock Rekey',
+    text: "Forgot the keys in the car at soccer practice. Alex out in under 25 min. No drama, no extra fees.",
+    service: 'Car Lockout',
     avatarColor: 'bg-[#D93025]',
   },
   {
-    name: 'Rachel V.',
+    name: 'Maria L.',
     rating: 5,
-    date: '2026-03-08',
-    displayDate: '8 March 2026',
-    text: "I'm not a customer who locks myself out often but when I did, Nonstop handled it like pros. They walked me through pricing on the phone, the tech showed up wearing a uniform (which honestly made me feel safer late at night), opened the door with no damage, and even waited until I confirmed I had my house keys before leaving. Total class act.",
-    service: 'House Lockout',
+    date: '2026-01-30',
+    displayDate: '30 January 2026',
+    text: "Had Alex install a Schlage Encode on our front door after our deadbolt started acting up. He helped us pick the model that worked best with our wifi setup and didn't try to upsell. Even synced it with our security system for free. My mom kept asking if we were related, that's how friendly the service was.",
+    service: 'Smart Lock Installation',
     photo: 'https://randomuser.me/api/portraits/women/65.jpg',
   },
   {
-    name: 'Mark P.',
+    name: 'Steven D.',
     rating: 5,
     date: '2024-08-22',
     displayDate: '22 August 2024',
-    text: 'Installed a Schlage Encode on our front door and walked us through every option in the app. Patient with our questions. Recommend.',
-    service: 'Smart Lock Installation',
+    text: "My Camry ignition wouldn't turn. Alex fixed it in the parking lot in less than 30 min. Half the dealer quote. Solid.",
+    service: 'Ignition Repair',
     avatarColor: 'bg-[#1A73E8]',
   },
   {
-    name: 'Carmen S.',
+    name: 'Carla T.',
     rating: 5,
     date: '2026-02-15',
     displayDate: '15 February 2026',
-    text: 'My only Honda Accord key got destroyed by my dog. I had to choose between a $450 dealer quote or finding a locksmith. Nonstop programmed a fresh transponder right in my driveway for less than half. The tech also showed me how to put my car into safety mode in case it ever happens again. Way above and beyond.',
-    service: 'Car Key Replacement',
+    text: "My husband and I are both teachers and one Sunday I came home from a long walk and couldn't get my key to turn. We were juggling end-of-quarter grading and the last thing I needed was a lock problem. Nonstop answered immediately, alex was at the house in 20 minutes, opened it without damage, and showed us the deadbolt was just worn out. Charged for the visit only, gave us a price for a replacement we could schedule when we had time. Honest people running an honest business. We've called them twice since.",
+    service: 'House Lockout',
     photo: 'https://randomuser.me/api/portraits/women/72.jpg',
   },
   {
-    name: 'Jeff M.',
+    name: 'Owen K.',
     rating: 5,
     date: '2026-04-19',
     displayDate: '19 April 2026',
-    text: 'Run a small business and we had a tenant lockout situation at 5am ahead of a 6am breakfast delivery. Nonstop dispatched someone immediately and got the suite open before we lost the order. These guys really do answer 24/7. Saved my morning.',
-    service: 'Commercial Lockout',
-    avatarColor: 'bg-[#188038]',
+    text: "My house key snapped clean in the deadbolt at midnight after a flight. Alex picked up after one ring, talked me through the situation while he was loading the van, and was at my house in 25 minutes. Pulled the broken piece out, tested the lock, no damage. He could have sold me a new lock and I wouldn't have known better. He didn't.",
+    service: 'Broken Key Extraction',
+    photo: 'https://randomuser.me/api/portraits/men/41.jpg',
   },
   {
-    name: 'Hannah K.',
+    name: 'Janelle B.',
     rating: 5,
     date: '2025-11-30',
     displayDate: '30 November 2025',
-    text: "House key snapped clean off in the deadbolt with my toddler napping inside. Panic doesn't begin to describe it. Called Nonstop and the tech was so calm and reassuring on the phone, walked me through what to expect. Got there fast, extracted the broken piece carefully, lock still works perfectly. We didn't even wake the baby.",
-    service: 'Broken Key Extraction',
-    photo: 'https://randomuser.me/api/portraits/women/28.jpg',
+    text: "After a break-in on our street I wanted to upgrade all our exterior locks. Alex came out, walked through our options, didn't push the top tier. Installed four new deadbolts and reinforced the strike plates with longer screws (a tip i didn't even know about). Doors feel solid now. The neighborhood watch group asked who we used and we sent them all his way.",
+    service: 'Lock Installation',
+    avatarColor: 'bg-[#188038]',
   },
   {
-    name: 'Dave R.',
+    name: 'Russell M.',
     rating: 5,
     date: '2024-12-08',
     displayDate: '8 December 2024',
-    text: 'Wanted to upgrade all our exterior locks to a higher security grade after a break-in on our street. Nonstop walked me through the Grade 1 options without pushing the most expensive, installed five new deadbolts and reinforced the strike plates. Doors look better than before, and we feel a lot safer.',
-    service: 'Lock Installation',
+    text: "Rekey on our new house. Quick, fair, professional. Alex even labeled the keys for us.",
+    service: 'Lock Rekey',
     photo: 'https://randomuser.me/api/portraits/men/55.jpg',
   },
 ];
@@ -98,7 +99,13 @@ const GoogleG = ({ className = 'w-6 h-6' }: { className?: string }) => (
   </svg>
 );
 
+const READ_MORE_THRESHOLD = 220;
+
 export default function AboutReviewsSection() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const toggleExpanded = (index: number) =>
+    setExpandedIndex((prev) => (prev === index ? null : index));
+
   const ldJson = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -146,11 +153,14 @@ export default function AboutReviewsSection() {
         </div>
 
         {/* Reviews grid — 2 columns on desktop, 1 on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-5xl mx-auto">
-          {reviews.map((review, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-5xl mx-auto items-start">
+          {reviews.map((review, index) => {
+            const isExpanded = expandedIndex === index;
+            const needsToggle = review.text.length > READ_MORE_THRESHOLD;
+            return (
             <article
               key={index}
-              className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col"
+              className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col min-h-[300px]"
             >
               <GoogleG className="absolute top-4 right-4 w-6 h-6" />
               <div className="flex items-start gap-3 pr-8">
@@ -179,11 +189,29 @@ export default function AboutReviewsSection() {
                   <span className="block text-[13px] text-[#70757a] normal-case mt-0.5">{review.displayDate}</span>
                 </div>
               </div>
-              <p className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case">
+              <p
+                className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case whitespace-pre-line"
+                style={
+                  !isExpanded && needsToggle
+                    ? { display: '-webkit-box', WebkitLineClamp: 6, WebkitBoxOrient: 'vertical', overflow: 'hidden' }
+                    : undefined
+                }
+              >
                 {review.text}
               </p>
+              {needsToggle && (
+                <button
+                  type="button"
+                  onClick={() => toggleExpanded(index)}
+                  className="self-start mt-2 text-[13px] font-semibold text-primary-600 hover:text-primary-700 transition-colors normal-case"
+                  aria-expanded={isExpanded}
+                >
+                  {isExpanded ? 'Read less' : 'Read more'}
+                </button>
+              )}
             </article>
-          ))}
+            );
+          })}
         </div>
 
         {/* Inline CTA below grid */}

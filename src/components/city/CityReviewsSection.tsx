@@ -59,7 +59,9 @@ export default function CityReviewsSection({ city }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const READ_MORE_THRESHOLD = 220;
 
   const scrollCarousel = (direction: 'left' | 'right') => {
     const el = scrollRef.current;
@@ -112,6 +114,11 @@ export default function CityReviewsSection({ city }: Props) {
     if (!card) return;
     const cardW = card.offsetWidth + 24;
     el.scrollTo({ left: cardW * i, behavior: 'smooth' });
+    pauseAutoScroll();
+  };
+
+  const toggleExpanded = (index: number) => {
+    setExpandedIndex((prev) => (prev === index ? null : index));
     pauseAutoScroll();
   };
 
@@ -187,12 +194,15 @@ export default function CityReviewsSection({ city }: Props) {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onTouchStart={() => pauseAutoScroll()}
-            className="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 -mx-4 md:mx-0 px-4 md:px-0 pb-3 scroll-smooth no-scrollbar"
+            className="flex items-start overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 -mx-4 md:mx-0 px-4 md:px-0 pb-3 scroll-smooth no-scrollbar"
           >
-            {reviews.map((review, index) => (
+            {reviews.map((review, index) => {
+              const isExpanded = expandedIndex === index;
+              const needsToggle = review.text.length > READ_MORE_THRESHOLD;
+              return (
               <article
                 key={index}
-                className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center sm:snap-start"
+                className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] min-h-[300px] snap-center sm:snap-start"
               >
                 <GoogleG className="absolute top-4 right-4 w-6 h-6" />
                 <div className="flex items-start gap-3 pr-8">
@@ -221,11 +231,29 @@ export default function CityReviewsSection({ city }: Props) {
                     <span className="block text-[13px] text-[#70757a] normal-case mt-0.5">{review.displayDate}</span>
                   </div>
                 </div>
-                <p className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case">
+                <p
+                  className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case whitespace-pre-line"
+                  style={
+                    !isExpanded && needsToggle
+                      ? { display: '-webkit-box', WebkitLineClamp: 6, WebkitBoxOrient: 'vertical', overflow: 'hidden' }
+                      : undefined
+                  }
+                >
                   {review.text}
                 </p>
+                {needsToggle && (
+                  <button
+                    type="button"
+                    onClick={() => toggleExpanded(index)}
+                    className="self-start mt-2 text-[13px] font-semibold text-primary-600 hover:text-primary-700 transition-colors normal-case"
+                    aria-expanded={isExpanded}
+                  >
+                    {isExpanded ? 'Read less' : 'Read more'}
+                  </button>
+                )}
               </article>
-            ))}
+              );
+            })}
           </div>
 
           {/* Dot indicators */}

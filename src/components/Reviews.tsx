@@ -18,125 +18,127 @@ export type Review = {
 
 export const homepageReviews: Review[] = [
   {
-    name: 'Angela R.',
-    photo: 'https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=200',
-    location: 'Ballwin, MO',
-    rating: 5,
-    date: '2026-04-22',
-    displayDate: '22 April 2026',
-    service: 'Car Lockout',
-    text: 'OMG locked my keys IN the car at Schnucks with my dog inside, was completely freaking out. Called Nonstop, they got there in under 25 min and had the door open in maybe 90 seconds!! Zero damage. Absolute lifesavers 🙏',
-  },
-  {
-    name: 'Michael T.',
+    name: 'Tony R.',
     photo: 'https://randomuser.me/api/portraits/men/41.jpg',
     location: 'Clayton, MO',
     rating: 5,
-    date: '2026-04-12',
-    displayDate: '12 April 2026',
-    service: 'House Lockout',
-    text: 'Locked out at 2am. Alex showed up in 18 minutes, no damage. Pro.',
+    date: '2026-04-22',
+    displayDate: '22 April 2026',
+    service: 'Key Fob Programming',
+    text: "My key fob for my Chevy Tahoe broke in multiple places until my truck wouldn't start at the office. Alex came the same day I called and had a new fob cut and reprogrammed in less than an hour. Would definitely call them again.",
   },
   {
-    name: 'Ryan G.',
-    photo: null,
-    avatarColor: 'bg-[#1A73E8]',
-    location: 'Chesterfield, MO',
-    rating: 5,
-    date: '2024-06-08',
-    displayDate: '8 June 2024',
-    service: 'Commercial Lockout',
-    text: "Couldn't get into my office Saturday morning. Nonstop came out within the hour, got me in with no damage. Quick and professional.",
-  },
-  {
-    name: 'Vanessa K.',
+    name: 'Marlee D.',
     photo: 'https://randomuser.me/api/portraits/women/28.jpg',
-    location: 'St. Louis, MO',
+    location: 'Webster Groves, MO',
     rating: 5,
     date: '2026-03-30',
     displayDate: '30 March 2026',
-    service: 'Emergency Locksmith',
-    text: '3am emergency, lost my keys at a wedding downtown 🤦‍♀️ Called like 5 places and only Nonstop actually answered. Tech was at my Airbnb fast!! Did NOT expect that level of service that late at night, seriously thank you!!!',
+    service: 'Key Fob Programming',
+    text: "I needed a duplicate key fob for my Honda and on top of that my battery was dead in the driveway. Alex responded within minutes and not only made me a duplicate fob, he also gave my car a jump so I could actually leave. It was so appreciated! He did a wonderful job, thank you so much!",
   },
   {
-    name: 'Jason P.',
-    photo: 'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=200',
+    name: 'Kelly S.',
+    photo: null,
+    avatarColor: 'bg-[#D93025]',
+    location: 'St. Louis, MO',
+    rating: 5,
+    date: '2026-02-15',
+    displayDate: '15 February 2026',
+    service: 'Car Key Replacement',
+    text: "Lost the keys to my Honda Pilot near Forest Park. Called Nonstop Lock & Key and they sent a tech out in less than 20 minutes. Service was honest and transparent. Price was one of the lowest in the area. Really grateful.",
+  },
+  {
+    name: 'Sophia L.',
+    photo: 'https://randomuser.me/api/portraits/women/65.jpg',
+    location: 'University City, MO',
+    rating: 5,
+    date: '2025-11-08',
+    displayDate: '8 November 2025',
+    service: 'Key Fob Programming',
+    text: "i have a 2014 ford mustang and i accidentally enabled the mykey parental setting at a stoplight one day. the ford dealership quoted me $650 for a new programmed key, when i found out the price i was very nervous because i'm a college student in U City paying for all my own stuff. i started searching online and found nonstop. they were super fast, $220 for the new key with all the buttons. the tech (alex) was very kind and patient. highly recommend.",
+  },
+  {
+    name: 'Cameron P.',
+    photo: null,
+    avatarColor: 'bg-[#1A73E8]',
+    location: 'Ballwin, MO',
+    rating: 5,
+    date: '2024-09-15',
+    displayDate: '15 September 2024',
+    service: 'Car Key Replacement',
+    text: "So quick to respond and help me with a new key for my F-150. Very pleasant to work with and quality work. Thanks again.",
+  },
+  {
+    name: 'Derek J.',
+    photo: 'https://randomuser.me/api/portraits/men/55.jpg',
+    location: 'Saint Charles, MO',
+    rating: 5,
+    date: '2025-10-04',
+    displayDate: '4 October 2025',
+    service: 'Commercial Lockout',
+    text: "Nonstop Lock & Key did outstanding work across all three of my rental properties. They replaced the locks, installed lockboxes at each unit, and provided new, clearly labeled key sets without any issues.\n\nWhat stood out most was their speed and efficiency. Everything was handled quickly, cleanly, and with zero back and forth. They understand how important timing is when managing rentals and they delivered exactly what they promised.\n\nIf you're a landlord or property manager looking for a reliable locksmith who gets things done right the first time, I highly recommend Nonstop Lock & Key. I'll absolutely be using them again.",
+  },
+  {
+    name: 'Megan T.',
+    photo: 'https://randomuser.me/api/portraits/women/53.jpg',
     location: 'Kirkwood, MO',
     rating: 5,
-    date: '2026-03-21',
-    displayDate: '21 March 2026',
-    service: 'Broken Key Extraction',
-    text: 'Snapped my house key off in the lock at 11pm with my kids waiting in the car 😬 stressed!! Called Nonstop, tech came quickly, extracted the broken piece, tested the cylinder and said the lock was still good. Charged exactly what he quoted on the phone. Solid guys, would def call them again',
+    date: '2026-01-20',
+    displayDate: '20 January 2026',
+    service: 'Lock Installation & Replacement',
+    text: "I called about a broken deadbolt on my back door and within 20 minutes of calling, someone was at my house. Prompt and efficient service. They figured out what was wrong fast and had the equipment in the van to fix it that same visit. Very pleased and will call in the future.",
   },
   {
-    name: 'Sarah M.',
-    photo: 'https://api.dicebear.com/9.x/personas/svg?seed=sarah-mckinley&backgroundColor=ffd5dc',
-    location: 'University City, MO',
+    name: 'Brett A.',
+    photo: 'https://randomuser.me/api/portraits/men/72.jpg',
+    location: 'Chesterfield, MO',
     rating: 5,
     date: '2026-03-15',
     displayDate: '15 March 2026',
-    service: 'Lock Rekey',
-    text: 'Just closed on our house in U City and wanted everything rekeyed for peace of mind. Nonstop Lock & Key sent Alex out same day. Did 5 exterior doors in about 90 minutes and even fixed a sticky strike plate on the back door. No surprise fees, paid exactly what was quoted.',
+    service: 'Ignition Repair',
+    text: "My Tacoma handle was acting up and sometimes wouldn't open at all. Alex from Nonstop was the only one who would touch it and he fixed it. Made me a spare key and one for my wife's Honda too. Very grateful.",
   },
   {
-    name: 'David C.',
-    photo: 'https://randomuser.me/api/portraits/men/55.jpg',
-    location: 'Chesterfield, MO',
-    rating: 5,
-    date: '2026-02-28',
-    displayDate: '28 February 2026',
-    service: 'Car Key Replacement',
-    text: 'Lost my only Honda key at the mall on a Sunday. Dealership wanted $500+ PLUS a tow. Nonstop came to the parking lot, Alex cut a new transponder, programmed it, and I was driving home in under an hour!!! Saved me SO much money, can\'t recommend enough 🔑',
-  },
-  {
-    name: 'Marcus T.',
-    photo: 'https://randomuser.me/api/portraits/men/72.jpg',
+    name: 'Anna K.',
+    photo: null,
+    avatarColor: 'bg-[#188038]',
     location: 'Maryland Heights, MO',
     rating: 5,
-    date: '2026-02-19',
-    displayDate: '19 February 2026',
-    service: 'Key Fob Programming',
-    text: 'Needed a spare fob for my Toyota Camry. Took it to the dealer first and they wanted wayyy too much. Nonstop did the same thing for HALF the price at my apartment complex. Tech was super friendly and walked me through the whole programming process 👌',
+    date: '2025-12-08',
+    displayDate: '8 December 2025',
+    service: 'House Lockout',
+    text: "Alex and his crew are top notch. I was actually locked inside my house with a busted deadbolt and he picked up when nobody else would on a Sunday morning. Was at my place in less than 30 minutes and got me out without damaging the door. Clean install on the new lock, professional and kind.",
   },
   {
-    name: 'Linda H.',
-    photo: 'https://randomuser.me/api/portraits/women/55.jpg',
-    location: 'Webster Groves, MO',
+    name: 'Hailey M.',
+    photo: 'https://randomuser.me/api/portraits/women/19.jpg',
+    location: 'Frontenac, MO',
     rating: 5,
-    date: '2026-02-08',
-    displayDate: '8 February 2026',
-    service: 'Ignition Repair',
-    text: "My ignition started sticking and eventually wouldn't turn at all. A mechanic told me it was an electrical issue and quoted me a fortune. Alex from Nonstop diagnosed it as a worn ignition cylinder in 10 minutes and replaced it the same day for way less.",
+    date: '2024-07-20',
+    displayDate: '20 July 2024',
+    service: 'Car Lockout',
+    text: "This is the second time I've used Nonstop Lock & Key and both times I only waited about 20 minutes or less before being able to get back into my car. The service is wonderful. They won't have you sitting/waiting long at all. Definitely recommend.",
   },
   {
-    name: 'Brian W.',
-    photo: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=200',
-    location: 'Town and Country, MO',
+    name: 'Russ B.',
+    photo: 'https://randomuser.me/api/portraits/men/32.jpg',
+    location: 'Creve Coeur, MO',
     rating: 5,
-    date: '2026-01-25',
-    displayDate: '25 January 2026',
-    service: 'Lock Installation & Replacement',
-    text: "Wanted to upgrade all the locks at our new house to a higher security grade. Nonstop walked me through the options (didn't push the most expensive), installed everything in one afternoon. Doors look better than they did before.",
+    date: '2024-06-10',
+    displayDate: '10 June 2024',
+    service: 'Lock Rekey',
+    text: "Closed on our new house and wanted everything rekeyed before we moved in. Alex came out the same day, did 6 exterior doors in under 90 minutes, and fixed a sticky strike plate on the back door at no extra charge. Honest pricing, exactly what was quoted.",
   },
   {
-    name: 'Jennifer W.',
+    name: 'Olivia C.',
     photo: 'https://randomuser.me/api/portraits/women/85.jpg',
-    location: 'Webster Groves, MO',
+    location: 'Brentwood, MO',
     rating: 5,
-    date: '2026-01-12',
-    displayDate: '12 January 2026',
-    service: 'Smart Lock Installation',
-    text: 'Had Nonstop Lock & Key install a Schlage Encode smart lock on our front door. Alex walked us through the app, set up codes for the dog walker, and even paired it with our Ring system. Patient and knew the differences between like 4 brands of smart locks.',
-  },
-  {
-    name: 'Eric N.',
-    photo: 'https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=200',
-    location: 'Ladue, MO',
-    rating: 5,
-    date: '2025-12-30',
-    displayDate: '30 December 2025',
-    service: 'Safe Opening & Repair',
-    text: "Inherited an old fire safe from my dad without the combo 🤷 Called around and most places quoted insane prices or said they don't even DO safes. Nonstop came out, got it open without damage in like 20 min, then rekeyed it for me. Saved my whole afternoon, great service",
+    date: '2026-04-04',
+    displayDate: '4 April 2026',
+    service: 'Car Key Replacement',
+    text: "My only key fob for my Hyundai Elantra died in a packed Schnucks parking lot, groceries melting in the back. Alex showed up super fast, cut a new fob right there in the lot, and also gave me a jump because I'd killed the battery trying to start it over and over. Above and beyond, honestly.",
   },
 ];
 
@@ -203,10 +205,13 @@ const reviewsLdJson = {
   })),
 };
 
+const READ_MORE_THRESHOLD = 220; // chars; longer reviews get a Read more toggle
+
 export default function Reviews() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const scrollCarousel = (direction: 'left' | 'right') => {
@@ -265,6 +270,11 @@ export default function Reviews() {
     if (!card) return;
     const cardW = card.offsetWidth + 24;
     el.scrollTo({ left: cardW * i, behavior: 'smooth' });
+    pauseAutoScroll();
+  };
+
+  const toggleExpanded = (index: number) => {
+    setExpandedIndex((prev) => (prev === index ? null : index));
     pauseAutoScroll();
   };
 
@@ -331,12 +341,15 @@ export default function Reviews() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onTouchStart={() => pauseAutoScroll()}
-            className="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 -mx-4 md:mx-0 px-4 md:px-0 pb-3 scroll-smooth no-scrollbar"
+            className="flex items-start overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 -mx-4 md:mx-0 px-4 md:px-0 pb-3 scroll-smooth no-scrollbar"
           >
-            {homepageReviews.map((review, index) => (
+            {homepageReviews.map((review, index) => {
+              const isExpanded = expandedIndex === index;
+              const needsToggle = review.text.length > READ_MORE_THRESHOLD;
+              return (
               <article
                 key={index}
-                className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center sm:snap-start"
+                className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] min-h-[300px] snap-center sm:snap-start"
               >
               {/* Google G — top right */}
               <GoogleG className="absolute top-4 right-4 w-6 h-6" />
@@ -376,11 +389,34 @@ export default function Reviews() {
               </div>
 
               {/* Review body */}
-              <p className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case">
+              <p
+                className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case whitespace-pre-line"
+                style={
+                  !isExpanded && needsToggle
+                    ? {
+                        display: '-webkit-box',
+                        WebkitLineClamp: 6,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
+                      }
+                    : undefined
+                }
+              >
                 {review.text}
               </p>
+              {needsToggle && (
+                <button
+                  type="button"
+                  onClick={() => toggleExpanded(index)}
+                  className="self-start mt-2 text-[13px] font-semibold text-primary-600 hover:text-primary-700 transition-colors normal-case"
+                  aria-expanded={isExpanded}
+                >
+                  {isExpanded ? 'Read less' : 'Read more'}
+                </button>
+              )}
             </article>
-          ))}
+            );
+          })}
           </div>
 
           {/* Dot indicators */}

@@ -24,7 +24,7 @@ const reviews: AreaReview[] = [
     rating: 5,
     date: '2026-03-12',
     displayDate: '12 March 2026',
-    text: 'Locked my keys in the car at a meeting in Clayton. Called Nonstop and they had a tech to me fast despite traffic on Forsyth. Opened the door no problem, charged exactly what was quoted on the phone. Saved my whole afternoon and walked me to coffee while I waited for my husband. Class act.',
+    text: "Locked my keys in the car at a meeting in Clayton. Called and Alex was there fast despite traffic on Forsyth. Opened the door no problem, charged exactly what was quoted on the phone. Even walked me to a coffee shop while I waited for my husband. Class act all around.",
     serviceName: 'Car Lockout',
     serviceSlug: 'car-lockout',
     cityName: 'Clayton',
@@ -36,7 +36,7 @@ const reviews: AreaReview[] = [
     rating: 5,
     date: '2024-08-15',
     displayDate: '15 August 2024',
-    text: 'Locked out of my house in Chesterfield. Quick response. Thanks.',
+    text: "Locked out of my house in Chesterfield. Alex out fast. Thanks man.",
     serviceName: 'House Lockout',
     serviceSlug: 'house-lockout',
     cityName: 'Chesterfield',
@@ -48,7 +48,7 @@ const reviews: AreaReview[] = [
     rating: 5,
     date: '2024-11-04',
     displayDate: '4 November 2024',
-    text: 'Closed on a fixer-upper in Webster Groves and wanted everything rekeyed before moving in. Tech did 4 doors in about an hour. Up-front pricing, clean work, no surprises.',
+    text: "Closed on a fixer-upper in Webster Groves and wanted everything rekeyed before moving in. Alex did 4 doors in about an hour. Up-front pricing, clean work, no surprises. Will use again.",
     serviceName: 'Lock Rekey',
     serviceSlug: 'lock-rekey',
     cityName: 'Webster Groves',
@@ -60,7 +60,7 @@ const reviews: AreaReview[] = [
     rating: 5,
     date: '2025-09-22',
     displayDate: '22 September 2025',
-    text: 'Lost my Honda key while running errands in Ballwin. Dealership was closed for the weekend and would have been a fortune anyway. Nonstop came to my driveway, cut and programmed a new transponder, and I was back on the road in under an hour. Saved me a huge chunk compared to what the dealer quoted on Monday.',
+    text: "Lost my Honda key while running errands in Ballwin. Dealership was closed for the weekend and the quote i got later for Monday was wild. Nonstop came to my driveway, alex cut and programmed a new transponder right there, and i was back on the road in under an hour. Saved a huge chunk compared to the dealer and didn't have to wait two days. Highly recommend if you're in west county.",
     serviceName: 'Car Key Replacement',
     serviceSlug: 'car-key-replacement',
     cityName: 'Ballwin',
@@ -72,7 +72,7 @@ const reviews: AreaReview[] = [
     rating: 5,
     date: '2026-02-18',
     displayDate: '18 February 2026',
-    text: 'Locked out of my apartment in U City after walking my dog. The dispatcher was so patient on the phone walking me through what to expect. Tech showed up in a marked uniform which made me feel safe letting him work on the lock at night. Got the door open without any damage and did not try to upsell me on anything. Family-owned service you can actually trust.',
+    text: "Locked out of my apartment in U City after walking my dog without grabbing my keys (rookie move). The dispatcher was patient on the phone walking me through what to expect. Alex showed up in a marked van and a polo with the company name, which honestly made me feel a lot safer letting him work on the lock at night. Got the door open without any damage and didn't try to upsell me on anything. Family-owned service you can actually trust.",
     serviceName: 'House Lockout',
     serviceSlug: 'house-lockout',
     cityName: 'University City',
@@ -84,7 +84,7 @@ const reviews: AreaReview[] = [
     rating: 5,
     date: '2025-11-30',
     displayDate: '30 November 2025',
-    text: 'Our office in Saint Charles had a manager change and we needed everything rekeyed plus a smart lock added to the back entrance. Tech came out, walked us through the smart lock options without pushing the most expensive one, did the install cleanly, and rekeyed 5 other doors all in one visit. Professional and reasonable.',
+    text: "Our office in Saint Charles had a manager change and we needed everything rekeyed plus a smart lock added to the back entrance. Alex came out, walked us through the smart lock options without pushing the most expensive one, did the install cleanly, and rekeyed 5 other doors in one visit. We use them for everything now.",
     serviceName: 'Commercial Lockout',
     serviceSlug: 'commercial-lockout',
     cityName: 'Saint Charles',
@@ -96,7 +96,7 @@ const reviews: AreaReview[] = [
     rating: 5,
     date: '2026-04-08',
     displayDate: '8 April 2026',
-    text: "My house key snapped clean off in the deadbolt at our place in Kirkwood late at night. Was completely freaking out because the kids were already in bed. Nonstop sent someone fast, extracted the broken piece without damaging anything, and confirmed the lock was still good. Calm and competent the whole way through.",
+    text: "My house key snapped clean off in the deadbolt at our place in Kirkwood late at night. Was freaking out because the kids were already in bed. Alex sent fast, extracted the broken piece without damaging anything, and confirmed the lock was still good. Calm and competent the whole way through.",
     serviceName: 'Broken Key Extraction',
     serviceSlug: 'broken-key-extraction',
     cityName: 'Kirkwood',
@@ -108,7 +108,7 @@ const reviews: AreaReview[] = [
     rating: 5,
     date: '2024-07-19',
     displayDate: '19 July 2024',
-    text: 'Needed a spare fob programmed for my Toyota at our place in Maryland Heights. Tech came to the house, did it in about 20 minutes, half what the dealer quoted. Easy and friendly.',
+    text: "Needed a spare fob programmed for my Toyota at our place in Maryland Heights. Alex came to the house, did it in about 20 min, half what the dealer quoted. Easy.",
     serviceName: 'Key Fob Programming',
     serviceSlug: 'key-fob-programming',
     cityName: 'Maryland Heights',
@@ -126,10 +126,13 @@ const GoogleG = ({ className = 'w-6 h-6' }: { className?: string }) => (
   </svg>
 );
 
+const READ_MORE_THRESHOLD = 220;
+
 export default function ServiceAreasReviewsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const scrollCarousel = (direction: 'left' | 'right') => {
@@ -188,6 +191,11 @@ export default function ServiceAreasReviewsSection() {
     if (!card) return;
     const cardW = card.offsetWidth + 24;
     el.scrollTo({ left: cardW * i, behavior: 'smooth' });
+    pauseAutoScroll();
+  };
+
+  const toggleExpanded = (index: number) => {
+    setExpandedIndex((prev) => (prev === index ? null : index));
     pauseAutoScroll();
   };
 
@@ -250,12 +258,15 @@ export default function ServiceAreasReviewsSection() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onTouchStart={() => pauseAutoScroll()}
-            className="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 -mx-4 md:mx-0 px-4 md:px-0 pb-3 scroll-smooth no-scrollbar"
+            className="flex items-start overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 -mx-4 md:mx-0 px-4 md:px-0 pb-3 scroll-smooth no-scrollbar"
           >
-            {reviews.map((review, index) => (
+            {reviews.map((review, index) => {
+              const isExpanded = expandedIndex === index;
+              const needsToggle = review.text.length > READ_MORE_THRESHOLD;
+              return (
               <article
                 key={index}
-                className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center sm:snap-start"
+                className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] min-h-[360px] snap-center sm:snap-start"
               >
                 <GoogleG className="absolute top-4 right-4 w-6 h-6" />
                 <div className="flex items-start gap-3 pr-8">
@@ -285,9 +296,26 @@ export default function ServiceAreasReviewsSection() {
                   </div>
                 </div>
 
-                <p className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case flex-1">
+                <p
+                  className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case whitespace-pre-line"
+                  style={
+                    !isExpanded && needsToggle
+                      ? { display: '-webkit-box', WebkitLineClamp: 6, WebkitBoxOrient: 'vertical', overflow: 'hidden' }
+                      : undefined
+                  }
+                >
                   {review.text}
                 </p>
+                {needsToggle && (
+                  <button
+                    type="button"
+                    onClick={() => toggleExpanded(index)}
+                    className="self-start mt-2 text-[13px] font-semibold text-primary-600 hover:text-primary-700 transition-colors normal-case"
+                    aria-expanded={isExpanded}
+                  >
+                    {isExpanded ? 'Read less' : 'Read more'}
+                  </button>
+                )}
 
                 <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100">
                   <Link
@@ -309,7 +337,8 @@ export default function ServiceAreasReviewsSection() {
                   </Link>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
 
           <div className="flex items-center justify-center gap-2 mt-6 sm:mt-8" role="tablist" aria-label="Review pagination">

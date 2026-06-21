@@ -17,74 +17,74 @@ type ContactReview = {
 
 const reviews: ContactReview[] = [
   {
-    name: 'Jeremy T.',
+    name: 'Greg M.',
     rating: 5,
-    date: '2025-09-04',
-    displayDate: '4 September 2025',
-    text: 'We were doing a property turnover at our duplex and needed every lock changed before the new tenants moved in. Called Nonstop on a Tuesday morning, they came out the same afternoon and rekeyed all six doors in under an hour. Pricing was reasonable, paperwork was professional, and they even gave me a detailed receipt I could pass to my accountant. This is now my go-to locksmith.',
-    service: 'Lock Rekey',
-    photo: 'https://randomuser.me/api/portraits/men/32.jpg',
-  },
-  {
-    name: 'Amanda L.',
-    rating: 5,
-    date: '2024-06-12',
-    displayDate: '12 June 2024',
-    text: 'Quick, friendly, and exactly what they quoted. Thanks!',
-    service: 'House Lockout',
+    date: '2024-08-15',
+    displayDate: '15 August 2024',
+    text: "Called Alex on a Saturday morning about my Civic. Out the door in less than half an hour. Easy.",
+    service: 'Car Key Replacement',
     avatarColor: 'bg-[#D93025]',
   },
   {
-    name: 'Brian C.',
+    name: 'Stephanie A.',
     rating: 5,
-    date: '2024-09-23',
-    displayDate: '23 September 2024',
-    text: 'Called for an ignition issue on our 2014 Hyundai. Tech diagnosed it right in the driveway, fixed it the same visit. Honest pricing and no upsell pressure. Will absolutely call again if anything else comes up with the car.',
-    service: 'Ignition Repair',
-    photo: 'https://randomuser.me/api/portraits/men/47.jpg',
+    date: '2025-09-12',
+    displayDate: '12 September 2025',
+    text: "Bought a fixer-upper and wanted everything rekeyed before the kids moved in. Alex came same day, did 5 doors in under an hour, and even fixed a loose strike plate that was on the way to giving up. Honest pricing all the way through.",
+    service: 'Lock Rekey',
+    photo: 'https://randomuser.me/api/portraits/women/45.jpg',
   },
   {
-    name: 'Sara M.',
+    name: 'Riley B.',
     rating: 5,
-    date: '2026-01-19',
-    displayDate: '19 January 2026',
-    text: "First time using a locksmith and I was a little nervous about getting overcharged. Asked a million questions on the phone and the dispatcher took the time to walk me through how their pricing works. Tech arrived in a marked van, was super polite to my elderly mom, and had her back in the house quickly. Genuinely good people who don't talk down to you for not knowing how locks work.",
-    service: 'House Lockout',
-    photo: 'https://randomuser.me/api/portraits/women/53.jpg',
+    date: '2026-02-28',
+    displayDate: '28 February 2026',
+    text: "Spare key for my Subaru Outback. Took it to a mechanic first and they said they couldn't help. Called Nonstop and Alex met me at the office, cut and programmed the key in like 25 minutes. Wish I'd called them first instead of running around.",
+    service: 'Car Key Replacement',
+    photo: 'https://randomuser.me/api/portraits/men/72.jpg',
   },
   {
-    name: 'Derek N.',
+    name: 'Dustin K.',
     rating: 5,
-    date: '2026-04-02',
-    displayDate: '2 April 2026',
-    text: 'I manage a small office complex and have had bad experiences with other locksmiths jacking up the price at the end. Nonstop has been the opposite. Up-front pricing, fast response when one of our tenants got locked out of their suite, and the techs always present themselves professionally. I have them on speed dial now.',
+    date: '2024-11-04',
+    displayDate: '4 November 2024',
+    text: "I run a small dental practice and after a staff change I needed everything rekeyed plus a smart lock with shared codes for the team. Alex walked me through the smart lock options without pushing the priciest one and made sure the codes were set up the way a HIPAA-conscious office needs. Did the rekey on five other doors in the same visit. The whole thing felt like working with a friend instead of a vendor. Will be calling them anytime we need anything lock-related.",
     service: 'Commercial Lockout',
     avatarColor: 'bg-[#188038]',
   },
   {
-    name: 'Olivia P.',
+    name: 'Jamie L.',
     rating: 5,
-    date: '2025-11-08',
-    displayDate: '8 November 2025',
-    text: 'Lost my only key fob to our Toyota Highlander while hiking with the kids. I was about an hour from home with two tired tweens in tow. Nonstop got someone to our location, programmed a new fob right there in the parking lot, and even gave us some shade with their van while we waited. Above and beyond service for a really stressful situation.',
-    service: 'Key Fob Programming',
+    date: '2025-12-18',
+    displayDate: '18 December 2025',
+    text: "My only spare key snapped in the door. Less than 30 min to get a tech to me, broken piece out, lock still working. Real life saver.",
+    service: 'Broken Key Extraction',
+    photo: 'https://randomuser.me/api/portraits/women/53.jpg',
+  },
+  {
+    name: 'Pat W.',
+    rating: 5,
+    date: '2026-03-20',
+    displayDate: '20 March 2026',
+    text: "Bought a Schlage Encode for our front door but didn't trust myself to install it right. Nonstop sent Alex out, he had it mounted and paired with our wifi in maybe 40 minutes, and set up a code for our cleaning service. Stayed long enough to make sure my wife was comfortable using the app too. Above and beyond.",
+    service: 'Smart Lock Installation',
+    photo: 'https://randomuser.me/api/portraits/men/47.jpg',
+  },
+  {
+    name: 'Nicole F.',
+    rating: 5,
+    date: '2026-01-04',
+    displayDate: '4 January 2026',
+    text: "Got home from a trip and my house key wouldn't turn in the lock. Was panicked because my flight had been delayed and i was exhausted. Nonstop picked up right away, Alex was at my door fast, opened it without damage, and showed me my deadbolt just needed a bit of lubrication. Charged for the visit only, didn't try to sell me a new lock. Honest service is rare.",
+    service: 'House Lockout',
     photo: 'https://randomuser.me/api/portraits/women/19.jpg',
   },
   {
-    name: 'Tom W.',
+    name: 'Reggie T.',
     rating: 5,
-    date: '2024-12-04',
-    displayDate: '4 December 2024',
-    text: 'We had a Schlage smart lock installed for our short-term rental and the tech walked us through the entire setup including how guest codes work. Spent extra time making sure we understood the app before leaving. Very patient and great communication start to finish.',
-    service: 'Smart Lock Installation',
-    photo: 'https://randomuser.me/api/portraits/men/78.jpg',
-  },
-  {
-    name: 'Jessica R.',
-    rating: 5,
-    date: '2026-03-15',
-    displayDate: '15 March 2026',
-    text: "Got locked out of my car at the grocery store after work with frozen food melting in my trunk. Called Nonstop, explained the situation, and they had a tech to me fast. The price matched exactly what I was quoted on the phone, no funny business at the end. Honestly relieved this kind of straightforward service still exists.",
+    date: '2024-06-30',
+    displayDate: '30 June 2024',
+    text: "Locked my keys in my Tahoe at the grocery store. Quick response, no scratches, no surprise fees. Will use again.",
     service: 'Car Lockout',
     avatarColor: 'bg-[#1A73E8]',
   },
@@ -99,10 +99,13 @@ const GoogleG = ({ className = 'w-6 h-6' }: { className?: string }) => (
   </svg>
 );
 
+const READ_MORE_THRESHOLD = 220;
+
 export default function ContactReviewsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const scrollCarousel = (direction: 'left' | 'right') => {
@@ -161,6 +164,11 @@ export default function ContactReviewsSection() {
     if (!card) return;
     const cardW = card.offsetWidth + 24;
     el.scrollTo({ left: cardW * i, behavior: 'smooth' });
+    pauseAutoScroll();
+  };
+
+  const toggleExpanded = (index: number) => {
+    setExpandedIndex((prev) => (prev === index ? null : index));
     pauseAutoScroll();
   };
 
@@ -237,12 +245,15 @@ export default function ContactReviewsSection() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onTouchStart={() => pauseAutoScroll()}
-            className="flex overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 -mx-4 md:mx-0 px-4 md:px-0 pb-3 scroll-smooth no-scrollbar"
+            className="flex items-start overflow-x-auto snap-x snap-mandatory gap-5 sm:gap-6 -mx-4 md:mx-0 px-4 md:px-0 pb-3 scroll-smooth no-scrollbar"
           >
-            {reviews.map((review, index) => (
+            {reviews.map((review, index) => {
+              const isExpanded = expandedIndex === index;
+              const needsToggle = review.text.length > READ_MORE_THRESHOLD;
+              return (
               <article
                 key={index}
-                className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center sm:snap-start"
+                className="relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex flex-col flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] min-h-[300px] snap-center sm:snap-start"
               >
                 <GoogleG className="absolute top-4 right-4 w-6 h-6" />
                 <div className="flex items-start gap-3 pr-8">
@@ -271,11 +282,29 @@ export default function ContactReviewsSection() {
                     <span className="block text-[13px] text-[#70757a] normal-case mt-0.5">{review.displayDate}</span>
                   </div>
                 </div>
-                <p className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case">
+                <p
+                  className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case whitespace-pre-line"
+                  style={
+                    !isExpanded && needsToggle
+                      ? { display: '-webkit-box', WebkitLineClamp: 6, WebkitBoxOrient: 'vertical', overflow: 'hidden' }
+                      : undefined
+                  }
+                >
                   {review.text}
                 </p>
+                {needsToggle && (
+                  <button
+                    type="button"
+                    onClick={() => toggleExpanded(index)}
+                    className="self-start mt-2 text-[13px] font-semibold text-primary-600 hover:text-primary-700 transition-colors normal-case"
+                    aria-expanded={isExpanded}
+                  >
+                    {isExpanded ? 'Read less' : 'Read more'}
+                  </button>
+                )}
               </article>
-            ))}
+              );
+            })}
           </div>
 
           {/* Dot indicators */}

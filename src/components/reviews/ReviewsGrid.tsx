@@ -23,7 +23,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2026-03-15',
     displayDate: '15 March 2026',
-    text: "Locked out of my condo on Forsyth at 2am after losing my keys at dinner. Called Nonstop and they had a tech at my door fast on a Saturday night. He opened the deadbolt without a single mark on the door, then rekeyed it on the spot so the lost keys wouldn't work anymore. Professional, calm, didn't take advantage of the situation.",
+    text: "Locked out of my condo on Forsyth at 2am after losing my keys at dinner downtown. Called Nonstop and Alex was at my door fast on a Saturday night. He picked the deadbolt without a single mark on the door, then rekeyed it on the spot so the lost keys wouldn't work anymore. Professional, calm, didn't take advantage of the situation.",
     serviceName: 'House Lockout',
     serviceSlug: 'house-lockout',
     cityName: 'Clayton',
@@ -35,7 +35,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2024-06-08',
     displayDate: '8 June 2024',
-    text: "Couldn't get into my office Saturday morning. Got me in fast. Quick and professional.",
+    text: "Couldn't get into my office Saturday morning. Alex out fast. Quick and professional.",
     serviceName: 'Commercial Lockout',
     serviceSlug: 'commercial-lockout',
     cityName: 'Chesterfield',
@@ -47,7 +47,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2024-09-12',
     displayDate: '12 September 2024',
-    text: 'Just closed on our new place and got everything rekeyed for peace of mind. Tech did 5 exterior doors and fixed a sticky strike plate on the back door. Charged exactly what was quoted on the phone.',
+    text: "Just closed on our new place and got everything rekeyed for peace of mind. Alex did 5 exterior doors and fixed a sticky strike plate on the back door. Charged exactly what was quoted on the phone.",
     serviceName: 'Lock Rekey',
     serviceSlug: 'lock-rekey',
     cityName: 'University City',
@@ -59,7 +59,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2026-04-22',
     displayDate: '22 April 2026',
-    text: 'Locked my keys IN the car at Schnucks with my dog inside, was completely freaking out. Called Nonstop and they got there quickly and had the door open in maybe 90 seconds. Zero damage to the trim. Absolute lifesavers, would absolutely call them again and tell every friend I know.',
+    text: "Locked my keys IN the car at Schnucks with my dog inside, was completely freaking out. Called and Alex got there fast and had the door open in maybe 90 seconds. Zero damage to the trim. Absolute lifesavers, would absolutely call them again and tell every friend i know.",
     serviceName: 'Car Lockout',
     serviceSlug: 'car-lockout',
     cityName: 'Ballwin',
@@ -71,7 +71,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2026-02-08',
     displayDate: '8 February 2026',
-    text: 'Had Nonstop install a Schlage Encode on our front door. The technician handled the install cleanly, set up the app on both our phones, and programmed guest codes for the dog walker. Very knowledgeable about smart lock brands and helped us pick the right one for our setup. Honestly the most patient and clear-communicating contractor we have ever worked with.',
+    text: "Had Alex install a Schlage Encode on our front door. The whole install was clean, he set up the app on both our phones, and programmed guest codes for the dog walker. Knew the differences between like 4 brands of smart locks and helped us pick the right one for our setup. Honestly the most patient and clear-communicating contractor we have ever worked with.",
     serviceName: 'Smart Lock Installation',
     serviceSlug: 'smart-lock-installation',
     cityName: 'Webster Groves',
@@ -83,7 +83,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2026-01-04',
     displayDate: '4 January 2026',
-    text: 'Broken key snapped off in our front door lock at 11pm. Locksmith arrived in about 25 minutes, extracted the broken piece, tested the cylinder, and confirmed the lock was still good. Quick and professional.',
+    text: "Broken key snapped off in our front door lock at 11pm. Alex was there in about 25 minutes, extracted the broken piece, tested the cylinder, and confirmed the lock was still good. Quick and professional.",
     serviceName: 'Broken Key Extraction',
     serviceSlug: 'broken-key-extraction',
     cityName: 'Kirkwood',
@@ -95,7 +95,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2025-08-19',
     displayDate: '19 August 2025',
-    text: "Lost my only Honda key at the mall on a Sunday. The dealership wanted way too much PLUS a tow. Nonstop came to the parking lot, cut a new transponder, programmed it, and I was driving home in under an hour. Saved me a ton of money. The tech also showed me how to put my car into safe mode in case anything like this ever happens again. Above and beyond.",
+    text: "Lost my only Honda key at the mall on a Sunday. The dealership wanted way too much PLUS a tow on Monday. Alex came to the parking lot, cut a new transponder, programmed it, and i was driving home in under an hour. Saved me a ton of money. He also showed me how to put my car into safe mode in case anything like this ever happens again. Above and beyond.",
     serviceName: 'Car Key Replacement',
     serviceSlug: 'car-key-replacement',
     cityName: 'Chesterfield',
@@ -107,7 +107,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2026-03-30',
     displayDate: '30 March 2026',
-    text: "3am emergency, lost my keys at a wedding downtown. Called like 5 places and only Nonstop actually answered. Tech was at my Airbnb fast and didn't make me feel bad for the late-night call. Did not expect that level of service that late at night, seriously thank you.",
+    text: "3am emergency, lost my keys at a wedding downtown. Called like 5 places and only Nonstop actually answered. Alex was at my Airbnb fast and didn't make me feel bad for the late-night call. Did not expect that level of service that late at night, seriously thank you.",
     serviceName: 'House Lockout',
     serviceSlug: 'house-lockout',
     cityName: 'St. Louis',
@@ -131,7 +131,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2025-10-26',
     displayDate: '26 October 2025',
-    text: 'Our front deadbolt had a worn-out mechanism that was getting harder to turn every day. Nonstop replaced it with a heavy-duty Kwikset and made sure everything was aligned perfectly. The tech also pointed out that our strike plate screws were too short for proper security and replaced those too. Door locks smoothly now and feels way more secure.',
+    text: "Our front deadbolt had a worn-out mechanism that was getting harder to turn every day. Alex replaced it with a heavy-duty Kwikset and made sure everything was aligned perfectly. He also pointed out that our strike plate screws were too short for proper security and replaced those too. Door locks smoothly now and feels way more secure.",
     serviceName: 'Lock Installation & Replacement',
     serviceSlug: 'lock-installation-replacement',
     cityName: 'Olivette',
@@ -143,7 +143,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2024-07-22',
     displayDate: '22 July 2024',
-    text: 'Locked my keys in the car near Lambert Airport after a red-eye at 5am. Dispatched someone to the parking area right away. Got me back in without any fuss. A lifesaver at that hour.',
+    text: "Locked my keys in the car near Lambert Airport after a red-eye at 5am. Alex dispatched right away to the parking area. Got me back in without any fuss. A lifesaver at that hour.",
     serviceName: 'Car Lockout',
     serviceSlug: 'car-lockout',
     cityName: 'Bridgeton',
@@ -155,7 +155,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2026-04-15',
     displayDate: '15 April 2026',
-    text: "Locked my keys inside the car at Dierbergs on Olive while loading groceries with my toddler in the cart. Called Nonstop and they understood the urgency immediately. Tech arrived and had the door open without a scratch on the paint. The price he quoted on the phone is exactly what I paid. No surprise fees, no upsells. Will absolutely call them again.",
+    text: "Locked my keys inside the car at Dierbergs on Olive while loading groceries with my toddler in the cart. Called Nonstop and they understood the urgency immediately. Alex arrived and had the door open without a scratch on the paint. The price he quoted on the phone is exactly what i paid. No surprise fees, no upsells. Will absolutely call them again.",
     serviceName: 'Car Lockout',
     serviceSlug: 'car-lockout',
     cityName: 'Creve Coeur',
@@ -167,7 +167,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2025-12-03',
     displayDate: '3 December 2025',
-    text: 'Had six doors rekeyed at our office plaza on Manchester Road after a staff change. Tech was efficient and rekeyed all six locks to work with a single master key. Great communication throughout the process and sent us a detailed invoice for our records. Would recommend for any commercial property manager.',
+    text: "Had six doors rekeyed at our office plaza on Manchester Road after a staff change. Alex was efficient and rekeyed all six locks to work with a single master key. Great communication throughout the process and sent us a detailed invoice for our records. Would recommend for any commercial property manager.",
     serviceName: 'Lock Rekey',
     serviceSlug: 'lock-rekey',
     cityName: 'Manchester',
@@ -179,7 +179,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2026-02-28',
     displayDate: '28 February 2026',
-    text: 'Needed a replacement key for my Honda after losing the spare. Tech came to my house on Midland Avenue, cut and programmed a new transponder key on the spot. Cost significantly less than what the Honda dealer quoted, and the convenience of having them come to me instead of getting it towed was huge. Honest pricing and explained everything as he went.',
+    text: "Needed a replacement key for my Honda after losing the spare. Alex came to my house on Midland Avenue, cut and programmed a new transponder key on the spot. Cost significantly less than what the Honda dealer quoted, and the convenience of having him come to me instead of getting it towed was huge. Honest pricing and explained everything as he went.",
     serviceName: 'Car Key Replacement',
     serviceSlug: 'car-key-replacement',
     cityName: 'Overland',
@@ -191,7 +191,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2024-05-10',
     displayDate: '10 May 2024',
-    text: 'Installed a Yale Assure smart lock. Quick, clean, easy. Thanks.',
+    text: "Installed a Yale Assure smart lock. Quick, clean, easy. Thanks Alex.",
     serviceName: 'Smart Lock Installation',
     serviceSlug: 'smart-lock-installation',
     cityName: 'Frontenac',
@@ -203,7 +203,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2025-09-08',
     displayDate: '8 September 2025',
-    text: 'Locked myself out walking my dog without thinking to grab my keys. Stood in the cold for what felt like forever until I called Nonstop. The dispatcher was patient and walked me through what to expect. Tech arrived in a clearly marked van wearing a uniform which made me feel safe letting him work on my lock alone. Quick, painless, did not charge me a premium for being a panicked customer.',
+    text: "Locked myself out walking my dog without thinking to grab my keys. Stood in the cold for what felt like forever until i called Nonstop. The dispatcher was patient and walked me through what to expect. Alex arrived in a clearly marked van wearing a uniform which made me feel safe letting him work on my lock alone. Quick, painless, did not charge me a premium for being a panicked customer.",
     serviceName: 'House Lockout',
     serviceSlug: 'house-lockout',
     cityName: 'Saint Charles',
@@ -215,7 +215,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2026-01-20',
     displayDate: '20 January 2026',
-    text: "Key wouldn't turn in the ignition of my old Subaru. Tech diagnosed the issue in the driveway and fixed it the same visit. Saved me a tow to the dealer for sure.",
+    text: "Key wouldn't turn in the ignition of my old Subaru. Alex diagnosed the issue in the driveway and fixed it the same visit. Saved me a tow to the dealer for sure.",
     serviceName: 'Ignition Repair',
     serviceSlug: 'ignition-repair',
     cityName: 'Kirkwood',
@@ -227,7 +227,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2024-10-30',
     displayDate: '30 October 2024',
-    text: 'Wanted to upgrade all our exterior locks to higher security after a break-in attempt on a neighboring house. Tech walked us through the Grade 1 options without pushing the most expensive. Installed four new deadbolts and reinforced the strike plates with longer screws. Doors look better than before and we feel a lot safer.',
+    text: "Wanted to upgrade all our exterior locks to higher security after a break-in attempt on a neighboring house. Alex walked us through the Grade 1 options without pushing the most expensive. Installed four new deadbolts and reinforced the strike plates with longer screws. Doors look better than before and we feel a lot safer.",
     serviceName: 'Lock Installation & Replacement',
     serviceSlug: 'lock-installation-replacement',
     cityName: 'Brentwood',
@@ -239,7 +239,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2026-03-22',
     displayDate: '22 March 2026',
-    text: "Lost the combo to my dad's old safe. They got it open without damaging anything. Pros.",
+    text: "Lost the combo to my dad's old safe. Alex got it open without damaging anything. Pros.",
     serviceName: 'Safe Opening & Repair',
     serviceSlug: 'safe-opening',
     cityName: 'Town and Country',
@@ -251,7 +251,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2026-04-05',
     displayDate: '5 April 2026',
-    text: 'Lost my only key fob to our Toyota Highlander on a family vacation. Stuck about an hour from home with two tired kids. Nonstop got someone to our location, programmed a new fob right there in the parking lot, and even gave us some shade with their van while we waited. Above and beyond for a really stressful situation.',
+    text: "Lost my only key fob to our Toyota Highlander on a family vacation. Stuck about an hour from home with two tired kids. Alex got to our location fast, programmed a new fob right there in the parking lot, and even gave us some shade with the van while we waited. Above and beyond for a really stressful situation.",
     serviceName: 'Key Fob Programming',
     serviceSlug: 'key-fob-programming',
     cityName: 'Richmond Heights',
@@ -263,7 +263,7 @@ export const reviews: Review[] = [
     rating: 5,
     date: '2024-08-22',
     displayDate: '22 August 2024',
-    text: 'Replaced two exterior locks at our home off Manchester Road. Tech was on-time, polite to our kids, and finished the job in about an hour. Clean install.',
+    text: "Replaced two exterior locks at our home off Manchester Road. Alex was on-time, polite to our kids, and finished the job in about an hour. Clean install.",
     serviceName: 'Lock Installation & Replacement',
     serviceSlug: 'lock-installation-replacement',
     cityName: 'Des Peres',
@@ -293,8 +293,13 @@ const GoogleG = ({ className = 'w-6 h-6' }: { className?: string }) => (
   </svg>
 );
 
+const READ_MORE_THRESHOLD = 220;
+
 export default function ReviewsGrid() {
   const [extraLoads, setExtraLoads] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const toggleExpanded = (index: number) =>
+    setExpandedIndex((prev) => (prev === index ? null : index));
   // Initial visible: 3 mobile, 6 desktop. Each click loads +3 on both viewports.
   const mobileVisible = 3 + extraLoads * 3;
   const desktopVisible = 6 + extraLoads * 3;
@@ -315,18 +320,20 @@ export default function ReviewsGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
           {reviews.map((review, index) => {
             if (index >= desktopVisible) return null;
 
             // Items below mobileVisible are visible on every viewport;
             // items between mobileVisible and desktopVisible only show on tablet/desktop.
             const displayClass = index < mobileVisible ? 'flex' : 'hidden md:flex';
+            const isExpanded = expandedIndex === index;
+            const needsToggle = review.text.length > READ_MORE_THRESHOLD;
 
             return (
               <article
                 key={index}
-                className={`${displayClass} relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex-col`}
+                className={`${displayClass} relative bg-white rounded-2xl p-5 sm:p-6 border border-primary-300 shadow-sm hover:shadow-md hover:border-primary-500 transition-all duration-300 flex-col min-h-[360px]`}
               >
               <GoogleG className="absolute top-4 right-4 w-6 h-6" />
               <div className="flex items-start gap-3 pr-8">
@@ -362,9 +369,26 @@ export default function ReviewsGrid() {
                 </div>
               </div>
 
-              <p className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case flex-1">
+              <p
+                className="text-[14px] text-[#202124] leading-[1.55] mt-4 normal-case whitespace-pre-line"
+                style={
+                  !isExpanded && needsToggle
+                    ? { display: '-webkit-box', WebkitLineClamp: 6, WebkitBoxOrient: 'vertical', overflow: 'hidden' }
+                    : undefined
+                }
+              >
                 {review.text}
               </p>
+              {needsToggle && (
+                <button
+                  type="button"
+                  onClick={() => toggleExpanded(index)}
+                  className="self-start mt-2 text-[13px] font-semibold text-primary-600 hover:text-primary-700 transition-colors normal-case"
+                  aria-expanded={isExpanded}
+                >
+                  {isExpanded ? 'Read less' : 'Read more'}
+                </button>
+              )}
 
               {/* Service + City link chips */}
               <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100">
